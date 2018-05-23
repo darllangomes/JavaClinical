@@ -4,9 +4,9 @@ public class Recepcionista {
 	private String id;
 	private String nome;
 	private String senha;
-	private Paciente paciente;
-	private Consulta consulta;
-	private Cirurgia cirurgia;
+	//private Paciente paciente;
+	//private Consulta consulta;
+	//private Cirurgia cirurgia;
 		
 	
 	
@@ -54,36 +54,37 @@ public class Recepcionista {
 
 
 
-	public Paciente getPaciente() {
-		return paciente;
-	}
+	//public Paciente getPaciente() {
+	//	return paciente;
+	//}
 
 
 
-	public void setPaciente(Paciente paciente) {
-		this.paciente = paciente;
-	}
+	//public void setPaciente(Paciente paciente) {
+	//	this.paciente = paciente;
+	//}
 
 
 
-	public Consulta getConsulta() {
-		return consulta;
-	}
+	//public Consulta getConsulta() {
+	//	return consulta;
+	//}
 
 
 
-	public void setConsulta(Consulta consulta) {
-		this.consulta = consulta;
-	}
+	//public void setConsulta(Consulta consulta) {
+	//	this.consulta = consulta;
+	//}
 
 
 
-	public void marcarConsulta(Paciente paciente){
+	public void marcarConsulta(Paciente paciente, Medico medico){
 		if(paciente.getConsulta()==null) {
 			LocalDate d = LocalDate.of(2018, 6, 25);
-			Consulta c = new Consulta(d, "especialidade", null, paciente, false, false, true);
+			Consulta c = new Consulta(d, "ortopedia", medico, paciente, false, false, true);
 			paciente.setConsulta(c);
 			System.out.println("Consulta marcada com sucesso!");
+			System.out.println("Especialidade: " + paciente.getConsulta().getEspecialidade());
 		}
 	}
 	
@@ -112,6 +113,10 @@ public class Recepcionista {
 			System.out.println("Cirurgia desmarcada com sucesso");
 		}
 		
+	}
+	
+	public void statusConsulta(Paciente paciente) {
+		System.out.println("status da consulta: " + paciente.getConsulta().isMarcada());
 	}
 	
 	
