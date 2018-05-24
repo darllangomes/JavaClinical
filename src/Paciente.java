@@ -2,9 +2,7 @@
 public class Paciente {
 	private String nome;
 	private int idade;
-	private String cpf; // Na uml esta como int, mas eh melhor String ate por que do tamanho do cpf nao cabe em um int
-	private String id;
-	private boolean cadastrado;
+	private String cpf;
 	private String senha;
 	private Consulta consulta;
 	private Cirurgia cirurgia;
@@ -36,18 +34,8 @@ public class Paciente {
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
-	public String getId() {
-		return id;
-	}
-	public void setId(String id) {
-		this.id = id;
-	}
-	public boolean isCadastrado() {
-		return cadastrado;
-	}
-	public void setCadastrado(boolean cadastrado) {
-		this.cadastrado = cadastrado;
-	}
+	
+	
 	public String getSenha() {
 		return senha;
 	}
