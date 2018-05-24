@@ -42,9 +42,7 @@ public class Cirurgia {
 	public void setMarcada(boolean marcada) {
 		this.marcada = marcada;
 	}
-
+    
 	
-	public String toString() {
-		return "Cirurgia:\nid: " + id + "\n" + paciente + "\n" + medico;
-	}
+	
 }

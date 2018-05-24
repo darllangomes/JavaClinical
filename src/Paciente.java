@@ -1,6 +1,5 @@
 
 public class Paciente {
-
 	private String nome;
 	private int idade;
 	private String cpf;
@@ -66,7 +65,5 @@ public class Paciente {
 		this.cirurgia = cirurgia;
 	}
 	
-	public String toString() {
-		return "Paciente:\nNome: " + nome + "\nIdade: " + idade + "\nCPF: " + cpf;
-	}
+	
 }

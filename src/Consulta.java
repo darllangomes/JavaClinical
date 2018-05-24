@@ -1,9 +1,10 @@
 import java.time.LocalDate;
 
 public class Consulta {
-	LocalDate data;	
-	private Medico medico;
-	private Paciente paciente;
+	LocalDate data;
+	//private String especialidade;	// **************************************
+	private Medico medico; 		    // Pode ser um atributo do tipo Medico
+	private Paciente paciente;	    //   "   "   "   "       "  "   Paciente
 	private boolean solicitacaoExame;
 	private boolean solicitacaoCirurgia;
 	
@@ -13,15 +14,18 @@ public class Consulta {
 		this.paciente = paciente;
 		this.solicitacaoExame = false;
 		this.solicitacaoCirurgia = false;
+		//this.marcada = marcada;
 	}
    
 	public Consulta(LocalDate data, String especialidade, Medico medico, Paciente paciente, boolean solicitacaoExame,
 			boolean solicitacaoCirurgia, boolean marcada) {
 		this.data = data;
+		//this.especialidade = especialidade;
 		this.medico = medico;
 		this.paciente = paciente;
 		this.solicitacaoExame = solicitacaoExame;
 		this.solicitacaoCirurgia = solicitacaoCirurgia;
+		//this.marcada = marcada;
 	}
 	public LocalDate getData() {
 		return data;
@@ -38,7 +42,7 @@ public class Consulta {
 	public Medico getNomeMedico() {
 		return medico;
 	}
-	public void setMedico(Medico medico) {
+	public void setMedico(Medico nomeMedico) {
 		this.medico = medico;
 	}
 	public Paciente getPaciente() {
@@ -59,9 +63,18 @@ public class Consulta {
 	public void setSolicitacaoCirurgia(boolean solicitacaoCirurgia) {
 		this.solicitacaoCirurgia = solicitacaoCirurgia;
 	}
-
-	public String toString() {
-		return "Consulta:\n" + data + "\n" + medico + "\n" + paciente + "\nSolicitação de Exame: "
-				+ solicitacaoExame + "\nSolicitaço de Cirurgia: " + solicitacaoCirurgia;
-	}
+	//public boolean isMarcada() {
+	//	return marcada;
+	//}
+	//public void setMarcada(boolean marcada) {
+	//	this.marcada=marcada;
+	//}
+	
+	//public void marcarConsulta() {
+	//	if(isMarcada()==false) {
+	//		setMarcada(true);
+	//	}
+	//}
+	
+	
 }

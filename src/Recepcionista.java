@@ -4,6 +4,9 @@ public class Recepcionista {
 	private String id;
 	private String nome;
 	private String senha;
+	//private Paciente paciente;
+	//private Consulta consulta;
+	//private Cirurgia cirurgia;
 		
 	
 	
@@ -114,7 +117,5 @@ public class Recepcionista {
 		
 	}
 	
-	public String toString() {
-		return "Recepcionista:\nId: " + id + "\nNome: " + nome;
-	}
+	
 }

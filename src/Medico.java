@@ -1,3 +1,4 @@
+
 public class Medico {
 	private String nome;
 	private String especialidade;
@@ -22,7 +23,4 @@ public class Medico {
 		this.senha = senha;
 	}
 	
-	public String toString() {
-		return "Médico:\nNome: " + nome + "\nEspecialidade: " + especialidade;
-	}
 }
