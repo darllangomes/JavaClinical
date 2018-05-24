@@ -11,8 +11,8 @@ public class MainTeste {
 		a.marcarConsulta(p, m);
 		a.desmarcarConsulta(p);
 		
-		//a.marcarCirurgia(p);
-		//a.desmarcarCirurgia(p);
+		a.marcarCirurgia(p);
+		a.desmarcarCirurgia(p);
 		
 }
 }

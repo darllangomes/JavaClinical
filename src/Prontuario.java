@@ -10,5 +10,7 @@ public class Prontuario {
 		this.queixaPaciente = queixaPaciente;
 	}
 	
-	
+	public String toString() {
+		return "Prontuário:\nQueixa: " + queixaPaciente;
+	}
 }
