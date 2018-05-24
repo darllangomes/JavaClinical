@@ -84,15 +84,13 @@ public class Recepcionista {
 			Consulta c = new Consulta(d, "ortopedia", medico, paciente, false, false, true);
 			paciente.setConsulta(c);
 			System.out.println("Consulta marcada com sucesso!");
-			System.out.println("Nome: "+ paciente.getNome());
 			System.out.println("Especialidade: " + paciente.getConsulta().getEspecialidade());
-			System.out.println("Data " + d);
 		}
 	}
 	
 	public void desmarcarConsulta(Paciente paciente){
-		if(paciente.getConsulta() != null) {
-			paciente.setConsulta(null);;
+		if(paciente.getConsulta().isMarcada()==true) {
+			paciente.getConsulta().setMarcada(false);
 			System.out.println("Consulta desmarcada com sucesso");
 		}
 	}
@@ -116,6 +114,12 @@ public class Recepcionista {
 		}
 		
 	}
+	
+	public void statusConsulta(Paciente paciente) {
+		System.out.println("status da consulta: " + paciente.getConsulta().isMarcada());
+	}
+	
+	
 	
 	
 }
