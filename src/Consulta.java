@@ -2,24 +2,30 @@ import java.time.LocalDate;
 
 public class Consulta {
 	LocalDate data;
-	private String especialidade;	// **************************************
+	//private String especialidade;	// **************************************
 	private Medico medico; 		    // Pode ser um atributo do tipo Medico
 	private Paciente paciente;	    //   "   "   "   "       "  "   Paciente
 	private boolean solicitacaoExame;
 	private boolean solicitacaoCirurgia;
-	boolean marcada;
 	
-	
+	public Consulta(LocalDate data, Medico medico, Paciente paciente) {
+		this.data = data;
+		this.medico = medico;
+		this.paciente = paciente;
+		this.solicitacaoExame = false;
+		this.solicitacaoCirurgia = false;
+		//this.marcada = marcada;
+	}
    
 	public Consulta(LocalDate data, String especialidade, Medico medico, Paciente paciente, boolean solicitacaoExame,
 			boolean solicitacaoCirurgia, boolean marcada) {
 		this.data = data;
-		this.especialidade = especialidade;
+		//this.especialidade = especialidade;
 		this.medico = medico;
 		this.paciente = paciente;
 		this.solicitacaoExame = solicitacaoExame;
 		this.solicitacaoCirurgia = solicitacaoCirurgia;
-		this.marcada = marcada;
+		//this.marcada = marcada;
 	}
 	public LocalDate getData() {
 		return data;
@@ -28,10 +34,10 @@ public class Consulta {
 		this.data = data;
 	}
 	public String getEspecialidade() {
-		return especialidade;
+		return medico.getEspecialidade();
 	}
 	public void setEspecialidade(String especialidade) {
-		this.especialidade = especialidade;
+		medico.setEspecialidade(especialidade);
 	}
 	public Medico getNomeMedico() {
 		return medico;
@@ -57,17 +63,18 @@ public class Consulta {
 	public void setSolicitacaoCirurgia(boolean solicitacaoCirurgia) {
 		this.solicitacaoCirurgia = solicitacaoCirurgia;
 	}
-	public boolean isMarcada() {
-		return marcada;
-	}
-	public void setMarcada(boolean marcada) {
-		this.marcada=marcada;
-	}
+	//public boolean isMarcada() {
+	//	return marcada;
+	//}
+	//public void setMarcada(boolean marcada) {
+	//	this.marcada=marcada;
+	//}
 	
-	public void marcarConsulta() {
-		if(isMarcada()==false) {
-			setMarcada(true);
-		}
-	}
+	//public void marcarConsulta() {
+	//	if(isMarcada()==false) {
+	//		setMarcada(true);
+	//	}
+	//}
+	
 	
 }
