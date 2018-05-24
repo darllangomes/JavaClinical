@@ -2,7 +2,7 @@ import java.time.LocalDate;
 
 public class Consulta {
 	LocalDate data;
-	private String especialidade;	// **************************************
+	//private String especialidade;	// **************************************
 	private Medico medico; 		    // Pode ser um atributo do tipo Medico
 	private Paciente paciente;	    //   "   "   "   "       "  "   Paciente
 	private boolean solicitacaoExame;
@@ -28,7 +28,7 @@ public class Consulta {
 		this.data = data;
 	}
 	public String getEspecialidade() {
-		return especialidade;
+		return medico.getEspecialidade();
 	}
 	public void setEspecialidade(String especialidade) {
 		this.especialidade = especialidade;
@@ -68,6 +68,10 @@ public class Consulta {
 		if(isMarcada()==false) {
 			setMarcada(true);
 		}
+	}
+	public void status() {
+		System.out.println();
+		System.out.println("status da consulta: "+ this.marcada);
 	}
 	
 }
