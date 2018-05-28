@@ -64,4 +64,34 @@ public class Consulta {
 		return "Consulta:\n" + data + "\n" + medico + "\n" + paciente + "\nSolicitação de Exame: "
 				+ solicitacaoExame + "\nSolicitaço de Cirurgia: " + solicitacaoCirurgia;
 	}
+	
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Consulta other = (Consulta) obj;
+		if (data == null) {
+			if (other.data != null)
+				return false;
+		} else if (!data.equals(other.data))
+			return false;
+		if (medico == null) {
+			if (other.medico != null)
+				return false;
+		} else if (!medico.equals(other.medico))
+			return false;
+		if (paciente == null) {
+			if (other.paciente != null)
+				return false;
+		} else if (!paciente.equals(other.paciente))
+			return false;
+		if (solicitacaoCirurgia != other.solicitacaoCirurgia)
+			return false;
+		if (solicitacaoExame != other.solicitacaoExame)
+			return false;
+		return true;
+	}
 }
