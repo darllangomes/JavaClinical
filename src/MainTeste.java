@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 
 public class MainTeste {
 
@@ -7,12 +8,12 @@ public class MainTeste {
 		m.setEspecialidade("Ortopedia");
 		Paciente p = new Paciente("Henrique", "99939394", "1234");
 		
-		
-		a.marcarConsulta(p, m);
+		ArrayList<Consulta> repositorioConsulta = new ArrayList<Consulta>();
+		a.marcarConsulta(p, m, repositorioConsulta);
 		a.desmarcarConsulta(p);
 		
 		a.marcarCirurgia(p);
 		a.desmarcarCirurgia(p);
 		
-}
+	}
 }

@@ -5,7 +5,7 @@ public class Paciente {
 	private int idade;
 	private String cpf;
 	private String senha;
-	private Consulta consulta;
+	//private Consulta consulta;
 	private Cirurgia cirurgia;
 	private Prontuario prontuario;
 	
@@ -50,13 +50,13 @@ public class Paciente {
 		this.prontuario = prontuario;
 	}
 
-	public Consulta getConsulta() {
+	/*public Consulta getConsulta() {
 		return consulta;
-	}
+	}*/
 
-	public void setConsulta(Consulta consulta) {
+	/*public void setConsulta(Consulta consulta) {
 		this.consulta = consulta;
-	}
+	}/*/
 
 	public Cirurgia getCirurgia() {
 		return cirurgia;
@@ -69,7 +69,7 @@ public class Paciente {
 	public String toString() {
 		return "Paciente:\nNome: " + nome + "\nIdade: " + idade + "\nCPF: " + cpf;
 	}
-	
+
 	public boolean equals(Object obj) {
 		if (this == obj)
 			return true;
@@ -82,11 +82,6 @@ public class Paciente {
 			if (other.cirurgia != null)
 				return false;
 		} else if (!cirurgia.equals(other.cirurgia))
-			return false;
-		if (consulta == null) {
-			if (other.consulta != null)
-				return false;
-		} else if (!consulta.equals(other.consulta))
 			return false;
 		if (cpf == null) {
 			if (other.cpf != null)
@@ -112,4 +107,6 @@ public class Paciente {
 			return false;
 		return true;
 	}
+	
+	
 }
