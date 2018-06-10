@@ -1,10 +1,8 @@
+package negocio;
 
-public class Paciente {
+public class Paciente extends Usuario  {
 
-	private String nome;
 	private int idade;
-	private String cpf;
-	private String senha;
 	//private Consulta consulta;
 	private Cirurgia cirurgia;
 	private Prontuario prontuario;
