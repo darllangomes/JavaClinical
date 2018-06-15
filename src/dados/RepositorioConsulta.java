@@ -17,7 +17,7 @@ public class RepositorioConsulta {
         this.cadastrar(c);
     }*/
 	
-	public void cadastrarUsuario(Consulta u) {
+	public void cadastrarConsulta(Consulta u) {
 		this.consultas[ultimo] = u;
 		this.ultimo += 1;
 		if(this.ultimo == this.consultas.length) {
