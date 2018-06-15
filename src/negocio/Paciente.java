@@ -9,10 +9,13 @@ public class Paciente extends Usuario  {
 	
 	
 	
-	public Paciente(String nome, String cpf, String senha) {
+	public Paciente(String nome, String cpf, int senha) {
 		this.nome = nome;
 		this.cpf = cpf;
-		this.senha = senha;
+		this.senhaHash = senha;
+	}
+	public Paciente() {
+		
 	}
 	
 	public String getNome() {
@@ -35,11 +38,11 @@ public class Paciente extends Usuario  {
 	}
 	
 	
-	public String getSenha() {
-		return senha;
+	public int getSenha() {
+		return senhaHash;
 	}
-	public void setSenha(String senha) {
-		this.senha = senha;
+	public void setSenha(int senha) {
+		this.senhaHash = senha;
 	}
 	public Prontuario getProntuario() {
 		return prontuario;
@@ -68,10 +71,13 @@ public class Paciente extends Usuario  {
 		return "Paciente:\nNome: " + nome + "\nIdade: " + idade + "\nCPF: " + cpf;
 	}
 
+	
+
+	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
 			return true;
-		if (obj == null)
+		if (!super.equals(obj))
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
@@ -81,30 +87,17 @@ public class Paciente extends Usuario  {
 				return false;
 		} else if (!cirurgia.equals(other.cirurgia))
 			return false;
-		if (cpf == null) {
-			if (other.cpf != null)
-				return false;
-		} else if (!cpf.equals(other.cpf))
-			return false;
 		if (idade != other.idade)
-			return false;
-		if (nome == null) {
-			if (other.nome != null)
-				return false;
-		} else if (!nome.equals(other.nome))
 			return false;
 		if (prontuario == null) {
 			if (other.prontuario != null)
 				return false;
 		} else if (!prontuario.equals(other.prontuario))
 			return false;
-		if (senha == null) {
-			if (other.senha != null)
-				return false;
-		} else if (!senha.equals(other.senha))
-			return false;
 		return true;
 	}
+
+	
 	
 	
 }

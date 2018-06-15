@@ -16,6 +16,21 @@ public class Recepcionista extends Usuario{
 		return "Recepcionista [nome=" + nome + ", cpf=" + cpf + "]";
 	}
 
+	public void trabalho() {
+		System.out.println("1- cadastrar Paciente \n 2- marcar consulta \n 3- marcar cirurgia \n 4- acessar prontuário");
+		Scanner op= new Scanner(System.in);
+		int option= op.nextInt();
+		
+		switch(option) {
+		case 1:
+			GetInformation g= new GetInformation();
+			g.work();
+		}
+		
+		
+		
+	}
+	
 
 /*
 	public void marcarConsulta(Paciente paciente, Medico medico, ArrayList<Consulta> repositorioConsulta){
@@ -69,6 +84,8 @@ public class Recepcionista extends Usuario{
 		
 	}
 	*/
+	
+	
 	
 	
 	

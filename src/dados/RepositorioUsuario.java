@@ -11,10 +11,7 @@ public class RepositorioUsuario {
 		this.ultimo = 0;
 	}
 	
-	/*public void cadastrarUsuario(String nome, String cpf, String ) {
-        Conta c = new Conta(numero, saldoInicial);
-        this.cadastrar(c);
-    }*/
+	
 	
 	public void cadastrarUsuario(Usuario u) {
 		this.usuarios[ultimo] = u;

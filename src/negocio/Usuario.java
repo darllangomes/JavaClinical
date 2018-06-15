@@ -3,7 +3,7 @@ package negocio;
 public class Usuario {
 	String nome;
 	String cpf;
-	String senha;
+	int senhaHash;
 	
 	public Usuario(){
 		
@@ -15,8 +15,11 @@ public class Usuario {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public void setSenha(String senha) {
-		this.senha = senha;
+	public void setSenhaHash(int senha) {
+		this.senhaHash = senha;
+	}
+	public int getSenhaHash() {
+		return this.senhaHash;
 	}
 	
 	public String getCpf() {
@@ -33,7 +36,6 @@ public class Usuario {
 	}
 
 	
-
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -53,13 +55,13 @@ public class Usuario {
 				return false;
 		} else if (!nome.equals(other.nome))
 			return false;
-		if (senha == null) {
-			if (other.senha != null)
-				return false;
-		} else if (!senha.equals(other.senha))
+		if (senhaHash != other.senhaHash)
 			return false;
 		return true;
 	}
+
+	
+	
 	
 	
 	
