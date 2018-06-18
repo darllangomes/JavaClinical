@@ -11,7 +11,8 @@ public class RepositorioUsuario {
 		this.ultimo = 0;
 	}
 	
-	
+	// quando for para o paciente marcar uma consulta e ele colocar o nome do médico, tem que buscar por nome.
+	// o paciente não é obrigado a saber o cpf do médico.
 	
 	public void cadastrarUsuario(Usuario u) {
 		this.usuarios[ultimo] = u;
@@ -29,6 +30,7 @@ public class RepositorioUsuario {
         }
         return u;
     }
+	
 
 	private int procurarIndice(String cpf) {
         int i = 0;

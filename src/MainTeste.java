@@ -20,7 +20,7 @@ public class MainTeste {
 		case 1:
 			r.trabalho();	
 		break;
-		
+			
 		case 2:
 			
 		}

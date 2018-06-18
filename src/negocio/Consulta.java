@@ -5,15 +5,17 @@ public class Consulta {
 	LocalDate data;	
 	private Medico medico;
 	private Paciente paciente;
-	private boolean solicitacaoExame;
-	private boolean solicitacaoCirurgia;
+	private Prontuario prontuario;
+	
+	 Consulta() {
+		
+	}
 	
 	public Consulta(LocalDate data, Medico medico, Paciente paciente) {
 		this.data = data;
 		this.medico = medico;
 		this.paciente = paciente;
-		this.solicitacaoExame = false;
-		this.solicitacaoCirurgia = false;
+		
 	}
    
 	public Consulta(LocalDate data, String especialidade, Medico medico, Paciente paciente, boolean solicitacaoExame,
@@ -21,8 +23,7 @@ public class Consulta {
 		this.data = data;
 		this.medico = medico;
 		this.paciente = paciente;
-		this.solicitacaoExame = solicitacaoExame;
-		this.solicitacaoCirurgia = solicitacaoCirurgia;
+		
 	}
 	public LocalDate getData() {
 		return data;
@@ -48,22 +49,22 @@ public class Consulta {
 	public void setPaciente(Paciente paciente) {
 		this.paciente = paciente;
 	}
-	public boolean isSolicitacaoExame() {
-		return solicitacaoExame;
+	
+	
+	public Prontuario getProntuario() {
+		return prontuario;
 	}
-	public void setSolicitacaoExame(boolean solicitacaoExame) {
-		this.solicitacaoExame = solicitacaoExame;
+
+	public void setProntuario(Prontuario prontuario) {
+		this.prontuario = prontuario;
 	}
-	public boolean isSolicitacaoCirurgia() {
-		return solicitacaoCirurgia;
-	}
-	public void setSolicitacaoCirurgia(boolean solicitacaoCirurgia) {
-		this.solicitacaoCirurgia = solicitacaoCirurgia;
+
+	public Medico getMedico() {
+		return medico;
 	}
 
 	public String toString() {
-		return "Consulta:\n" + data + "\n" + medico + "\n" + paciente + "\nSolicitação de Exame: "
-				+ solicitacaoExame + "\nSolicitaço de Cirurgia: " + solicitacaoCirurgia;
+		return "Consulta:\n" + data + "\n" + "nome do M�dico" + medico + "\n" + "Nome do Paciente: " + paciente;
 	}
 	
 	public boolean equals(Object obj) {
@@ -89,10 +90,7 @@ public class Consulta {
 				return false;
 		} else if (!paciente.equals(other.paciente))
 			return false;
-		if (solicitacaoCirurgia != other.solicitacaoCirurgia)
-			return false;
-		if (solicitacaoExame != other.solicitacaoExame)
-			return false;
+		
 		return true;
 	}
 }

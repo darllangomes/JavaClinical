@@ -1,4 +1,7 @@
 package negocio;
+
+import java.util.Scanner;
+
 public class Medico extends Usuario {
 	
 	private String especialidade;
@@ -11,10 +14,20 @@ public class Medico extends Usuario {
 		this.especialidade = especialidade;
 	}
 	
-	
+	public void consultar() {
+		Consulta c = new Consulta();
+		Prontuario p= new Prontuario();
+		System.out.println("Qual é a sua queixa? ");
+		Scanner sc = new Scanner(System.in);
+		p.setQueixaPaciente(sc.nextLine());
+	}
 	
 	public String toString() {
 		return "MÃ©dico:\nNome: " + nome + "\nEspecialidade: " + especialidade;
+	}
+	
+	public void work(Paciente paciente, Prontuario prontuario ) {
+		
 	}
 	
 	@Override

@@ -37,10 +37,12 @@ public class Paciente extends Usuario  {
 		this.cpf = cpf;
 	}
 	
-	
+	/*
 	public int getSenha() {
 		return senhaHash;
-	}
+	}*/  //precisa disso?
+	
+	
 	public void setSenha(int senha) {
 		this.senhaHash = senha;
 	}
@@ -71,6 +73,9 @@ public class Paciente extends Usuario  {
 		return "Paciente:\nNome: " + nome + "\nIdade: " + idade + "\nCPF: " + cpf;
 	}
 
+	public void uso() {
+		System.out.println("");
+	}
 	
 
 	@Override

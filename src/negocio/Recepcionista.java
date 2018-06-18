@@ -21,10 +21,15 @@ public class Recepcionista extends Usuario{
 		Scanner op= new Scanner(System.in);
 		int option= op.nextInt();
 		
-		switch(option) {
-		case 1:
-			GetInformation g= new GetInformation();
-			g.work();
+			switch(option) {
+			case 1:
+				GetInformation g= new GetInformation();
+				g.workPacientes();
+				break;
+			case 2:
+			//	g.workConsultas(p);
+				
+			
 		}
 		
 		
