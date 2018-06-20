@@ -25,6 +25,7 @@ public class Servidor implements IServidor {
 	@Override
 	public void cadastrarUsuario() {
 		Usuario u = leitor.lerUsuarioCadastro();
+		u.setId(leitor.lerId());
 		pacientes.cadastrar(u);
 	}
 
