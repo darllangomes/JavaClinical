@@ -18,12 +18,8 @@ public class Servidor implements IServidor {
 	}
 	//@Override
 	public void efetuarLogin() {
-		/*Usuario u = leitor.lerUsuarioCadastro();
-		Usuario login = pacientes.procurar(u.getCpf());
-		if(login != null) {
-			
-		}*/
-
+		/*String id = leitor.lerId();
+		Usu*/
 	}
 
 	@Override

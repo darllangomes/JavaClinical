@@ -27,6 +27,14 @@ public class TelaTextual {
 	public void exibirMenuInicial() {
 		System.out.println("1 - Login\n0 - Sair");
 	}
+	
+	public void exibirMenuLogin() {
+		System.out.println("1 - Funcionario\n2 - Paciente\n3 - Médico\n0 - Voltar");
+	}
+	
+	public void loginFuncionario() {
+		s.efetuarLogin();
+	}
 
 	public void exibirRecepcao() {
 		System.out.println("1 - Cadrastar usuario\n2 - Buscar usuario\n3 - Remover usuario\n0 - Sair");
