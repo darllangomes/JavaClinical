@@ -3,7 +3,7 @@ package negocio;
 import java.util.Random;
 
 public class Id {
-	private Random r = new Random();
+	private static Random r = new Random();
     public  static  String gerarId(int opcao) {
         String id = new String();
         

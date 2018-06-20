@@ -15,14 +15,13 @@ public class Recepcionista extends Usuario{
 		return super.getId();
 	}
 
-	public String setIdRecepcionista(String id){
-		id = "1000";
+	public void setIdRecepcionista(String id){
 		super.setId(id);
 	}
 
 	@Override
 	public String toString() {
-		return "Recepcionista [nome=" + nome + ", cpf=" + cpf + "]";
+		return "Recepcionista [nome=" + this.getNome() + ", cpf=" + this.getCpf() + "]";
 	}
 
 	public void trabalho() {

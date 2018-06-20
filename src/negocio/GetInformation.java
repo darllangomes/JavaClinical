@@ -1,5 +1,6 @@
 ﻿package negocio;
 
+import java.util.Random;
 import java.util.Scanner;
 import dados.RepositorioUsuario;;
 
@@ -68,6 +69,7 @@ public class GetInformation {
 		b.cadastrar(u);*/
 		return u;
 	}
+	
 	public String lerId() {
 		System.out.println("Insira a id do usuario");
 		return n.nextLine();
