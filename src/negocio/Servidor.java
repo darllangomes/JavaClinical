@@ -25,13 +25,12 @@ public class Servidor implements IServidor {
 	@Override
 	public void cadastrarUsuario() {
 		Usuario u = leitor.lerUsuarioCadastro();
-		u.setId(leitor.lerId());
 		pacientes.cadastrar(u);
 	}
 
 	@Override
 	public void cadastrarConsulta() {
-		// TODO Auto-generated method stub
+	    Consulta c=  leitor.lerConsulta();
 
 	}
 
