@@ -24,6 +24,8 @@ public class MainTeste2 {
 					tt.removerUsuario();
 					tt.setOpcao(-1);
 					break;
+					case 4: // cadastrar consulta
+
 				default:
 					break;
 				}
