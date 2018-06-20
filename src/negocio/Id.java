@@ -1,7 +1,12 @@
+package negocio;
+
+import java.util.Random;
+
 public class Id {
+	private Random r = new Random();
     public  static  String gerarId(int opcao) {
-        private String id;
-        static Random r = new Random();
+        String id = new String();
+        
         switch (opcao) {
             case 1: // Recepcionista
                 id += opcao;
@@ -18,13 +23,14 @@ public class Id {
             default:
                 break;
         }
-
-        private String random() {
-            String s;
-            for(int i = 0; i < 3; i++) {
-                s += r.nextInt(9);
-            }
-            return s;
+        return id;
+    }
+    
+    static String random() {
+        String s = new  String();
+        for(int i = 0; i < 3; i++) {
+            s += r.nextInt(9);
         }
+        return s;
     }
 }
