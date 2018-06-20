@@ -36,6 +36,15 @@ public class Paciente extends Usuario  {
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
+
+	public String getIdPaciente(){
+		return super.getId();
+	}
+
+	public String setIdPaciente(String id){
+		id = "3000";
+		super.setId(id);
+	}
 	
 	/*
 	public int getSenha() {

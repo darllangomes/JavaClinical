@@ -11,6 +11,15 @@ public class Recepcionista extends Usuario{
 		super();
 	}
 
+	public String getIdRecepcionista(){
+		return super.getId();
+	}
+
+	public String setIdRecepcionista(String id){
+		id = "1000";
+		super.setId(id);
+	}
+
 	@Override
 	public String toString() {
 		return "Recepcionista [nome=" + nome + ", cpf=" + cpf + "]";
