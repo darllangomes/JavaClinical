@@ -1,22 +1,44 @@
-package negocio;
+Ôªøpackage negocio;
 
 import java.util.Scanner;
 import dados.RepositorioUsuario;;
 
-// A classe basicamente tem os mÈtodos que pegam as informaÁıes para jogar nos controladores de consultas e pacientes.
-//poderia ser simplesmente um mÈtodo dentro da classe Recepcionista, mas achei melhor assim.
-// Se acharem uma soluÁ„o melhor, prfvr, avisem.
+// A classe basicamente tem os m√©todos que pegam as informa√ß√µes para jogar nos controladores de consultas e pacientes.
+//poderia ser simplesmente um m√©todo dentro da classe Recepcionista, mas achei melhor assim.
+// Se acharem uma solu√ß√£o melhor, prfvr, avisem.
 // Ass. Darllan Gomes
 
-public class GetInformation {
+/*
+ * Classe GetInformation √© singleton s√≥ h√° uma inst√¢ncia dessa classe;
+ * Ass: Danilo Ara√∫jo 
+ */
 
-	public GetInformation() {
-		
+public class GetInformation {
+	static Scanner n;
+	private static GetInformation instance;
+	
+	/*
+	 * Construtor privado
+	 */
+	private GetInformation() {
+		n = new Scanner(System.in); // Scanner criado uma √∫nica vez
 	}
-	public void workPacientes() {
+	
+	/*
+	 * Para receber a √∫nica inst√¢ncia da classe e inicializar a leitura
+	 * chamar esse m√©todo
+	 * Ass: Danilo Ara√∫jo
+	 */
+	public static GetInformation getInstance() {
+		if(instance == null) {
+			instance = new GetInformation();
+		}
+		return instance;
+	}
+	/*public void workPacientes() {
 		System.out.println("Digite o nome do Paciente: ");
 		Scanner n= new Scanner(System.in);
-		Usuario paciente= new Usuario();
+		Usuario paciente= new Paciente();
 		paciente.setNome(n.nextLine());
 		
 		System.out.println("Digite o cpf do paciente: ");
@@ -28,21 +50,43 @@ public class GetInformation {
 		
 		ControladorUsuario b= new ControladorUsuario();
 		b.cadastrar(paciente);
+	}*/
+	
+	public Usuario lerUsuarioCadastro() {
+		Usuario u= new Usuario();
+		System.out.println("Digite o nome do Usuario: ");		
+		u.setNome(n.nextLine());
+		
+		System.out.println("Digite o cpf do Usuario: ");
+		u.setCpf(n.nextLine());
+		
+		System.out.println("crie uma senha: ");
+		String senha = n.nextLine();
+		u.setSenhaHash(senha.hashCode());
+		
+		/*ControladorUsuario b= new ControladorUsuario();
+		b.cadastrar(u);*/
+		return u;
 	}
+	public String lerId() {
+		System.out.println("Insira a id do usuario");
+		return n.nextLine();
+	}
+	
 	public void workConsultas(Paciente p) {
 		Consulta c = new Consulta();
 		Scanner r = new Scanner(System.in);
 		Paciente paciente= new Paciente();
 		Medico m = new Medico();
 		ControladorUsuario medico= new ControladorUsuario();
-		System.out.println("Digite a especialidade do mÈdico: ");
+		System.out.println("Digite a especialidade do m√©dico: ");
 		c.setEspecialidade(r.nextLine());
-		System.out.println("escreva  o nome do mÈdico: ");
+		System.out.println("escreva  o nome do m√©dico: ");
 		String a = new String();
 		a= r.nextLine();
 		
-		//ent„os, temos um problema aqui, precisamos verificar se o mÈdico existe na hora de marcar a consulta, o mÈtodo de procura sÛ procura cpf
-		//n„o consegui fazer override, sÛ se eu criasse uma subclasse e fizesse o override do mÈtodo procurar.
+		//ent√£os, temos um problema aqui, precisamos verificar se o m√©dico existe na hora de marcar a consulta, o m√©todo de procura s√≥ procura cpf
+		//n√£o consegui fazer override, s√≥ se eu criasse uma subclasse e fizesse o override do m√©todo procurar.
 		//medico.procurar
 		
 				

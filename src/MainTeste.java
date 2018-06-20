@@ -1,4 +1,4 @@
-import java.util.Scanner;
+Ôªøimport java.util.Scanner;
 import negocio.Paciente;
 import negocio.ControladorUsuario;
 import negocio.Usuario;
@@ -11,8 +11,8 @@ public class MainTeste {
 		Recepcionista r= new Recepcionista();
 		Paciente p= new Paciente();
 		System.out.println("Seja bem vindo ao sistema Java Clinical. ");
-		System.out.println("Para proseguir selecione o seu tipo de usu·rio: ");
-		System.out.println("1- Recepcionista \n 2- Paciente \n 3- MÈdico\n");
+		System.out.println("Para proseguir selecione o seu tipo de usu√°rio: ");
+		System.out.println("1- Recepcionista \n 2- Paciente \n 3- M√©dico\n");
 		Scanner c = new Scanner(System.in);
 		opcao= c.nextInt();
 				
@@ -24,6 +24,5 @@ public class MainTeste {
 		case 2:
 			
 		}
-
 	}
 }

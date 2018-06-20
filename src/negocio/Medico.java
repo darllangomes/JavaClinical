@@ -1,4 +1,4 @@
-package negocio;
+﻿package negocio;
 
 import java.util.Scanner;
 
@@ -17,13 +17,13 @@ public class Medico extends Usuario {
 	public void consultar() {
 		Consulta c = new Consulta();
 		Prontuario p= new Prontuario();
-		System.out.println("Qual � a sua queixa? ");
+		System.out.println("Qual é a sua queixa? ");
 		Scanner sc = new Scanner(System.in);
 		p.setQueixaPaciente(sc.nextLine());
 	}
 	
 	public String toString() {
-		return "Médico:\nNome: " + nome + "\nEspecialidade: " + especialidade;
+		return "MÃ©dico:\nNome: " + nome + "\nEspecialidade: " + especialidade;
 	}
 	
 	public void work(Paciente paciente, Prontuario prontuario ) {

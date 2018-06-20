@@ -1,4 +1,4 @@
-package negocio;
+﻿package negocio;
 
 public class Prontuario {
 	private String queixaPaciente;

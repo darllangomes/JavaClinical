@@ -1,4 +1,4 @@
-package negocio;
+﻿package negocio;
 import java.time.LocalDate;
 
 public class Consulta {
@@ -64,7 +64,7 @@ public class Consulta {
 	}
 
 	public String toString() {
-		return "Consulta:\n" + data + "\n" + "nome do M�dico" + medico + "\n" + "Nome do Paciente: " + paciente;
+		return "Consulta:\n" + data + "\n" + "nome do Médico" + medico + "\n" + "Nome do Paciente: " + paciente;
 	}
 	
 	public boolean equals(Object obj) {

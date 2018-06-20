@@ -1,4 +1,4 @@
-package negocio;
+ï»¿package negocio;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -17,14 +17,14 @@ public class Recepcionista extends Usuario{
 	}
 
 	public void trabalho() {
-		System.out.println("1- cadastrar Paciente \n 2- marcar consulta \n 3- marcar cirurgia \n 4- acessar prontuário");
+		System.out.println("1- cadastrar Paciente \n 2- marcar consulta \n 3- marcar cirurgia \n 4- acessar prontuÃ¡rio");
 		Scanner op= new Scanner(System.in);
 		int option= op.nextInt();
 		
 			switch(option) {
 			case 1:
-				GetInformation g= new GetInformation();
-				g.workPacientes();
+				//GetInformation g= new GetInformation();
+				//g.workPacientes();
 				break;
 			case 2:
 			//	g.workConsultas(p);
@@ -45,9 +45,9 @@ public class Recepcionista extends Usuario{
 		int dia,mes,ano;
 		String especialidade=new String();
 			
-		System.out.println("digite a especialidade do médico: ");			
+		System.out.println("digite a especialidade do mÃ©dico: ");			
 		especialidade = sc.nextLine();
-		System.out.println("digite o dia da consulta (dia mês ano): ");
+		System.out.println("digite o dia da consulta (dia mÃªs ano): ");
 		dia = sc.nextInt();
 		mes = sc.nextInt();
 		ano =sc.nextInt();

@@ -1,4 +1,4 @@
-package dados;
+Ôªøpackage dados;
 
 import negocio.Usuario;
 
@@ -11,8 +11,8 @@ public class RepositorioUsuario {
 		this.ultimo = 0;
 	}
 	
-	// quando for para o paciente marcar uma consulta e ele colocar o nome do mÈdico, tem que buscar por nome.
-	// o paciente n„o È obrigado a saber o cpf do mÈdico.
+	// quando for para o paciente marcar uma consulta e ele colocar o nome do m√©dico, tem que buscar por nome.
+	// o paciente n√£o √© obrigado a saber o cpf do m√©dico.
 	
 	public void cadastrarUsuario(Usuario u) {
 		this.usuarios[ultimo] = u;
