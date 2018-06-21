@@ -83,13 +83,13 @@ public class GetInformation {
 		Paciente p;
 		System.out.println("Digite a id do médico: ");
 		// Buscar medico no repositorio
-		m = (Medico) s.procurarUsuario();
+		m = (Medico) s.procurarMedico();
 		if(m==null) {
 			System.out.println("Médico não encontrado.");
 		}else {
 			c.setMedico(m);
 			System.out.println("Digite o nome do paciente: ");
-			p=(Paciente)s.procurarUsuario();
+			p=(Paciente)s.procurarPaciente();
 				if(p==null) {
 					System.out.println("Paciente não encontrado.");
 				}else {

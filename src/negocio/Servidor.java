@@ -8,15 +8,23 @@ public class Servidor implements IServidor {
 	private ControladorUsuario recepcionistas;
 	private ControladorConsulta consultas;
 	private GetInformation leitor;
+	private static Servidor instance;
 	
-	public Servidor() {
+	private Servidor() {
 		medicos = new ControladorUsuario();
 		pacientes = new ControladorUsuario();
 		recepcionistas = new ControladorUsuario();
 		consultas = new ControladorConsulta();
 		leitor = GetInformation.getInstance();
 	}
-	Recepcionista efetuarLoginRecepcionita() {
+	
+	public static Servidor getInstance() {
+		if(instance == null) {
+			instance = new Servidor();
+		}
+		return instance;
+	}
+	public Recepcionista efetuarLoginRecepcionista() {
 		
 		Recepcionista r = (Recepcionista) recepcionistas.procurar(leitor.lerId());
 		if(r == null) {
@@ -31,7 +39,7 @@ public class Servidor implements IServidor {
 		}
 	}
 	
-	Paciente efetuarLoginPaciente() {
+	public Paciente efetuarLoginPaciente() {
 		
 		Paciente r = (Paciente) recepcionistas.procurar(leitor.lerId());
 		if(r == null) {
@@ -55,8 +63,8 @@ public class Servidor implements IServidor {
 	@Override
 	public void cadastrarConsulta() {
 	    Consulta c= new Consulta();  
-	    		 c=leitor.lerConsulta();
-	    		 consultas.cadastrar(c);
+	    c=leitor.lerConsulta(this);
+	    consultas.cadastrar(c);
 	}
 
 	@Override
@@ -67,7 +75,7 @@ public class Servidor implements IServidor {
 
 	@Override
 	public void descadastrarUsuario() {
-		pacientes.descadrastar(this.lerId());
+		pacientes.descadrastar(leitor.lerId());
 	}
 
 	@Override
@@ -88,12 +96,12 @@ public class Servidor implements IServidor {
 	 * (non-Javadoc)
 	 * @see negocio.IServidor#lerId()
 	 */
-	public String lerId() {
-		return leitor.lerId();
+	public Paciente procurarPaciente() {
+		return (Paciente) pacientes.procurar(leitor.lerId());
 	}
 	
-	public Usuario procurarUsuario() {
-		return pacientes.procurar(this.lerId());
+	public Medico procurarMedico() {
+		return (Medico) medicos.procurar(leitor.lerId());
 	}
 	
 }

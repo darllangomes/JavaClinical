@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 import negocio.GetInformation;
 import negocio.IServidor;
+import negocio.Paciente;
 import negocio.Servidor;
 import negocio.Usuario;
 
@@ -15,7 +16,7 @@ public class TelaTextual {
 	
 	public TelaTextual() {
 		executando = true;
-		s = new Servidor();
+		s = Servidor.getInstance();
 		opcao = -1;
 		sc = new Scanner(System.in);
 	}
@@ -32,8 +33,8 @@ public class TelaTextual {
 		System.out.println("1 - Funcionario\n2 - Paciente\n3 - Médico\n0 - Voltar");
 	}
 	
-	public void loginFuncionario() {
-		s.efetuarLoginFunconario();
+	public void loginRecepicionista() {
+		s.efetuarLoginRecepcionista();
 	}
 
 	public void exibirRecepcao() {
@@ -66,8 +67,8 @@ public class TelaTextual {
 		this.executando = false;		
 	}
 
-	public Usuario procurar() {
-		return s.procurarUsuario();
+	public Paciente procurarPaciente() {
+		return s.procurarPaciente();
 		
 	}
 
