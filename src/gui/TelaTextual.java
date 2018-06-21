@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 import negocio.GetInformation;
 import negocio.IServidor;
+import negocio.Medico;
 import negocio.Paciente;
 import negocio.Servidor;
 import negocio.Usuario;
@@ -70,6 +71,10 @@ public class TelaTextual {
 	public Paciente procurarPaciente() {
 		return s.procurarPaciente();
 		
+	}
+	
+	public Medico procurarMedico() {
+		return s.procurarMedico();
 	}
 
 	public String lerId() {
