@@ -16,7 +16,7 @@ public class MainTeste2 {
 					tt.setOpcao(-1); // Setar o valor opção com o valor do menu anterior
 					break;
 				case 2:
-					System.out.println(tt.procurar()); // retorna um paciente
+					System.out.println(tt.procurarPaciente()); // retorna um paciente
 					tt.setOpcao(-1);
 					break;
 				case 3:
