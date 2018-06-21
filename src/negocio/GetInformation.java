@@ -80,14 +80,26 @@ public class GetInformation {
 	public Consulta lerConsulta(Servidor s) {
 		Consulta c = new Consulta();
 		Medico m;
+		Paciente p;
 		System.out.println("Digite a id do médico: ");
 		// Buscar medico no repositorio
-		m = s.procurar(instance.lerId());
-		c.setMedico();
-		//entãos, temos um problema aqui, precisamos verificar se o médico existe na hora de marcar a consulta, o método de procura só procura cpf
-		//não consegui fazer override, só se eu criasse uma subclasse e fizesse o override do método procurar.
-		//medico.procurar
-		
+		m = (Medico) s.procurarUsuario();
+		if(m==null) {
+			System.out.println("Médico não encontrado.");
+		}else {
+			c.setMedico(m);
+			System.out.println("Digite o nome do paciente: ");
+			p=(Paciente)s.procurarUsuario();
+				if(p==null) {
+					System.out.println("Paciente não encontrado.");
+				}else {
+					c.setPaciente(p);
+					c.setProntuario(new Prontuario());
+					
+				}
+				
+		}
+		return c;
 				
 	}
 }

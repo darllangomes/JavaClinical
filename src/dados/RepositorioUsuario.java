@@ -50,7 +50,8 @@ public class RepositorioUsuario {
         int indice = this.procurarIndice(cpf);
         if (indice != this.ultimo) {
             existe = true;
-        }
+        }else 
+        	
         return existe;
     }
 	

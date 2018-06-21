@@ -30,8 +30,9 @@ public class Servidor implements IServidor {
 
 	@Override
 	public void cadastrarConsulta() {
-	    Consulta c=  leitor.lerConsulta();
-
+	    Consulta c= new Consulta();  
+	    		 c=leitor.lerConsulta();
+	    		 consultas.cadastrar(c);
 	}
 
 	@Override
@@ -70,4 +71,5 @@ public class Servidor implements IServidor {
 	public Usuario procurarUsuario() {
 		return pacientes.procurar(this.lerId());
 	}
+	
 }
