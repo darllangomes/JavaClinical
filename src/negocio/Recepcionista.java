@@ -11,13 +11,21 @@ public class Recepcionista extends Usuario{
 		super();
 	}
 
+	public String getIdRecepcionista(){
+		return super.getId();
+	}
+
+	public void setIdRecepcionista(String id){
+		super.setId(id);
+	}
+
 	@Override
 	public String toString() {
-		return "Recepcionista [nome=" + nome + ", cpf=" + cpf + "]";
+		return "Recepcionista [nome=" + this.getNome() + ", cpf=" + this.getCpf() + "]";
 	}
 
 	public void trabalho() {
-		System.out.println("1- cadastrar Paciente \n 2- marcar consulta \n 3- marcar cirurgia \n 4- acessar prontuário");
+		System.out.println("1- cadastrar Paciente \n 2- marcar consulta \n 3- marcar cirurgia \n 4- acessar prontu�rio \n 5- voltar");
 		Scanner op= new Scanner(System.in);
 		int option= op.nextInt();
 		
@@ -28,6 +36,19 @@ public class Recepcionista extends Usuario{
 				break;
 			case 2:
 			//	g.workConsultas(p);
+			break;
+			
+			case 3:
+			
+			break;
+			
+			case 4:
+				
+			break;
+			
+			case 5:
+				
+			break;
 				
 			
 		}

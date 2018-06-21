@@ -7,77 +7,17 @@ public class Paciente extends Usuario  {
 	private Cirurgia cirurgia;
 	private Prontuario prontuario;
 	
-	
-	
-	public Paciente(String nome, String cpf, int senha) {
-		this.nome = nome;
-		this.cpf = cpf;
-		this.senhaHash = senha;
-	}
 	public Paciente() {
 		
 	}
 	
-	public String getNome() {
-		return nome;
-	}
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-	public int getIdade() {
-		return idade;
-	}
-	public void setIdade(int idade) {
-		this.idade = idade;
-	}
-	public String getCpf() {
-		return cpf;
-	}
-	public void setCpf(String cpf) {
-		this.cpf = cpf;
-	}
-	
-	/*
-	public int getSenha() {
-		return senhaHash;
-	}*/  //precisa disso?
-	
-	
-	public void setSenha(int senha) {
-		this.senhaHash = senha;
-	}
-	public Prontuario getProntuario() {
-		return prontuario;
-	}
-	public void setProntuario(Prontuario prontuario) {
-		this.prontuario = prontuario;
-	}
-
-	/*public Consulta getConsulta() {
-		return consulta;
-	}*/
-
-	/*public void setConsulta(Consulta consulta) {
-		this.consulta = consulta;
-	}/*/
-
-	public Cirurgia getCirurgia() {
-		return cirurgia;
-	}
-
-	public void setCirurgia(Cirurgia cirurgia) {
-		this.cirurgia = cirurgia;
-	}
-	
 	public String toString() {
-		return "Paciente:\nNome: " + nome + "\nIdade: " + idade + "\nCPF: " + cpf;
+		return "Paciente:\nNome: " + this.getNome() + "\nIdade: " + this.getIdade() + "\nCPF: " + this.getCpf();
 	}
 
-	public void uso() {
-		System.out.println("");
+	public int getIdade() {
+		return this.idade;
 	}
-	
-
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)

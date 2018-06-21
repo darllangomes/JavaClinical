@@ -1,10 +1,11 @@
 ﻿package negocio;
 
 public class Usuario {
-	String nome;
-	String cpf;
-	int senhaHash;
-	
+	private String nome;
+	private String cpf;
+	private int senhaHash;
+	private String id;
+
 	public Usuario(){
 		
 	}
@@ -28,6 +29,14 @@ public class Usuario {
 
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
 	}
 
 	@Override

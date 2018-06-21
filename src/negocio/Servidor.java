@@ -1,4 +1,4 @@
-package negocio;
+﻿package negocio;
 /*
  * Classe servidor contem os controladores
  */
@@ -16,10 +16,34 @@ public class Servidor implements IServidor {
 		consultas = new ControladorConsulta();
 		leitor = GetInformation.getInstance();
 	}
-	//@Override
-	public void efetuarLogin() {
-		/*String id = leitor.lerId();
-		Usu*/
+	Recepcionista efetuarLoginRecepcionita() {
+		
+		Recepcionista r = (Recepcionista) recepcionistas.procurar(leitor.lerId());
+		if(r == null) {
+			System.out.println("Identificação errada");
+			return null;
+		}
+		System.out.println("Senha:");
+		if(leitor.lerSenha().hashCode() != r.getSenhaHash()) {
+			return null;
+		}else {
+			return r;
+		}
+	}
+	
+	Paciente efetuarLoginPaciente() {
+		
+		Paciente r = (Paciente) recepcionistas.procurar(leitor.lerId());
+		if(r == null) {
+			System.out.println("Identificação errada");
+			return null;
+		}
+		System.out.println("Senha:");
+		if(leitor.lerSenha().hashCode() != r.getSenhaHash()) {
+			return null;
+		}else {
+			return r;
+		}
 	}
 
 	@Override
@@ -30,7 +54,7 @@ public class Servidor implements IServidor {
 
 	@Override
 	public void cadastrarConsulta() {
-		// TODO Auto-generated method stub
+	    Consulta c=  leitor.lerConsulta();
 
 	}
 
@@ -58,7 +82,7 @@ public class Servidor implements IServidor {
 	}
 	
 	/*
-	 * A leitura é feita diretamente no servidor?
+	 * A leitura Ã© feita diretamente no servidor?
 	 * Ass: Danilo Araujo
 	 * (non-Javadoc)
 	 * @see negocio.IServidor#lerId()

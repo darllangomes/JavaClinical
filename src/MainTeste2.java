@@ -8,7 +8,7 @@ public class MainTeste2 {
 			// Isto vai ficar dentro de um m√©todo depois
 			switch (tt.getOpcao()) {
 			case -1: // Menu inicial
-				tt.exibirRecepcao(); // Exibindo o menu da recep√ß√£o s√≥ para teste
+				tt.exibirRecepcao(); // Exibindo o menu da recepÁ„o sÛ para teste
 				tt.lerOpcao();
 				switch (tt.getOpcao()) {
 				case 1:
@@ -24,6 +24,9 @@ public class MainTeste2 {
 					tt.removerUsuario();
 					tt.setOpcao(-1);
 					break;
+					case 4: // cadastrar consulta
+						break;
+
 				default:
 					break;
 				}

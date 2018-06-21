@@ -13,6 +13,14 @@ public class Medico extends Usuario {
 	public void setEspecialidade(String especialidade) {
 		this.especialidade = especialidade;
 	}
+
+	public String getIdMedico(){
+		return super.getId();
+	}
+
+	public void setIdMedico(String id){
+		super.setId(id);
+	}
 	
 	public void consultar() {
 		Consulta c = new Consulta();
@@ -23,7 +31,7 @@ public class Medico extends Usuario {
 	}
 	
 	public String toString() {
-		return "MÃ©dico:\nNome: " + nome + "\nEspecialidade: " + especialidade;
+		return "MÃ©dico:\nNome: " + this.getNome() + "\nEspecialidade: " + especialidade;
 	}
 	
 	public void work(Paciente paciente, Prontuario prontuario ) {

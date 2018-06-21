@@ -1,4 +1,4 @@
-package gui;
+﻿package gui;
 
 import java.util.Scanner;
 
@@ -33,7 +33,7 @@ public class TelaTextual {
 	}
 	
 	public void loginFuncionario() {
-		s.efetuarLogin();
+		s.efetuarLoginFunconario();
 	}
 
 	public void exibirRecepcao() {

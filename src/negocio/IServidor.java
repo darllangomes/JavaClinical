@@ -1,4 +1,4 @@
-package negocio;
+﻿package negocio;
 public interface IServidor {
 	
 	void efetuarLogin();
@@ -10,4 +10,5 @@ public interface IServidor {
 	void descadastrarCirurgia();
 	String lerId();
 	Usuario procurarUsuario();
+	boolean efetuarLoginFunconario();
 }
