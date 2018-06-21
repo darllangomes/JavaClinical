@@ -34,9 +34,9 @@ public class TelaTextual {
 		System.out.println("1 - Funcionario\n2 - Paciente\n3 - Médico\n0 - Voltar");
 	}
 	
-	public void loginRecepicionista() {
+	/*public void loginRecepicionista() {
 		s.efetuarLoginRecepcionista();
-	}
+	}*/
 
 	public void exibirRecepcao() {
 		System.out.println("1 - Cadrastar usuario\n2 - Buscar usuario\n3 - Remover usuario\n0 - Sair");
@@ -79,5 +79,21 @@ public class TelaTextual {
 
 	public void removerUsuario() {
 		s.descadastrarUsuario();
+	}
+
+	public Usuario efetuarLogin() {
+		return s.efetuarLogin();
+	}
+
+	public void exibeMenuRecepcionista() {
+		
+	}
+
+	public void exibeMenuMedico() {
+		
+	}
+
+	public void exibeMenuPaciente() {
+		
 	}
 }

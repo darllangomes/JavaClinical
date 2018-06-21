@@ -31,5 +31,9 @@ public class ControladorUsuario {
 		return this.repositorio.procurar(cpf);
 	}
 	
+	public boolean existe(String id) {
+		return repositorio.existe(id);
+	}
+	
 	// Avaliar a necessidade de mais operações
 }

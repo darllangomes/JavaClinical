@@ -16,6 +16,18 @@ public class Servidor implements IServidor {
 		recepcionistas = new ControladorUsuario();
 		consultas = new ControladorConsulta();
 		leitor = GetInformation.getInstance();
+		
+		/*
+		 * Administrador padrão do sistema
+		 * Famoso admin admin
+		 * Com id 1111
+		 */
+		Recepcionista r = new Recepcionista();
+		r.setNome("admin");
+		r.setSenhaHash("admin".hashCode());
+		r.setId("1111");
+		r.setCpf(null);
+		recepcionistas.cadastrar(r);
 	}
 	
 	public static Servidor getInstance() {
@@ -27,7 +39,9 @@ public class Servidor implements IServidor {
 	
 	public Usuario efetuarLogin() {
 		Usuario u;
-		String id = leitor.lerId();		
+		String id = leitor.lerId();
+		System.out.println(id);
+		System.out.println(id.charAt(0));
 		
 		if(id.charAt(0) == 1) {
 			u = efetuarLoginRecepcionista(id);
@@ -40,14 +54,20 @@ public class Servidor implements IServidor {
 	}
 	public Recepcionista efetuarLoginRecepcionista(String id) {
 		
-		Recepcionista r = (Recepcionista) recepcionistas.procurar(leitor.lerId());
+		Recepcionista r = (Recepcionista) recepcionistas.procurar(id);
+		if(recepcionistas.existe(id)) {
+			System.out.println(true);
+		} else {
+			System.out.println("Erro macabro");
+			System.out.println(false);
+		}
 		if(r == null) {
 			System.out.println("Identificação errada");
 			return null;
 		}
 		System.out.println("Senha:");
 		if(leitor.lerSenha().hashCode() != r.getSenhaHash()) {
-			System.out.println("Identificação errada");
+			System.out.println("Senha errada");
 			return null;
 		}else {
 			return r;
@@ -56,14 +76,14 @@ public class Servidor implements IServidor {
 	
 	public Paciente efetuarLoginPaciente(String id) {
 		
-		Paciente r = (Paciente) recepcionistas.procurar(leitor.lerId());
+		Paciente r = (Paciente) pacientes.procurar(id);
 		if(r == null) {
 			System.out.println("Identificação errada");
 			return null;
 		}
 		System.out.println("Senha:");
 		if(leitor.lerSenha().hashCode() != r.getSenhaHash()) {
-			System.out.println("Identificação errada");
+			System.out.println("Senha errada");
 			return null;
 		}else {
 			return r;
@@ -72,7 +92,7 @@ public class Servidor implements IServidor {
 	
 	public Medico efetuarLoginMedico(String id) {
 		
-		Medico r = (Medico) recepcionistas.procurar(leitor.lerId());
+		Medico r = (Medico) medicos.procurar(id);
 		if(r == null) {
 			System.out.println("Identificação errada");
 			return null;
