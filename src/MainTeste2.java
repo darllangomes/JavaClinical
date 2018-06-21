@@ -8,7 +8,7 @@ public class MainTeste2 {
 			// Isto vai ficar dentro de um mÃ©todo depois
 			switch (tt.getOpcao()) {
 			case -1: // Menu inicial
-				tt.exibirRecepcao(); // Exibindo o menu da recepção só para teste
+				tt.exibirRecepcao(); // Exibindo o menu da recepï¿½ï¿½o sï¿½ para teste
 				tt.lerOpcao();
 				switch (tt.getOpcao()) {
 				case 1:

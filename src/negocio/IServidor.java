@@ -8,6 +8,7 @@ public interface IServidor {
 	void descadastrarUsuario();
 	void descadastrarConsulta();
 	void descadastrarCirurgia();
+	Usuario procurarMedico();
 	String lerId();
 	Usuario procurarUsuario();
 	boolean efetuarLoginFunconario();
