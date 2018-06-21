@@ -22,8 +22,8 @@ public class RepositorioUsuario {
 		}
 	}
 	
-	public Usuario procurar(String cpf) {
-        int i = this.procurarIndice(cpf);
+	public Usuario procurar(String id) {
+        int i = this.procurarIndice(id);
         Usuario u = null;
         if (i != this.ultimo) {
             u = this.usuarios[i];
@@ -32,11 +32,11 @@ public class RepositorioUsuario {
     }
 	
 
-	private int procurarIndice(String cpf) {
+	private int procurarIndice(String id) {
         int i = 0;
         boolean encontrado = false;
         while ((!encontrado) && (i < this.ultimo)) {
-            if (cpf.equals(this.usuarios[i].getCpf())) {
+            if (id.equals(this.usuarios[i].getId())) {
                 encontrado = true;
             } else {
                 i = i + 1;
@@ -45,18 +45,17 @@ public class RepositorioUsuario {
         return i;
     }
 	
-	public boolean existe(String cpf) {
+	public boolean existe(String id) {
         boolean existe = false;
-        int indice = this.procurarIndice(cpf);
+        int indice = this.procurarIndice(id);
         if (indice != this.ultimo) {
             existe = true;
         }
-        	
         return existe;
     }
 	
-	public void remover(String cpf) {
-        int i = this.procurarIndice(cpf);
+	public void remover(String id) {
+        int i = this.procurarIndice(id);
         if (i != this.ultimo) {
             this.usuarios[i] = this.usuarios[this.ultimo - 1];
             this.usuarios[this.ultimo - 1] = null;
