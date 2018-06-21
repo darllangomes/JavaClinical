@@ -1,7 +1,7 @@
 ﻿package negocio;
 public interface IServidor {
 	
-	//void efetuarLogin();
+	Usuario efetuarLogin();
 	void cadastrarUsuario();
 	void cadastrarConsulta();
 	void cadastrarCirurgia();
@@ -10,6 +10,7 @@ public interface IServidor {
 	void descadastrarCirurgia();
 	Medico procurarMedico();
 	Paciente procurarPaciente();
-	Recepcionista efetuarLoginRecepcionista();
-	Paciente efetuarLoginPaciente();
+	Recepcionista efetuarLoginRecepcionista(String id);
+	Medico efetuarLoginMedico(String id);
+	Paciente efetuarLoginPaciente(String id);
 }

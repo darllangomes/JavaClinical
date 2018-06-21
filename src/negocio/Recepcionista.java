@@ -24,7 +24,7 @@ public class Recepcionista extends Usuario{
 		return "Recepcionista [nome=" + this.getNome() + ", cpf=" + this.getCpf() + "]";
 	}
 
-	public void trabalho() {
+	/*public void trabalho() {
 		System.out.println("1- cadastrar Paciente \n 2- marcar consulta \n 3- marcar cirurgia \n 4- acessar prontu�rio \n 5- voltar");
 		Scanner op= new Scanner(System.in);
 		int option= op.nextInt();
@@ -55,7 +55,7 @@ public class Recepcionista extends Usuario{
 		
 		
 		
-	}
+	}*/
 	
 
 /*

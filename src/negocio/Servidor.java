@@ -24,7 +24,21 @@ public class Servidor implements IServidor {
 		}
 		return instance;
 	}
-	public Recepcionista efetuarLoginRecepcionista() {
+	
+	public Usuario efetuarLogin() {
+		Usuario u;
+		String id = leitor.lerId();		
+		
+		if(id.charAt(0) == 1) {
+			u = efetuarLoginRecepcionista(id);
+		} else if(id.charAt(0) == 2) {
+			u = efetuarLoginMedico(id);
+		} else {
+			u = efetuarLoginPaciente(id);
+		}
+		return u;
+	}
+	public Recepcionista efetuarLoginRecepcionista(String id) {
 		
 		Recepcionista r = (Recepcionista) recepcionistas.procurar(leitor.lerId());
 		if(r == null) {
@@ -33,13 +47,14 @@ public class Servidor implements IServidor {
 		}
 		System.out.println("Senha:");
 		if(leitor.lerSenha().hashCode() != r.getSenhaHash()) {
+			System.out.println("Identificação errada");
 			return null;
 		}else {
 			return r;
 		}
 	}
 	
-	public Paciente efetuarLoginPaciente() {
+	public Paciente efetuarLoginPaciente(String id) {
 		
 		Paciente r = (Paciente) recepcionistas.procurar(leitor.lerId());
 		if(r == null) {
@@ -48,6 +63,23 @@ public class Servidor implements IServidor {
 		}
 		System.out.println("Senha:");
 		if(leitor.lerSenha().hashCode() != r.getSenhaHash()) {
+			System.out.println("Identificação errada");
+			return null;
+		}else {
+			return r;
+		}
+	}
+	
+	public Medico efetuarLoginMedico(String id) {
+		
+		Medico r = (Medico) recepcionistas.procurar(leitor.lerId());
+		if(r == null) {
+			System.out.println("Identificação errada");
+			return null;
+		}
+		System.out.println("Senha:");
+		if(leitor.lerSenha().hashCode() != r.getSenhaHash()) {
+			System.out.println("Identificação errada");
 			return null;
 		}else {
 			return r;
@@ -102,6 +134,10 @@ public class Servidor implements IServidor {
 	
 	public Medico procurarMedico() {
 		return (Medico) medicos.procurar(leitor.lerId());
+	}
+	
+	public Recepcionista procurarRecepcionista() {
+		return (Recepcionista) recepcionistas.procurar(leitor.lerId());
 	}
 	
 }

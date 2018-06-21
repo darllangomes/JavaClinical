@@ -72,11 +72,6 @@ public class TelaTextual {
 		
 	}
 
-	public String lerId() {
-		
-		return null;
-	}
-
 	public void removerUsuario() {
 		s.descadastrarUsuario();
 	}
