@@ -7,6 +7,8 @@ public class Servidor implements IServidor {
 	private ControladorUsuario pacientes;
 	private ControladorUsuario recepcionistas;
 	private ControladorConsulta consultas;
+	private ControladorConsulta exames;
+	private ControladorConsulta cirurgias;
 	private GetInformation leitor;
 	private static Servidor instance;
 	
@@ -15,6 +17,8 @@ public class Servidor implements IServidor {
 		pacientes = new ControladorUsuario();
 		recepcionistas = new ControladorUsuario();
 		consultas = new ControladorConsulta();
+		exames = new ControladorConsulta();
+		cirurgias = new ControladorConsulta();
 		leitor = GetInformation.getInstance();
 		
 		/*
@@ -123,9 +127,8 @@ public class Servidor implements IServidor {
 	}
 
 	@Override
-	public void descadastrarConsulta() {
-		// TODO Auto-generated method stub
-
+	public void descadastrarConsulta(String id) {
+		consultas.descadrastar(id);
 	}
 
 	@Override
@@ -152,4 +155,15 @@ public class Servidor implements IServidor {
 		return (Recepcionista) recepcionistas.procurar(leitor.lerId());
 	}
 	
+	public Consulta procurarConsulta(String id) {
+		return consultas.procurar(id);
+	}
+	
+	public Exame procurarExame(String id) {
+		return (Exame) exames.procurar(id);
+	}
+	
+	public Cirurgia procurarCirurgia(String id) {
+		return (Cirurgia) cirurgias.procurar(id);
+	}
 }

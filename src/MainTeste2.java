@@ -30,6 +30,26 @@ public class MainTeste2 {
 								tt.exibeMenuMedico();
 							} else if (u instanceof Paciente) {
 								tt.exibeMenuPaciente();
+								tt.lerOpcao();
+								switch (tt.getOpcao()) {
+								case 1:
+									tt.exibirConsulta(u.getId());
+									break;
+								case 2:
+									tt.exibirExame(u.getId());
+									break;
+									
+								case 3:
+									tt.exibirCirurgia(u.getId());
+									break;
+									
+								case 4:
+									tt.cancelarConsulta(u.getId());
+									break;
+
+								default:
+									break;
+								}
 							}
 							
 						} else {
@@ -37,6 +57,8 @@ public class MainTeste2 {
 							tt.lerOpcao();
 							if(tt.getOpcao() == 0) {
 								tt.setContinuarLogin(false);
+							} else {
+								tt.setContinuarLogin(true);
 							}
 						}
 					}while(u != null && tt.isContinuarLogin());
