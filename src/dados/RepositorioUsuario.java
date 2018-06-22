@@ -31,6 +31,10 @@ public class RepositorioUsuario {
         return u;
     }
 	
+	
+	public Usuario[] getUsuarios() {
+		return usuarios;
+	}
 
 	private int procurarIndice(String id) {
         int i = 0;

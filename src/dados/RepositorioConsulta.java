@@ -1,8 +1,5 @@
 ﻿package dados;
 
-import java.time.LocalDate;
-import java.util.ArrayList;
-
 import negocio.Consulta;
 
 public class RepositorioConsulta {
@@ -40,36 +37,12 @@ public class RepositorioConsulta {
         }
         return c;
     }
-	
-	public ArrayList<Consulta> procurar(LocalDate d) {
-        ArrayList<Consulta>  listaConsultas = new ArrayList();
-        for(int i=0; i<this.consultas.length;i++) {
-        	if(consultas[i].getData().equals(d)) {
-        		listaConsultas.add(consultas[i]);
-        	}
-        }
-        return listaConsultas;
-    }
 
 	private int procurarIndice(String id) {
         int i = 0;
         boolean encontrado = false;
         while ((!encontrado) && (i < this.ultimo)) {
             if (id.equals(this.consultas[i].getPaciente().getId())) {
-                encontrado = true;
-            } else {
-                i = i + 1;
-            }
-        }
-        return i;
-    }
-	
-	
-	private int procurarIndice(LocalDate d) {
-        int i = 0;
-        boolean encontrado = false;
-        while ((!encontrado) && (i < this.ultimo)) {
-            if (d.equals(this.consultas[i].getData())) {
                 encontrado = true;
             } else {
                 i = i + 1;
@@ -87,8 +60,8 @@ public class RepositorioConsulta {
         return existe;
     }
 	
-	public void remover(String cpf) {
-        int i = this.procurarIndice(cpf);
+	public void remover(String id) {
+        int i = this.procurarIndice(id);
         if (i != this.ultimo) {
             this.consultas[i] = this.consultas[this.ultimo - 1];
             this.consultas[this.ultimo - 1] = null;

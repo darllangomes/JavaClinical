@@ -1,7 +1,4 @@
 ﻿package negocio;
-import java.time.LocalDate;
-import java.util.ArrayList;
-
 import dados.RepositorioConsulta;
 
 public class ControladorConsulta {
@@ -21,20 +18,16 @@ public class ControladorConsulta {
 		}
 	}
 	
-	public void descadrastar(String id) {
-		if(this.repositorio.existe(id)) {
-			this.repositorio.remover(id);
+	public void descadrastar(String cpf) {
+		if(this.repositorio.existe(cpf)) {
+			this.repositorio.remover(cpf);
 		} else {
 			// Tratar caso usuario não exista
 		}
 	}
 	
-	public Consulta procurar(String id) {
-		return this.repositorio.procurar(id);
-	}
-	
-	public ArrayList<Consulta> procurar(LocalDate d) {
-		return this.repositorio.procurar(d);
+	public Consulta procurar(String cpf) {
+		return this.repositorio.procurar(cpf);
 	}
 	
 	// Avaliar a necessidade de mais operações
