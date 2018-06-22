@@ -4,7 +4,9 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import java.time.LocalDate;
 
+import negocio.Cirurgia;
 import negocio.Consulta;
+import negocio.Exame;
 import negocio.GetInformation;
 import negocio.IServidor;
 import negocio.Medico;
@@ -106,7 +108,7 @@ public class TelaTextual {
 	}
 
 	public void exibeMenuPaciente() {
-		
+		System.out.println("1 - Exibir consulta\n2 - Exibir Resultado de exame\n3 - Exibir cirurgia\n4 - Desmarcar consulta\n0 - sair");
 	}
 
 	public boolean isContinuarLogin() {
@@ -115,5 +117,24 @@ public class TelaTextual {
 
 	public void setContinuarLogin(boolean continuarLogin) {
 		this.continuarLogin = continuarLogin;
+	}
+
+	public void exibirConsulta(String id) {
+		Consulta c = s.procurarConsulta(id);
+		System.out.println(c);
+	}
+	
+	public void exibirExame(String id) {
+		Exame e = s.procurarExame(id);
+		System.out.println(e);
+	}
+
+	public void exibirCirurgia(String id) {
+		Cirurgia c = s.procurarCirurgia(id);
+		System.out.println(c);
+	}
+
+	public void cancelarConsulta(String id) {
+		s.descadastrarConsulta(id);
 	}
 }

@@ -1,6 +1,6 @@
 ﻿package negocio;
 
-public class Cirurgia extends Consulta {
+public class Cirurgia {
 	private String id;
 	private Paciente paciente;  // Atributo tipo Paciente;
 	private Medico medico;  // Atributo tipo Medico

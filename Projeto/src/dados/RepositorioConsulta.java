@@ -1,8 +1,5 @@
 ﻿package dados;
 
-import java.time.LocalDate;
-import java.util.ArrayList;
-
 import negocio.Consulta;
 
 public class RepositorioConsulta {
@@ -32,30 +29,20 @@ public class RepositorioConsulta {
 	 * Ver como tratar a busca por consulta
 	 * Devolver um consulta ou um vetor de consultas do paciente
 	 */
-	public Consulta procurar(String id) {
-        int i = this.procurarIndice(id);
+	public Consulta procurar(String cpf) {
+        int i = this.procurarIndice(cpf);
         Consulta c = null;
         if (i != this.ultimo) {
             c = this.consultas[i];
         }
         return c;
     }
-	
-	public ArrayList<Consulta> procurar(LocalDate d) {
-        ArrayList<Consulta>  listaConsultas = new ArrayList();
-        for(int i=0; i<this.consultas.length;i++) {
-        	if(consultas[i].getData().equals(d)) {
-        		listaConsultas.add(consultas[i]);
-        	}
-        }
-        return listaConsultas;
-    }
 
 	private int procurarIndice(String cpf) {
         int i = 0;
         boolean encontrado = false;
         while ((!encontrado) && (i < this.ultimo)) {
-            if (id.equals(this.consultas[i].getPaciente().getId())) {
+            if (cpf.equals(this.consultas[i].getPaciente().getCpf())) {
                 encontrado = true;
             } else {
                 i = i + 1;
@@ -64,23 +51,9 @@ public class RepositorioConsulta {
         return i;
     }
 	
-	
-	private int procurarIndice(LocalDate d) {
-        int i = 0;
-        boolean encontrado = false;
-        while ((!encontrado) && (i < this.ultimo)) {
-            if (d.equals(this.consultas[i].getData())) {
-                encontrado = true;
-            } else {
-                i = i + 1;
-            }
-        }
-        return i;
-    }
-	
-	public boolean existe(String id) {
+	public boolean existe(String cpf) {
         boolean existe = false;
-        int indice = this.procurarIndice(id);
+        int indice = this.procurarIndice(cpf);
         if (indice != this.ultimo) {
             existe = true;
         }
