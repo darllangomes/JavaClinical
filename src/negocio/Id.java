@@ -23,6 +23,7 @@ public class Id {
             default:
                 break;
         }
+        System.out.println("Id do Usuário: " + id);
         return id;
     }
     

@@ -68,10 +68,6 @@ public class GetInformation {
 		System.out.println("crie uma senha: ");
 		String senha = n.nextLine();
 		u.setSenhaHash(senha.hashCode());
-
-		
-		/*ControladorUsuario b= new ControladorUsuario();
-		b.cadastrar(u);*/
 		return u;
 	}
 	
