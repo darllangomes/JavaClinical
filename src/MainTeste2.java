@@ -77,8 +77,6 @@ public class MainTeste2 {
 								}
 							}
 						} else {
-							
-						} else {
 							tt.exibeMenuRecepcionista();
 							tt.lerOpcao();
 							if(tt.getOpcao() == 0) {
