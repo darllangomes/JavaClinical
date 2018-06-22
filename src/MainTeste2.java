@@ -1,3 +1,5 @@
+  import java.io.IOException;
+
 import gui.TelaTextual;
 import negocio.Medico;
 import negocio.Paciente;
@@ -6,7 +8,7 @@ import negocio.Usuario;
 
 public class MainTeste2 {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		Usuario u;
 		TelaTextual tt = new TelaTextual();	// Cria a tela
 		while(tt.executando()) {
@@ -45,25 +47,17 @@ public class MainTeste2 {
 							} else if (u instanceof Paciente) {
 								tt.exibeMenuPaciente();
 							}
-						} else {
 							
+						} else {
+							tt.exibeMenuRecepcionista();
+							tt.lerOpcao();
+							if(tt.getOpcao() == 0) {
+								tt.setContinuarLogin(false);
+							}
 						}
-					}while(u != null);
+					}while(u != null && tt.isContinuarLogin());
 					tt.setOpcao(-1); // Setar o valor opção com o valor do menu anterior
 					break;
-				// Isto aqui faz parte do menu da recepção, será retirado depois	
-				case 2:
-					System.out.println(tt.procurarPaciente()); // retorna um paciente
-					tt.setOpcao(-1);
-					break;
-				case 3:
-					System.out.println("Removendo usuario"); // Mensagem exibida aqui, pode ser feita em metodo especifico
-					tt.removerUsuario();
-					tt.setOpcao(-1);
-					break;
-					case 4: // cadastrar consulta
-						break;
-
 				default:
 					break;
 				}

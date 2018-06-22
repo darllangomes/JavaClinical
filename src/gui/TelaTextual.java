@@ -12,11 +12,13 @@ import negocio.Usuario;
 public class TelaTextual {
 	private IServidor s;
 	private boolean executando;
+	private boolean continuarLogin;
 	private int opcao;
 	private Scanner sc;
 	
 	public TelaTextual() {
 		executando = true;
+		continuarLogin = false;
 		s = Servidor.getInstance();
 		opcao = -1;
 		sc = new Scanner(System.in);
@@ -32,7 +34,7 @@ public class TelaTextual {
 	}
 	
 	public void exibirMenuLogin() {
-		System.out.println("1 - Funcionario\n2 - Paciente\n3 - Médico\n0 - Voltar");
+		System.out.println("1 - Efetuar o login\n0 - Voltar");
 	}
 	
 	
@@ -102,5 +104,13 @@ public class TelaTextual {
 
 	public void exibeMenuPaciente() {
 		
+	}
+
+	public boolean isContinuarLogin() {
+		return continuarLogin;
+	}
+
+	public void setContinuarLogin(boolean continuarLogin) {
+		this.continuarLogin = continuarLogin;
 	}
 }
