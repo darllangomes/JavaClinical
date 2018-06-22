@@ -51,7 +51,7 @@ public class RepositorioConsulta {
         return listaConsultas;
     }
 
-	private int procurarIndice(String cpf) {
+	private int procurarIndice(String id) {
         int i = 0;
         boolean encontrado = false;
         while ((!encontrado) && (i < this.ultimo)) {
