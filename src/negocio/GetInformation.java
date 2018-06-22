@@ -1,5 +1,6 @@
 ﻿package negocio;
 
+import java.time.LocalDate;
 import java.util.Random;
 import java.util.Scanner;
 import dados.RepositorioUsuario;;
@@ -70,8 +71,16 @@ public class GetInformation {
 		u.setSenhaHash(senha.hashCode());
 		return u;
 	}
+	
 	public LocalDate lerData() {
-		
+		int dia;
+		int mes;
+		int ano;
+		dia=n.nextInt();
+		mes=n.nextInt();
+		ano=n.nextInt();
+		LocalDate d= LocalDate.of(ano, mes, dia);
+		return d;
 	}
 	
 	public String lerId() {
