@@ -43,9 +43,9 @@ public class Servidor implements IServidor {
 		System.out.println(id);
 		System.out.println(id.charAt(0));
 		
-		if(id.charAt(0) == 1) {
+		if(id.charAt(0) == '1') {
 			u = efetuarLoginRecepcionista(id);
-		} else if(id.charAt(0) == 2) {
+		} else if(id.charAt(0) == '2') {
 			u = efetuarLoginMedico(id);
 		} else {
 			u = efetuarLoginPaciente(id);
@@ -55,12 +55,6 @@ public class Servidor implements IServidor {
 	public Recepcionista efetuarLoginRecepcionista(String id) {
 		
 		Recepcionista r = (Recepcionista) recepcionistas.procurar(id);
-		if(recepcionistas.existe(id)) {
-			System.out.println(true);
-		} else {
-			System.out.println("Erro macabro");
-			System.out.println(false);
-		}
 		if(r == null) {
 			System.out.println("Identificação errada");
 			return null;
