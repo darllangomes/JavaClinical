@@ -30,5 +30,9 @@ public class ControladorConsulta {
 		return this.repositorio.procurar(id);
 	}
 	
+	public ArrayList procurar(LocalDate d) {
+		return this.repositorio.procurar(d);
+	}
+	
 	// Avaliar a necessidade de mais operações
 }

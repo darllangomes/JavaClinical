@@ -2,6 +2,8 @@
 /*
  * Classe servidor contem os controladores
  */
+import java.time.LocalDate;
+
 public class Servidor implements IServidor {
 	private ControladorUsuario medicos;
 	private ControladorUsuario pacientes;
@@ -153,6 +155,10 @@ public class Servidor implements IServidor {
 	
 	public Recepcionista procurarRecepcionista() {
 		return (Recepcionista) recepcionistas.procurar(leitor.lerId());
+	}
+	
+	public Consulta procurarConsulta(Localdate d) {
+		return consultas.procurar(cpf);
 	}
 	
 	public Consulta procurarConsulta(String id) {
