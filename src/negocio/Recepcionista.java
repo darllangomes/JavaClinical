@@ -16,7 +16,7 @@ public class Recepcionista extends Usuario{
 		return "Recepcionista [nome=" + this.getNome() + ", cpf=" + this.getCpf() + "]";
 	}
 
-	
+	//essa merda ta aqui
 
 	
 	
