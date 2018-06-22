@@ -32,8 +32,8 @@ public class RepositorioConsulta {
 	 * Ver como tratar a busca por consulta
 	 * Devolver um consulta ou um vetor de consultas do paciente
 	 */
-	public Consulta procurar(String cpf) {
-        int i = this.procurarIndice(cpf);
+	public Consulta procurar(String id) {
+        int i = this.procurarIndice(id);
         Consulta c = null;
         if (i != this.ultimo) {
             c = this.consultas[i];
@@ -51,12 +51,11 @@ public class RepositorioConsulta {
         return consultas;
     }
 
-
 	private int procurarIndice(String cpf) {
         int i = 0;
         boolean encontrado = false;
         while ((!encontrado) && (i < this.ultimo)) {
-            if (cpf.equals(this.consultas[i].getPaciente().getCpf())) {
+            if (id.equals(this.consultas[i].getPaciente().getId())) {
                 encontrado = true;
             } else {
                 i = i + 1;
@@ -65,9 +64,23 @@ public class RepositorioConsulta {
         return i;
     }
 	
-	public boolean existe(String cpf) {
+	
+	private int procurarIndice(LocalDate d) {
+        int i = 0;
+        boolean encontrado = false;
+        while ((!encontrado) && (i < this.ultimo)) {
+            if (d.equals(this.consultas[i].getData())) {
+                encontrado = true;
+            } else {
+                i = i + 1;
+            }
+        }
+        return i;
+    }
+	
+	public boolean existe(String id) {
         boolean existe = false;
-        int indice = this.procurarIndice(cpf);
+        int indice = this.procurarIndice(id);
         if (indice != this.ultimo) {
             existe = true;
         }
