@@ -40,8 +40,6 @@ public class Servidor implements IServidor {
 	public Usuario efetuarLogin() {
 		Usuario u;
 		String id = leitor.lerId();
-		System.out.println(id);
-		System.out.println(id.charAt(0));
 		
 		if(id.charAt(0) == '1') {
 			u = efetuarLoginRecepcionista(id);
