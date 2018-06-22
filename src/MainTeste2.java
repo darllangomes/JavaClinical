@@ -23,7 +23,23 @@ public class MainTeste2 {
 							if(u instanceof Recepcionista) {
 								System.out.println(u);
 								tt.exibeMenuRecepcionista();
-								//tt.lerOpcao();
+								tt.lerOpcao();
+									switch(tt.getOpcao()) {
+										
+									case 1:
+										tt.cadastrar();
+										break;
+									case 2:
+										tt.procurarPaciente();
+										break;
+									case 3:
+										tt.procurarMedico();
+										break;
+									case 4:
+									tt.removerUsuario();
+										break;
+									}
+								
 							} else if (u instanceof Medico) {
 								tt.exibeMenuMedico();
 							} else if (u instanceof Paciente) {
