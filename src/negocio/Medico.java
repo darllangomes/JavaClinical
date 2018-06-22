@@ -29,7 +29,7 @@ public class Medico extends Usuario {
 	}
 	
 	public String toString() {
-		return "MÃ©dico:\nNome: " + this.getNome() + "\nEspecialidade: " + especialidade;
+		return "Médico:\nNome: " + this.getNome() + "\nEspecialidade: " + especialidade;
 	}
 	
 	public void work(Paciente paciente, Prontuario prontuario ) {
