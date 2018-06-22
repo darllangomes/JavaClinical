@@ -70,6 +70,9 @@ public class GetInformation {
 		u.setSenhaHash(senha.hashCode());
 		return u;
 	}
+	public LocalDate lerData() {
+		
+	}
 	
 	public String lerId() {
 		System.out.println("Insira a id do usuario");

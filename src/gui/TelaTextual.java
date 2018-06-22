@@ -42,11 +42,6 @@ public class TelaTextual {
 		System.out.println("1 - Efetuar o login\n0 - Voltar");
 	}
 	
-	public LocalDate lerData() {
-		LocalDate data= new LocalDate(int d, int m, int a);
-	
-		return data;
-	}
 	
 	public int lerOpcao() {
 		/*
