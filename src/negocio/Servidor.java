@@ -3,6 +3,8 @@
  * Classe servidor contem os controladores
  */
 import java.time.LocalDate;
+import java.util.ArrayList;
+
 
 public class Servidor implements IServidor {
 	private ControladorUsuario medicos;
@@ -154,8 +156,8 @@ public class Servidor implements IServidor {
 		return (Recepcionista) recepcionistas.procurar(leitor.lerId());
 	}
 	
-	public Consulta procurarConsulta(Localdate d) {
-		return consultas.procurar(cpf);
+	public ArrayList<Consulta> procurarConsulta(LocalDate d) {
+		return consultas.procurar(d);
 	}
 	
 }

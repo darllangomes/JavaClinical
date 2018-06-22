@@ -1,4 +1,8 @@
 ﻿package negocio;
+
+import java.time.LocalDate;
+import java.util.ArrayList;
+
 public interface IServidor {
 	
 	Usuario efetuarLogin();
@@ -13,4 +17,5 @@ public interface IServidor {
 	Recepcionista efetuarLoginRecepcionista(String id);
 	Medico efetuarLoginMedico(String id);
 	Paciente efetuarLoginPaciente(String id);
+	ArrayList<Consulta> procurarConsulta(LocalDate d);
 }

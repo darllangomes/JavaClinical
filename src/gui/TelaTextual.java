@@ -1,7 +1,10 @@
 ﻿package gui;
 
+import java.util.ArrayList;
 import java.util.Scanner;
+import java.time.LocalDate;
 
+import negocio.Consulta;
 import negocio.GetInformation;
 import negocio.IServidor;
 import negocio.Medico;
@@ -81,7 +84,7 @@ public class TelaTextual {
 	public Medico procurarMedico() {
 		return s.procurarMedico();
 	}
-	public Consulta procurarConsulta(Localdate d){
+	public ArrayList<Consulta> procurarConsulta(LocalDate d){
 		return s.procurarConsulta(d);
 	}
 

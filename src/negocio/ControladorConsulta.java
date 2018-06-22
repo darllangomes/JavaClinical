@@ -1,4 +1,7 @@
 ﻿package negocio;
+import java.time.LocalDate;
+import java.util.ArrayList;
+
 import dados.RepositorioConsulta;
 
 public class ControladorConsulta {
@@ -30,7 +33,7 @@ public class ControladorConsulta {
 		return this.repositorio.procurar(cpf);
 	}
 	
-	public ArrayList procurar(LocalDate d) {
+	public ArrayList<Consulta> procurar(LocalDate d) {
 		return this.repositorio.procurar(d);
 	}
 	
