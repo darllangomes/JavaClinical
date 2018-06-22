@@ -22,7 +22,9 @@ public class Medico extends Usuario {
 		super.setId(id);
 	}
 	
-	public void consultar(Consulta c, Prontuario p) {
+	public void consultar() {
+		Consulta c = new Consulta();
+		Prontuario p= new Prontuario();
 		System.out.println("Qual é a sua queixa? ");
 		Scanner sc = new Scanner(System.in);
 		p.setQueixaPaciente(sc.nextLine());

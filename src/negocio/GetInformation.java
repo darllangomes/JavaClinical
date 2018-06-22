@@ -58,7 +58,6 @@ public class GetInformation {
 		
 		System.out.println("Digite o numero do tipo de Usuario:\n1 - Recepcionista\n2 - Médico\n3 - Paciente");
 		u.setId(Id.gerarId(n.nextInt()));
-		n.nextLine();
 		System.out.println("Digite o nome do Usuario: ");		
 		u.setNome(n.nextLine());
 		
@@ -68,6 +67,10 @@ public class GetInformation {
 		System.out.println("crie uma senha: ");
 		String senha = n.nextLine();
 		u.setSenhaHash(senha.hashCode());
+
+		
+		/*ControladorUsuario b= new ControladorUsuario();
+		b.cadastrar(u);*/
 		return u;
 	}
 	
