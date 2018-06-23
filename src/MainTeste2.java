@@ -1,3 +1,5 @@
+import java.time.LocalDate;
+
 import gui.TelaTextual;
 import negocio.Medico;
 import negocio.Paciente;
@@ -8,7 +10,8 @@ public class MainTeste2 {
 
 	public static void main(String[] args) {
 		Usuario u;
-		TelaTextual tt = new TelaTextual();	// Cria a tela
+		TelaTextual tt = new TelaTextual();
+		// Cria a tela
 		while(tt.executando()) {
 			// Isto vai ficar dentro de um método depois
 			switch (tt.getOpcao()) {
@@ -45,7 +48,7 @@ public class MainTeste2 {
 								tt.lerOpcao();
 								switch(tt.getOpcao()) {
 								case 1:
-									
+									tt.procurarConsulta();
 									break;
 								case 2:
 									

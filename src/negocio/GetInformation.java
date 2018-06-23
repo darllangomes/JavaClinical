@@ -1,6 +1,7 @@
 ﻿package negocio;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 import dados.RepositorioUsuario;;
@@ -112,6 +113,11 @@ public class GetInformation {
 		}
 		return c;
 				
+	}
+	
+	public LocalDate procurarConsulta() {
+		LocalDate d= this.lerData();
+		return d;
 	}
 
 	public String lerSenha() {

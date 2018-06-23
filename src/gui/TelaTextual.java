@@ -86,8 +86,8 @@ public class TelaTextual {
 	public Medico procurarMedico() {
 		return s.procurarMedico();
 	}
-	public ArrayList<Consulta> procurarConsulta(LocalDate d){
-		return s.procurarConsulta(d);
+	public ArrayList<Consulta> procurar(LocalDate d){
+		return s.procurarConsulta();
 	}
 
 	public void removerUsuario() {

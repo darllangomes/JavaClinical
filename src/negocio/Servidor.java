@@ -160,7 +160,7 @@ public class Servidor implements IServidor {
 	}
 	
 	public ArrayList<Consulta> procurarConsulta(LocalDate d) {
-		return consultas.procurar(d);
+		
 	}
 	
 	public Consulta procurarConsulta(String id) {
