@@ -165,8 +165,8 @@ public class Servidor implements IServidor {
 		return (Recepcionista) recepcionistas.procurar(leitor.lerId());
 	}
 	
-	public ArrayList<Consulta> procurarConsulta(LocalDate d) {
-		
+	public ArrayList<Consulta> procurarConsulta() {
+		return consultas.procurar(leitor.lerData());
 	}
 	
 	public Consulta procurarConsulta(String id) {

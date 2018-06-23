@@ -138,4 +138,10 @@ public class TelaTextual {
 	public void cancelarConsulta(String id) {
 		s.descadastrarConsulta(id);
 	}
+
+	public void procurarConsulta() {
+		
+		System.out.println(s.procurarConsulta());
+		
+	}
 }

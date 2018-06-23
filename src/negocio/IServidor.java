@@ -21,5 +21,4 @@ public interface IServidor {
 	Exame procurarExame(String id);
 	Cirurgia procurarCirurgia(String id);
 	ArrayList<Consulta> procurarConsulta();
-	ArrayList<Consulta> procurarConsulta(LocalDate d);
 }

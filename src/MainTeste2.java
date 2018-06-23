@@ -52,7 +52,7 @@ public class MainTeste2 {
 									break;
 								case 2:
 									
-										break;
+									break;
 									case 3:
 										break;
 								}
@@ -81,7 +81,6 @@ public class MainTeste2 {
 										break;
 									}
 								}while(tt.getOpcao() != 0);
-							}
 						} else {
 							tt.exibirMenuLoginOpcao();
 							tt.lerOpcao();
