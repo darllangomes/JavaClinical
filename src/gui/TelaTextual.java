@@ -34,12 +34,12 @@ public class TelaTextual {
 	}
 	
 	public void exibirMenuInicial() {
-		System.out.println("1 - Login \n 0 - Sair");
+		System.out.println("Menu Inicial\n1 - Login \n0 - Sair");
 		
 	}
 	
-	public void exibirMenuLogin() {
-		System.out.println("1 - Efetuar o login\n0 - Voltar");
+	public void exibirMenuLoginOpcao() {
+		System.out.println("Opções\n1 - Efetuar o login\n0 - Voltar ao menu inicial");
 	}
 	
 	
@@ -95,20 +95,21 @@ public class TelaTextual {
 	}
 
 	public Usuario efetuarLogin() {
+		System.out.println("Efetuar login:");
 		return s.efetuarLogin();
 	}
 
 	public void exibeMenuRecepcionista() {
-		System.out.println("1 - Cadrastar usuario\n2 - Buscar paciente\n3-Buscar medico \n4 - Remover usuario\n 0 - Sair");
+		System.out.println("Menu Recepção\n1 - Cadrastar usuario\n2 - Buscar paciente\n3-Buscar medico \n4 - Remover usuario\n0 - Sair");
 		
 	}
 
 	public void exibeMenuMedico() {
-		System.out.println("1 - buscar Consultas do dia\n2-Buscar paciente do dia.");
+		System.out.println("Menu Médico\n1 - buscar Consultas do dia\n2-Buscar paciente do dia.");
 	}
 
 	public void exibeMenuPaciente() {
-		System.out.println("1 - Exibir consulta\n2 - Exibir Resultado de exame\n3 - Exibir cirurgia\n4 - Desmarcar consulta\n0 - sair");
+		System.out.println("Menu Paciente\n1 - Exibir consulta\n2 - Exibir Resultado de exame\n3 - Exibir cirurgia\n4 - Desmarcar consulta\n0 - sair");
 	}
 
 	public boolean isContinuarLogin() {

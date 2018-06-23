@@ -56,18 +56,26 @@ public class GetInformation {
 	}*/
 	
 	public Usuario lerUsuarioCadastro() {
-		Usuario u= new Usuario();
-		
+		Usuario u;
+		int tipo;
 		System.out.println("Digite o numero do tipo de Usuario:\n1 - Recepcionista\n2 - Médico\n3 - Paciente");
-		u.setId(Id.gerarId(n.nextInt()));
+		tipo = n.nextInt();
+		if(tipo == 1) {
+			u = new Recepcionista();
+		} else if(tipo == 2) {
+			u = new Medico();
+		} else {
+			u = new Paciente();
+		}
+		u.setId(Id.gerarId(tipo));
 		n.nextLine();
-		System.out.println("Digite o nome do Usuario: ");		
+		System.out.println("Digite o nome do Usuario: ");
 		u.setNome(n.nextLine());
 		
 		System.out.println("Digite o cpf do Usuario: ");
 		u.setCpf(n.nextLine());
 		
-		System.out.println("crie uma senha: ");
+		System.out.println("Crie uma senha: ");
 		String senha = n.nextLine();
 		u.setSenhaHash(senha.hashCode());
 		return u;
