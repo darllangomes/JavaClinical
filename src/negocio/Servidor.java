@@ -76,17 +76,17 @@ public class Servidor implements IServidor {
 	
 	public Paciente efetuarLoginPaciente(String id) {
 		
-		Paciente r = (Paciente) pacientes.procurar(id);
-		if(r == null) {
+		Paciente p = (Paciente) pacientes.procurar(id);
+		if(p == null) {
 			System.out.println("Identificação errada");
 			return null;
 		}
 		System.out.println("Senha:");
-		if(leitor.lerSenha().hashCode() != r.getSenhaHash()) {
+		if(leitor.lerSenha().hashCode() != p.getSenhaHash()) {
 			System.out.println("Senha errada");
 			return null;
 		}else {
-			return r;
+			return p;
 		}
 	}
 	
@@ -109,7 +109,13 @@ public class Servidor implements IServidor {
 	@Override
 	public void cadastrarUsuario() {
 		Usuario u = leitor.lerUsuarioCadastro();
-		pacientes.cadastrar(u);
+		if(u instanceof Recepcionista) {
+			recepcionistas.cadastrar(u);
+		} else if(u instanceof Medico) {
+			medicos.cadastrar(u);
+		} else {
+			pacientes.cadastrar(u);
+		}
 	}
 
 	@Override
