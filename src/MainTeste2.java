@@ -41,40 +41,44 @@ public class MainTeste2 {
 									}
 								} while (tt.getOpcao() != 0);
 							} else if (u instanceof Medico) {
-								tt.exibeMenuMedico();
-								tt.lerOpcao();
-								switch(tt.getOpcao()) {
-								case 1:
+								do {
+									tt.exibeMenuMedico();
+									tt.lerOpcao();
+									switch(tt.getOpcao()) {
+									case 1:
 									
-									break;
-								case 2:
+										break;
+									case 2:
 									
-									break;
-								case 3:
-									break;
+										break;
+									case 3:
+										break;
 								}
+								}while(tt.getOpcao() != 0);
 							} else if (u instanceof Paciente) {
-								tt.exibeMenuPaciente();
-								tt.lerOpcao();
-								switch (tt.getOpcao()) {
-								case 1:
-									tt.exibirConsulta(u.getId());
-									break;
-								case 2:
-									tt.exibirExame(u.getId());
-									break;
-									
-								case 3:
-									tt.exibirCirurgia(u.getId());
-									break;
-									
-								case 4:
-									tt.cancelarConsulta(u.getId());
-									break;
+								do {
+									tt.exibeMenuPaciente();
+									tt.lerOpcao();
+									switch (tt.getOpcao()) {
+									case 1:
+										tt.exibirConsulta(u.getId());
+										break;
+									case 2:
+										tt.exibirExame(u.getId());
+										break;
+										
+									case 3:
+										tt.exibirCirurgia(u.getId());
+										break;
+										
+									case 4:
+										tt.cancelarConsulta(u.getId());
+										break;
 
-								default:
-									break;
-								}
+									default:
+										break;
+									}
+								}while(tt.getOpcao() != 0);
 							}
 						} else {
 							tt.exibirMenuLoginOpcao();
