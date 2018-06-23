@@ -38,8 +38,8 @@ public class TelaTextual {
 		
 	}
 	
-	public void exibirMenuLogin() {
-		System.out.println("Opções\n1 - Efetuar o login\n0 - Voltar");
+	public void exibirMenuLoginOpcao() {
+		System.out.println("Opções\n1 - Efetuar o login\n0 - Voltar ao menu inicial");
 	}
 	
 	
