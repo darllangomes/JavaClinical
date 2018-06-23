@@ -34,12 +34,13 @@ public class TelaTextual {
 	}
 	
 	public void exibirMenuInicial() {
-		System.out.println("1 - Login \n 0 - Sair");
+		System.out.println("Seja Bem Vindo ao JavaClinical\n");
+		System.out.println("1 - Login \n0 - Sair");
 		
 	}
 	
 	public void exibirMenuLogin() {
-		System.out.println("1 - Efetuar o login\n0 - Voltar");
+		System.out.println("1 - Efetuar o login \n0 - Voltar");
 	}
 	
 	
@@ -99,16 +100,16 @@ public class TelaTextual {
 	}
 
 	public void exibeMenuRecepcionista() {
-		System.out.println("1 - Cadrastar usuario\n2 - Buscar paciente\n3-Buscar medico \n4 - Remover usuario\n 0 - Sair");
+		System.out.println("\n1 - Cadrastar Usuario\n2 - Buscar Paciente\n3 - Buscar Medico \n4 - Remover Usuario\n0 - Sair");
 		
 	}
 
 	public void exibeMenuMedico() {
-		System.out.println("1 - buscar Consultas do dia\n2-Buscar paciente do dia.");
+		System.out.println("1 - Buscar Consultas do Dia\n2 - Buscar Paciente do Dia.");
 	}
 
 	public void exibeMenuPaciente() {
-		System.out.println("1 - Exibir consulta\n2 - Exibir Resultado de exame\n3 - Exibir cirurgia\n4 - Desmarcar consulta\n0 - sair");
+		System.out.println("1 - Exibir Consulta\n2 - Exibir Resultado de Exame\n3 - Exibir Cirurgia\n4 - Desmarcar Consulta\n0 - Sair");
 	}
 
 	public boolean isContinuarLogin() {
