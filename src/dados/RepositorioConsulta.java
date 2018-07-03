@@ -43,10 +43,12 @@ public class RepositorioConsulta {
 	
 	public ArrayList<Consulta> procurar(LocalDate d) {
         ArrayList<Consulta>  listaConsultas = new ArrayList();
-        for(int i=0; i<this.consultas.length;i++) {
-        	if(consultas[i].getData().equals(d)) {
-        		listaConsultas.add(consultas[i]);
-        	}
+        if(this.ultimo > 0) {
+        	for(int i=0; i<this.consultas.length;i++) {
+            	if(consultas[i].getData().equals(d)) {
+            		listaConsultas.add(consultas[i]);
+            	}
+            }
         }
         return listaConsultas;
     }

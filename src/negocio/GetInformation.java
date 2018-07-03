@@ -82,13 +82,14 @@ public class GetInformation {
 	}
 	
 	public LocalDate lerData() {
+		System.out.println("Insira um dia para verificar as consultas marcadas (dd/mm/aaaa):");
 		int dia;
 		int mes;
 		int ano;
 		dia=n.nextInt();
 		mes=n.nextInt();
 		ano=n.nextInt();
-		LocalDate d= LocalDate.of(ano, mes, dia);
+		LocalDate d = LocalDate.of(ano, mes, dia);
 		return d;
 	}
 	

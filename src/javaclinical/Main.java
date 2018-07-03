@@ -1,3 +1,4 @@
+package javaclinical;
 import java.time.LocalDate;
 
 import gui.TelaTextual;
@@ -6,7 +7,7 @@ import negocio.Paciente;
 import negocio.Recepcionista;
 import negocio.Usuario;
 
-public class MainTeste2 {
+public class Main {
 
 	public static void main(String[] args) {
 		Usuario u;
