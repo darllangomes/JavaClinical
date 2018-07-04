@@ -35,10 +35,12 @@ public class Main {
 										tt.cadastrar();
 										break;
 									case 2:
-										tt.procurarPaciente();
+										Paciente p = tt.procurarPaciente();
+										System.out.println(p);
 										break;
 									case 3:
-										tt.procurarMedico();
+										Medico m = tt.procurarMedico();
+										System.out.println(m);
 										break;
 									case 4:
 									tt.removerUsuario();
