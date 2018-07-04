@@ -180,4 +180,8 @@ public class Servidor implements IServidor {
 	public Cirurgia procurarCirurgia(String id) {
 		return (Cirurgia) cirurgias.procurar(id);
 	}
+	 public void marcarExame(Exame e) {
+		e= (Exame)leitor.lerConsulta(instance);
+		exames.cadastrar(e);
+	}
 }

@@ -12,6 +12,7 @@ public interface IServidor {
 	void descadastrarUsuario();
 	void descadastrarConsulta(String id);
 	void descadastrarCirurgia();
+	void marcarExame(Exame e);
 	Medico procurarMedico();
 	Paciente procurarPaciente();
 	Recepcionista efetuarLoginRecepcionista(String id);

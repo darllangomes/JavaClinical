@@ -98,8 +98,9 @@ public class GetInformation {
 		return n.nextLine();
 	}
 	
+	
 	public Consulta lerConsulta(Servidor s) {
-		Consulta c = new Consulta();
+		Consulta c = new Exame();
 		Medico m;
 		Paciente p;
 		System.out.println("Digite a id do médico: ");
@@ -116,13 +117,14 @@ public class GetInformation {
 				}else {
 					c.setPaciente(p);
 					c.setProntuario(new Prontuario());
-					
 				}
 				
 		}
 		return c;
-				
 	}
+	
+	
+	
 	
 	public LocalDate procurarConsulta() {
 		LocalDate d= this.lerData();

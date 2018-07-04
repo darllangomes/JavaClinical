@@ -100,12 +100,12 @@ public class TelaTextual {
 	}
 
 	public void exibeMenuRecepcionista() {
-		System.out.println("Menu Recepção\n1 - Cadrastar usuario\n2 - Buscar paciente\n3 - Buscar medico \n4 - Remover usuario\n0 - Sair");
+		System.out.println("Menu Recepção\n1 - Cadrastar usuario\n2 - Buscar paciente\n3 - Buscar medico \n4 - Remover usuario \n 5- Marcar exame \n0 - Sair");
 		
 	}
 
 	public void exibeMenuMedico() {
-		System.out.println("Menu Médico\n1 - Buscar Consultas do dia\n2 - Buscar paciente do dia\n0 - Sair");
+		System.out.println("Menu Médico\n1 - Buscar Consultas do dia\n 0 - Sair");
 	}
 
 	public void exibeMenuPaciente() {
@@ -143,5 +143,8 @@ public class TelaTextual {
 		
 		System.out.println(s.procurarConsulta());
 		
+	}
+	public void marcarExame() {
+		s.cadastrarConsulta();
 	}
 }

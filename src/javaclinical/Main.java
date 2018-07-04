@@ -11,6 +11,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		Usuario u;
+		   
 		TelaTextual tt = new TelaTextual();
 		// Cria a tela
 		while(tt.executando()) {
@@ -41,6 +42,9 @@ public class Main {
 										break;
 									case 4:
 									tt.removerUsuario();
+										break;
+									case 5:
+										
 										break;
 									}
 								} while (tt.getOpcao() != 0);
