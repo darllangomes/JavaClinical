@@ -9,6 +9,7 @@ import negocio.Consulta;
 import negocio.Exame;
 import negocio.GetInformation;
 import negocio.IServidor;
+import negocio.Login;
 import negocio.Medico;
 import negocio.Paciente;
 import negocio.Servidor;
@@ -20,11 +21,13 @@ public class TelaTextual {
 	private boolean continuarLogin;
 	private int opcao;
 	private Scanner sc;
+	private GetInformation leitor;
 	
 	public TelaTextual() {
 		executando = true;
 		continuarLogin = false;
 		s = Servidor.getInstance();
+		leitor = GetInformation.getInstance();
 		opcao = -1;
 		sc = new Scanner(System.in);
 	}
@@ -32,7 +35,9 @@ public class TelaTextual {
 	public boolean executando() {
 		return this.executando;
 	}
-	
+    
+
+    //*************** Menus ****************	
 	public void exibirMenuInicial() {
 		System.out.println("Menu Inicial\n1 - Login \n0 - Sair");
 		
@@ -41,7 +46,19 @@ public class TelaTextual {
 	public void exibirMenuLoginOpcao() {
 		System.out.println("Opções\n1 - Efetuar o login\n0 - Voltar ao menu inicial");
 	}
-	
+
+	public void exibeMenuRecepcionista() {
+		System.out.println("Menu Recepção\n1 - Cadrastar usuario\n2 - Buscar paciente\n3 - Buscar medico \n4 - Remover usuario \n 5- Marcar exame \n0 - Sair");
+		
+	}
+
+	public void exibeMenuMedico() {
+		System.out.println("Menu Médico\n1 - Buscar Consultas do dia\n0 - Sair");
+	}
+
+	public void exibeMenuPaciente() {
+		System.out.println("Menu Paciente\n1 - Exibir consulta\n2 - Exibir Resultado de exame\n3 - Exibir cirurgia\n4 - Desmarcar consulta\n0 - Sair");
+	}
 	
 	public int lerOpcao() {
 		/*
@@ -55,23 +72,24 @@ public class TelaTextual {
 	
 	}
 	
+	public int getOpcao() {
+		return this.opcao;
+	}
+
+	public void setOpcao(int opcao) {
+		this.opcao = opcao;
+	}
+
 	public void limparTela() {
 		System.out.println("\n \n");
 		System.out.println("\n \n");
 		System.out.println("\n \n");
 		
 	}
-	
-	public int getOpcao() {
-		return this.opcao;
-	}
 
 	public void cadastrar() {
-		s.cadastrarUsuario();
-	}
-
-	public void setOpcao(int opcao) {
-		this.opcao = opcao;
+		Usuario u = leitor.lerUsuarioCadastro();
+		s.cadastrarUsuario(u);
 	}
 
 	public void sair() {
@@ -79,37 +97,54 @@ public class TelaTextual {
 	}
 
 	public Paciente procurarPaciente() {
-		return s.procurarPaciente();
+		return s.procurarPaciente(leitor.lerId());
 		
 	}
 	
 	public Medico procurarMedico() {
-		return s.procurarMedico();
+		return s.procurarMedico(leitor.lerId());
 	}
 	public ArrayList<Consulta> procurar(LocalDate d){
-		return s.procurarConsulta();
+		return s.procurarConsulta(d);
 	}
 
 	public void removerUsuario() {
-		s.descadastrarUsuario();
+		s.descadastrarUsuario(leitor.lerId());
 	}
 
 	public Usuario efetuarLogin() {
 		System.out.println("Efetuar login:");
-		return s.efetuarLogin();
-	}
-
-	public void exibeMenuRecepcionista() {
-		System.out.println("Menu Recepção\n1 - Cadrastar usuario\n2 - Buscar paciente\n3 - Buscar medico \n4 - Remover usuario \n 5- Marcar exame \n0 - Sair");
+		Usuario u;
 		
-	}
-
-	public void exibeMenuMedico() {
-		System.out.println("Menu Médico\n1 - Buscar Consultas do dia\n 0 - Sair");
-	}
-
-	public void exibeMenuPaciente() {
-		System.out.println("Menu Paciente\n1 - Exibir consulta\n2 - Exibir Resultado de exame\n3 - Exibir cirurgia\n4 - Desmarcar consulta\n0 - sair");
+		System.out.println("Insira a id do usuario");
+		String id = leitor.lerId();
+		
+		System.out.println("Insira a senha");
+		int sh = leitor.lerSenha().hashCode();
+		
+		Login l = new Login(id, sh);
+		
+		/*
+		 * Por questões de segurança
+		 * Perde-se as referências da id e hash
+		 */
+		id = null;
+		sh = 0;
+		
+		if(id.charAt(0) == '1') {
+			u = s.efetuarLoginRecepcionista(l);
+		} else if(id.charAt(0) == '2') {
+			u = s.efetuarLoginMedico(l);
+		} else {
+			u = s.efetuarLoginPaciente(l);
+		}
+        
+		/*
+		 * Por questões de segurança
+		 * Perde-se a referência do objeto login
+		 */
+        l = null;
+		return u;
 	}
 
 	public boolean isContinuarLogin() {
@@ -141,7 +176,7 @@ public class TelaTextual {
 
 	public void procurarConsulta() {
 		
-		System.out.println(s.procurarConsulta());
+		System.out.println(s.procurarConsulta(leitor.lerData()));
 		
 	}
 	public void marcarExame() {

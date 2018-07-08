@@ -13,7 +13,7 @@ public class Servidor implements IServidor {
 	private ControladorConsulta consultas;
 	private ControladorConsulta exames;
 	private ControladorConsulta cirurgias;
-	private GetInformation leitor;
+	//private GetInformation leitor;
 	private static Servidor instance;
 	
 	private Servidor() {
@@ -23,7 +23,7 @@ public class Servidor implements IServidor {
 		consultas = new ControladorConsulta();
 		exames = new ControladorConsulta();
 		cirurgias = new ControladorConsulta();
-		leitor = GetInformation.getInstance();
+		//leitor = GetInformation.getInstance();
 		
 		/*
 		 * Administrador padrão do sistema
@@ -34,7 +34,7 @@ public class Servidor implements IServidor {
 		r.setNome("admin");
 		r.setSenhaHash("admin".hashCode());
 		r.setId("1111");
-		r.setCpf(null);
+		r.setCpf("");
 		recepcionistas.cadastrar(r);
 	}
 	
@@ -45,7 +45,7 @@ public class Servidor implements IServidor {
 		return instance;
 	}
 	
-	public Usuario efetuarLogin() {
+	/*public Usuario efetuarLogin() {
 		Usuario u;
 		String id = leitor.lerId();
 				
@@ -57,16 +57,16 @@ public class Servidor implements IServidor {
 			u = efetuarLoginPaciente(id);
 		}
 		return u;
-	}
-	public Recepcionista efetuarLoginRecepcionista(String id) {
+	}*/
+	
+	public Recepcionista efetuarLoginRecepcionista(Login l) {
 		
-		Recepcionista r = (Recepcionista) recepcionistas.procurar(id);
+		Recepcionista r = (Recepcionista) recepcionistas.procurar(l.getId());
 		if(r == null) {
 			System.out.println("Identificação errada");
 			return null;
 		}
-		System.out.println("Senha:");
-		if(leitor.lerSenha().hashCode() != r.getSenhaHash()) {
+		if(l.getSenhaHash() != r.getSenhaHash()) {
 			System.out.println("Senha errada");
 			return null;
 		}else {
@@ -74,15 +74,14 @@ public class Servidor implements IServidor {
 		}
 	}
 	
-	public Paciente efetuarLoginPaciente(String id) {
+	public Paciente efetuarLoginPaciente(Login l) {
 		
-		Paciente p = (Paciente) pacientes.procurar(id);
+		Paciente p = (Paciente) pacientes.procurar(l.getId());
 		if(p == null) {
 			System.out.println("Identificação errada");
 			return null;
 		}
-		System.out.println("Senha:");
-		if(leitor.lerSenha().hashCode() != p.getSenhaHash()) {
+		if(l.getSenhaHash() != p.getSenhaHash()) {
 			System.out.println("Senha errada");
 			return null;
 		}else {
@@ -90,15 +89,14 @@ public class Servidor implements IServidor {
 		}
 	}
 	
-	public Medico efetuarLoginMedico(String id) {
+	public Medico efetuarLoginMedico(Login l) {
 		
-		Medico r = (Medico) medicos.procurar(id);
+		Medico r = (Medico) medicos.procurar(l.getId());
 		if(r == null) {
 			System.out.println("Identificação errada");
 			return null;
 		}
-		System.out.println("Senha:");
-		if(leitor.lerSenha().hashCode() != r.getSenhaHash()) {
+		if(l.getSenhaHash() != r.getSenhaHash()) {
 			System.out.println("Identificação errada");
 			return null;
 		}else {
@@ -107,8 +105,8 @@ public class Servidor implements IServidor {
 	}
 
 	@Override
-	public void cadastrarUsuario() {
-		Usuario u = leitor.lerUsuarioCadastro();
+	public void cadastrarUsuario(Usuario u) {
+		//Usuario u = leitor.lerUsuarioCadastro();
 		if(u instanceof Recepcionista) {
 			recepcionistas.cadastrar(u);
 		} else if(u instanceof Medico) {
@@ -121,7 +119,7 @@ public class Servidor implements IServidor {
 	@Override
 	public void cadastrarConsulta() {
 	    Consulta c= new Consulta();  
-	    c=leitor.lerConsulta(this);
+	    //c=leitor.lerConsulta(this);
 	    consultas.cadastrar(c);
 	}
 
@@ -132,8 +130,9 @@ public class Servidor implements IServidor {
 	}
 
 	@Override
-	public void descadastrarUsuario() {
-		pacientes.descadrastar(leitor.lerId());
+	public void descadastrarUsuario(String id) {
+		//pacientes.descadrastar(leitor.lerId());
+		pacientes.descadrastar(id);
 	}
 
 	@Override
@@ -153,20 +152,21 @@ public class Servidor implements IServidor {
 	 * (non-Javadoc)
 	 * @see negocio.IServidor#lerId()
 	 */
-	public Paciente procurarPaciente() {
-		return (Paciente) pacientes.procurar(leitor.lerId());
+	public Paciente procurarPaciente(String id) {
+		//return (Paciente) pacientes.procurar(leitor.lerId());
+		return (Paciente) pacientes.procurar(id);
+		}
+	
+	public Medico procurarMedico(String id) {
+		return (Medico) medicos.procurar(id);
 	}
 	
-	public Medico procurarMedico() {
-		return (Medico) medicos.procurar(leitor.lerId());
+	public Recepcionista procurarRecepcionista(String id) {
+		return (Recepcionista) recepcionistas.procurar(id);
 	}
 	
-	public Recepcionista procurarRecepcionista() {
-		return (Recepcionista) recepcionistas.procurar(leitor.lerId());
-	}
-	
-	public ArrayList<Consulta> procurarConsulta() {
-		return consultas.procurar(leitor.lerData());
+	public ArrayList<Consulta> procurarConsulta(LocalDate d) {
+		return consultas.procurar(d);
 	}
 	
 	public Consulta procurarConsulta(String id) {
@@ -181,7 +181,7 @@ public class Servidor implements IServidor {
 		return (Cirurgia) cirurgias.procurar(id);
 	}
 	 public void marcarExame(Exame e) {
-		e= (Exame)leitor.lerConsulta(instance);
-		exames.cadastrar(e);
+		//e= (Exame)leitor.lerConsulta(instance);
+		//exames.cadastrar(e);
 	}
 }

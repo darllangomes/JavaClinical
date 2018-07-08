@@ -94,7 +94,6 @@ public class GetInformation {
 	}
 	
 	public String lerId() {
-		System.out.println("Insira a id do usuario");
 		return n.nextLine();
 	}
 	
@@ -105,13 +104,13 @@ public class GetInformation {
 		Paciente p;
 		System.out.println("Digite a id do médico: ");
 		// Buscar medico no repositorio
-		m = (Medico) s.procurarMedico();
+		m = (Medico) s.procurarMedico(lerId());
 		if(m==null) {
 			System.out.println("Médico não encontrado.");
 		}else {
 			c.setMedico(m);
-			System.out.println("Digite o nome do paciente: ");
-			p=(Paciente)s.procurarPaciente();
+			System.out.println("Digite a id do paciente: ");
+			p=(Paciente)s.procurarPaciente(lerId());
 				if(p==null) {
 					System.out.println("Paciente não encontrado.");
 				}else {
@@ -122,9 +121,6 @@ public class GetInformation {
 		}
 		return c;
 	}
-	
-	
-	
 	
 	public LocalDate procurarConsulta() {
 		LocalDate d= this.lerData();
