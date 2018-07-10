@@ -33,6 +33,7 @@ public class ControladorConsulta {
 		return this.repositorio.procurar(id);
 	}
 	
+	
 	public ArrayList<Consulta> procurar(LocalDate d) {
 		return this.repositorio.procurar(d);
 	}

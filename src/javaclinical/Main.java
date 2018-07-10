@@ -75,7 +75,7 @@ public class Main {
 										tt.exibirConsulta(u.getId());
 										break;
 									case 2:
-										tt.exibirExame(u.getId());
+										//tt.exibirExame(u.getId());
 										break;
 										
 									case 3:

@@ -173,11 +173,12 @@ public class TelaTextual {
 		System.out.println(c);
 	}
 	
+	/*
 	public void exibirExame(String id) {
 		Exame e = s.procurarExame(id);
 		System.out.println(e);
 	}
-
+    */
 	public void exibirCirurgia(String id) {
 		Cirurgia c = s.procurarCirurgia(id);
 		System.out.println(c);

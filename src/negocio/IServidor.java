@@ -22,7 +22,7 @@ public interface IServidor {
 	Paciente procurarPaciente(String id);
 	Recepcionista procurarRecepcionista(String id);
 	Consulta procurarConsulta(String id);
-	Exame procurarExame(String id);
+	
 	Cirurgia procurarCirurgia(String id);
 	ArrayList<Consulta> procurarConsulta(LocalDate d);
 }

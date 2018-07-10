@@ -173,9 +173,14 @@ public class Servidor implements IServidor {
 		return consultas.procurar(id);
 	}
 	
+	/*
 	public Exame procurarExame(String id) {
-		return (Exame) exames.procurar(id);
+		Exame e= new Exame();
+		e = (Exame)leitor.lerConsulta(instance);
+		return (Exame) exames.procurar(e); // ver uma forma de sobrescrever o metodo de procura para poder passar um
+										   //objeto Exame como argumento.
 	}
+	*/
 	
 	public Cirurgia procurarCirurgia(String id) {
 		return (Cirurgia) cirurgias.procurar(id);
