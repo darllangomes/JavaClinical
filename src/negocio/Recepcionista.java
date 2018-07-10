@@ -15,10 +15,4 @@ public class Recepcionista extends Usuario{
 	public String toString() {
 		return "Recepcionista [nome=" + this.getNome() + ", cpf=" + this.getCpf() + "]";
 	}
-
-	//essa merda ta aqui
-
-	
-	
-	
 }

@@ -131,13 +131,25 @@ public class TelaTextual {
 		id = null;
 		sh = 0;
 		
-		if(id.charAt(0) == '1') {
+		switch (l.getId().charAt(0)) {
+		case '1':
+			u = s.efetuarLoginRecepcionista(l);
+			break;
+		case '2':
+			u = s.efetuarLoginMedico(l);
+			break;
+		default:
+			u = s.efetuarLoginPaciente(l);
+			break;
+		}
+		
+		/*if(l.getId().charAt(0) == '1') {
 			u = s.efetuarLoginRecepcionista(l);
 		} else if(id.charAt(0) == '2') {
 			u = s.efetuarLoginMedico(l);
 		} else {
 			u = s.efetuarLoginPaciente(l);
-		}
+		}*/
         
 		/*
 		 * Por questões de segurança
