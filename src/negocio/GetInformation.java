@@ -75,7 +75,9 @@ public class GetInformation {
 		n.nextLine();
 		System.out.println("Digite o nome do Usuario: ");
 		u.setNome(n.nextLine());
-		
+		System.out.println("Digite a idade: ");
+		u.setIdade(n.nextInt());
+		n.nextLine();
 		System.out.println("Digite o cpf do Usuario: ");
 		u.setCpf(n.nextLine());
 		
@@ -99,6 +101,7 @@ public class GetInformation {
 	}
 	
 	public String lerId() {
+		System.out.println("Insira a id do usuario");
 		String id = n.nextLine();
 		return id;
 	}

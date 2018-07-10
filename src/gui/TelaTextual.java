@@ -115,8 +115,6 @@ public class TelaTextual {
 	public Usuario efetuarLogin() {
 		System.out.println("Efetuar login:");
 		Usuario u;
-		
-		System.out.println("Insira a id do usuario");
 		String id = leitor.lerId();
 		
 		
@@ -206,7 +204,6 @@ public class TelaTextual {
 		System.out.println("Identificação do médico");
 		id = leitor.lerId();
 		Medico m = this.procurarMedico();*/
-		
 		Consulta c = leitor.lerConsulta(s);
 		s.cadastrarConsulta(c);
 	}

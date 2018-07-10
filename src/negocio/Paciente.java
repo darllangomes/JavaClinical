@@ -2,7 +2,7 @@
 
 public class Paciente extends Usuario  {
 
-	private int idade;
+	
 	//private Consulta consulta;
 	private Cirurgia cirurgia;
 	private Prontuario prontuario;
@@ -15,10 +15,8 @@ public class Paciente extends Usuario  {
 		return "Paciente:\nNome: " + this.getNome() + "\nIdade: " + this.getIdade() + "\nCPF: " + this.getCpf();
 	}
 
-	public int getIdade() {
-		return this.idade;
-	}
-	@Override
+	
+	/*@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
 			return true;
@@ -42,7 +40,7 @@ public class Paciente extends Usuario  {
 		return true;
 	}
 
-	
+	*/
 	
 	
 }
