@@ -55,6 +55,10 @@ public class GetInformation {
 		b.cadastrar(paciente);
 	}*/
 	
+	private void clearBuffer() {
+		n.nextLine();
+	}
+	
 	public Usuario lerUsuarioCadastro() {
 		Usuario u;
 		int tipo;
@@ -90,18 +94,21 @@ public class GetInformation {
 		mes=n.nextInt();
 		ano=n.nextInt();
 		LocalDate d = LocalDate.of(ano, mes, dia);
+		this.clearBuffer();
 		return d;
 	}
 	
 	public String lerId() {
-		return n.nextLine();
+		String id = n.nextLine();
+		return id;
 	}
 	
 	
-	public Consulta lerConsulta(Servidor s) {
-		Consulta c = new Exame();
+	public Consulta lerConsulta(IServidor s) {
+		Consulta c = new Consulta();
 		Medico m;
 		Paciente p;
+		LocalDate d;
 		System.out.println("Digite a id do médico: ");
 		// Buscar medico no repositorio
 		m = (Medico) s.procurarMedico(lerId());
@@ -119,6 +126,9 @@ public class GetInformation {
 				}
 				
 		}
+		d = this.lerData();
+		c.setData(d);
+		
 		return c;
 	}
 	

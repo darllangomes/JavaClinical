@@ -43,10 +43,10 @@ public class Main {
 										System.out.println(m);
 										break;
 									case 4:
-									tt.removerUsuario();
+										tt.removerUsuario();
 										break;
 									case 5:
-										
+										tt.marcarConsulta();
 										break;
 									}
 								} while (tt.getOpcao() != 0);

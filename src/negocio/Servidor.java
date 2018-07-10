@@ -117,8 +117,8 @@ public class Servidor implements IServidor {
 	}
 
 	@Override
-	public void cadastrarConsulta() {
-	    Consulta c= new Consulta();  
+	public void cadastrarConsulta(Consulta c) {
+	    //Consulta c= new Consulta();  
 	    //c=leitor.lerConsulta(this);
 	    consultas.cadastrar(c);
 	}

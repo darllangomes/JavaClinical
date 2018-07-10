@@ -13,7 +13,7 @@ public class ControladorConsulta {
 	
 	public void cadastrar(Consulta c) {
 		if(c != null) {
-			if(!this.repositorio.existe(c.getPaciente().getCpf())) {
+			if(!this.repositorio.existe(c.getPaciente().getId())) {
 				this.repositorio.cadastrarConsulta(c);
 			}
 		} else {

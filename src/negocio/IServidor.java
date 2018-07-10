@@ -7,7 +7,7 @@ public interface IServidor {
 	
 	//Usuario efetuarLogin();
 	void cadastrarUsuario(Usuario u);
-	void cadastrarConsulta();
+	void cadastrarConsulta(Consulta c);
 	void cadastrarCirurgia();
 	void descadastrarUsuario(String id);
 	void descadastrarConsulta(String id);

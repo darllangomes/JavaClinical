@@ -48,7 +48,7 @@ public class TelaTextual {
 	}
 
 	public void exibeMenuRecepcionista() {
-		System.out.println("Menu Recepção\n1 - Cadrastar usuario\n2 - Buscar paciente\n3 - Buscar medico \n4 - Remover usuario \n 5- Marcar exame \n0 - Sair");
+		System.out.println("Menu Recepção\n1 - Cadrastar usuario\n2 - Buscar paciente\n3 - Buscar medico \n4 - Remover usuario \n5 - Marcar consulta\n6 - Marcar exame \n0 - Sair");
 		
 	}
 
@@ -118,6 +118,7 @@ public class TelaTextual {
 		
 		System.out.println("Insira a id do usuario");
 		String id = leitor.lerId();
+		
 		
 		System.out.println("Insira a senha");
 		int sh = leitor.lerSenha().hashCode();
@@ -192,6 +193,20 @@ public class TelaTextual {
 		
 	}
 	public void marcarExame() {
-		s.cadastrarConsulta();
+		//s.cadastrarConsulta();
+	}
+
+	public void marcarConsulta() {
+		// TODO Auto-generated method stub
+		/*LocalDate d = leitor.lerData();
+		String id = leitor.lerId();
+		System.out.println("Identificação do paciente");
+		Paciente p = this.procurarPaciente();
+		System.out.println("Identificação do médico");
+		id = leitor.lerId();
+		Medico m = this.procurarMedico();*/
+		
+		Consulta c = leitor.lerConsulta(s);
+		s.cadastrarConsulta(c);
 	}
 }
