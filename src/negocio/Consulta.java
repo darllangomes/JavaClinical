@@ -64,7 +64,7 @@ public class Consulta {
 	}
 
 	public String toString() {
-		return "Consulta:\n" + data + "\n" + "nome do Médico" + medico + "\n" + "Nome do Paciente: " + paciente;
+		return "Consulta:\n" + data + "\n" + medico + "\n" + paciente;
 	}
 	
 	public boolean equals(Object obj) {

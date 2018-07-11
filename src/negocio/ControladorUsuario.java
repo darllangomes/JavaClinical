@@ -27,8 +27,8 @@ public class ControladorUsuario {
 		}
 	}
 	
-	public Usuario procurar(String cpf) {
-		return this.repositorio.procurar(cpf);
+	public Usuario procurar(String id) {
+		return this.repositorio.procurar(id);
 	}
 	
 	public boolean existe(String id) {

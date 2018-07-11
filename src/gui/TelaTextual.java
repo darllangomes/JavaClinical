@@ -99,6 +99,7 @@ public class TelaTextual {
 		s.salvarDados();
 		}catch(IOException e){
 			System.out.println("erro ao salvar arquivo");
+			System.out.println(e);
 		}
 	}
 
@@ -119,7 +120,7 @@ public class TelaTextual {
 	}
 
 	public Usuario efetuarLogin() {
-		System.out.println("Efetuar login:");
+		System.out.println("Efetuar login\nDigite a sua id");
 		Usuario u;
 		String id = leitor.lerId();
 		

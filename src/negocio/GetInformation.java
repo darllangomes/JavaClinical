@@ -56,7 +56,9 @@ public class GetInformation {
 	}*/
 	
 	private void clearBuffer() {
-		n.nextLine();
+		if(n.hasNextLine()) {
+			n.nextLine();
+		}
 	}
 	
 	public Usuario lerUsuarioCadastro() {
@@ -78,6 +80,10 @@ public class GetInformation {
 		System.out.println("Digite a idade: ");
 		u.setIdade(n.nextInt());
 		n.nextLine();
+		if(tipo == 2) {
+			System.out.println("Digite a especialidade do médico: ");
+			((Medico) u).setEspecialidade(n.nextLine());
+		}
 		System.out.println("Digite o cpf do Usuario: ");
 		u.setCpf(n.nextLine());
 		
@@ -101,7 +107,6 @@ public class GetInformation {
 	}
 	
 	public String lerId() {
-		System.out.println("Insira a id do usuario");
 		String id = n.nextLine();
 		return id;
 	}
@@ -113,11 +118,14 @@ public class GetInformation {
 		Paciente p;
 		LocalDate d;
 		System.out.println("Digite a id do médico: ");
+		//this.clearBuffer();
 		// Buscar medico no repositorio
 		m = (Medico) s.procurarMedico(lerId());
 		if(m==null) {
 			System.out.println("Médico não encontrado.");
 		}else {
+			System.out.println("Digite a especialidade do médico: ");
+			m.setEspecialidade(n.nextLine());
 			c.setMedico(m);
 			System.out.println("Digite a id do paciente: ");
 			p=(Paciente)s.procurarPaciente(lerId());

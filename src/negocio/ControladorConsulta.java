@@ -45,6 +45,7 @@ public class ControladorConsulta {
 
 	public void salvarDados() throws IOException {
 		// TODO Auto-generated method stub
+		salva = new SalvarArquivos();
 		salva.salvar(repositorio.getDados());
 	}
 	
