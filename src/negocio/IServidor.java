@@ -1,5 +1,6 @@
 ﻿package negocio;
 
+import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
@@ -25,4 +26,5 @@ public interface IServidor {
 	
 	Cirurgia procurarCirurgia(String id);
 	ArrayList<Consulta> procurarConsulta(LocalDate d);
+	void salvarDados() throws IOException;
 }

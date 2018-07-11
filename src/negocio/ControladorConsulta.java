@@ -1,11 +1,14 @@
 ﻿package negocio;
+import java.io.IOException;
 import java.time.LocalDate;
+import dados.SalvarArquivos;
 import java.util.ArrayList;
 
 import dados.RepositorioConsulta;
 
 public class ControladorConsulta {
 	private RepositorioConsulta repositorio;
+	private SalvarArquivos salva;
 	
 	public ControladorConsulta() {
 		this.repositorio = new RepositorioConsulta(128);
@@ -36,6 +39,13 @@ public class ControladorConsulta {
 	
 	public ArrayList<Consulta> procurar(LocalDate d) {
 		return this.repositorio.procurar(d);
+	}
+	
+	
+
+	public void salvarDados() throws IOException {
+		// TODO Auto-generated method stub
+		salva.salvar(repositorio.getDados());
 	}
 	
 	// Avaliar a necessidade de mais operações

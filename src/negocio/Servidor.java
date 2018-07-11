@@ -1,4 +1,5 @@
 ﻿package negocio;
+import java.io.IOException;
 /*
  * Classe servidor contem os controladores
  */
@@ -188,5 +189,9 @@ public class Servidor implements IServidor {
 	 public void marcarExame(Exame e) {
 		//e= (Exame)leitor.lerConsulta(instance);
 		//exames.cadastrar(e);
+	}
+	 
+	 public void salvarDados() throws IOException {
+		 consultas.salvarDados();
 	}
 }

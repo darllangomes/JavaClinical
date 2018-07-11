@@ -8,7 +8,11 @@ import java.util.List;
 import negocio.Consulta;
 
 public class SalvarArquivos {
-	public Files sv= new Files();
 	
-	
+	public void salvar(Consulta[] consultas) throws IOException {
+		FileWriter arq = new FileWriter("c:\\tabuada.txt");
+		PrintWriter gravarArq = new PrintWriter(arq);
+		gravarArq.print(consultas);
+		arq.close();
+	}
 }

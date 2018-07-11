@@ -11,6 +11,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		Usuario u;
+		
 		   
 		TelaTextual tt = new TelaTextual();
 		// Cria a tela
@@ -116,5 +117,6 @@ public class Main {
 		}
 		System.out.println("Terminando");
 	}
+	
 
 }

@@ -111,4 +111,8 @@ public class RepositorioConsulta {
         }
 		
 	}
+	
+	public Consulta[] getDados() {		
+		return this.consultas;
+	}
 }

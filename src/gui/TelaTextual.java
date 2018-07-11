@@ -2,6 +2,7 @@
 
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.io.IOException;
 import java.time.LocalDate;
 
 import negocio.Cirurgia;
@@ -93,7 +94,12 @@ public class TelaTextual {
 	}
 
 	public void sair() {
-		this.executando = false;		
+		this.executando = false;
+		try {
+		s.salvarDados();
+		}catch(IOException e){
+			System.out.println("erro ao salvar arquivo");
+		}
 	}
 
 	public Paciente procurarPaciente() {
