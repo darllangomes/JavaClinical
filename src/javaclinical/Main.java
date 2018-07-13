@@ -49,6 +49,9 @@ public class Main {
 									case 5:
 										tt.marcarConsulta();
 										break;
+									case 6:
+										
+										break;
 									}
 								} while (tt.getOpcao() != 0);
 							} else if (u instanceof Medico) {

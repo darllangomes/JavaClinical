@@ -120,12 +120,12 @@ public class TelaTextual {
 	}
 
 	public Usuario efetuarLogin() {
-		System.out.println("Efetuar login\nDigite a sua id");
+		System.out.println("Efetuar login\n\nDigite a sua id:\n");
 		Usuario u;
 		String id = leitor.lerId();
 		
 		
-		System.out.println("Insira a senha");
+		System.out.println("Insira a senha: \n");
 		int sh = leitor.lerSenha().hashCode();
 		
 		Login l = new Login(id, sh);
@@ -199,19 +199,13 @@ public class TelaTextual {
 		
 	}
 	public void marcarExame() {
-		//s.cadastrarConsulta();
+		s.marcarExame();
 	}
 
 	public void marcarConsulta() {
-		// TODO Auto-generated method stub
-		/*LocalDate d = leitor.lerData();
-		String id = leitor.lerId();
-		System.out.println("Identificação do paciente");
-		Paciente p = this.procurarPaciente();
-		System.out.println("Identificação do médico");
-		id = leitor.lerId();
-		Medico m = this.procurarMedico();*/
+		
 		Consulta c = leitor.lerConsulta(s);
 		s.cadastrarConsulta(c);
 	}
+
 }

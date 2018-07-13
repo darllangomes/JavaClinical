@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 import negocio.Consulta;
 
-public class RepositorioConsulta {
+public class RepositorioConsulta  {
 	
 	private Consulta[] consultas;
 	private int ultimo;
@@ -26,6 +26,7 @@ public class RepositorioConsulta {
 		if(this.ultimo == this.consultas.length) {
 			this.duplicarLimite();
 		}
+
 	}
 	
 	/*
@@ -115,4 +116,6 @@ public class RepositorioConsulta {
 	public Consulta[] getDados() {		
 		return this.consultas;
 	}
+
+	
 }

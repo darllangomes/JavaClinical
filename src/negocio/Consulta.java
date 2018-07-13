@@ -67,6 +67,9 @@ public class Consulta {
 		return "Consulta:\n" + data + "\n" + medico + "\n" + paciente;
 	}
 	
+	
+
+
 	public boolean equals(Object obj) {
 		if (this == obj)
 			return true;
@@ -93,4 +96,6 @@ public class Consulta {
 		
 		return true;
 	}
+	
+	
 }

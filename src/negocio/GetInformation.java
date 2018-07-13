@@ -143,6 +143,8 @@ public class GetInformation {
 		return c;
 	}
 	
+	
+	
 	public LocalDate procurarConsulta() {
 		LocalDate d= this.lerData();
 		return d;

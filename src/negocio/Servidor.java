@@ -14,7 +14,7 @@ public class Servidor implements IServidor {
 	private ControladorConsulta consultas;
 	private ControladorConsulta exames;
 	private ControladorConsulta cirurgias;
-	//private GetInformation leitor;
+	private GetInformation leitor;
 	private static Servidor instance;
 	
 	private Servidor() {
@@ -187,8 +187,9 @@ public class Servidor implements IServidor {
 		return (Cirurgia) cirurgias.procurar(id);
 	}
 	 public void marcarExame(Exame e) {
-		//e= (Exame)leitor.lerConsulta(instance);
+		//e= leitor.lerConsulta(instance);
 		//exames.cadastrar(e);
+		 e= leitor.lerconsulta();
 	}
 	 
 	 public void salvarDados() throws IOException {
