@@ -18,6 +18,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
 /**
@@ -30,13 +31,38 @@ public class FXMLTelaInicialController implements Initializable {
     @FXML private Label label2;
     @FXML private Label label1;
     @FXML private Button btLogin;
-    @FXML private TextField TextSenha;
-    @FXML private TextField TextFieldSenha;
+    @FXML private TextField TextId;
+    @FXML private PasswordField SenhaField;
+    @FXML private Button btCadastroUsuario;
+    @FXML private Button btMArcarExame;
+    @FXML private Button btBuscarMedico;
+    @FXML private Button btBuscaUsuario;
+    @FXML private Button btRemoverUsuario;
+    @FXML private Button btMarcarConsulta;
+    @FXML private Button btVoltar;
+    
     private Parent root;
     
     
+     @FXML
+    private void LoginUsuario(ActionEvent event) {
+        String id = TextId.getText();
+        System.out.println(id);
+        if(id == null){
+            
+        }
+        
+        String senha = SenhaField.getText();
+        System.out.println(senha);
+
+       
+    }
+    
     @FXML
     private void BotaoLogin(ActionEvent event) {
+        
+        LoginUsuario(event);
+        
         System.out.println("Usuario entrando na tela de login...!");
         try {
             this.root = FXMLLoader.load(getClass().getResource("FXMLTelaDoLogin.fxml"));
@@ -50,6 +76,18 @@ public class FXMLTelaInicialController implements Initializable {
     private void BotaoSair(ActionEvent event) {
         System.out.println("Usuario fechou o programa...!");
         System.exit(0);
+        
+    }
+    
+    @FXML
+    void BotaoVoltar(ActionEvent event) {
+        System.out.println("Voltando para a tela inicial...");
+        try {
+            this.root = FXMLLoader.load(getClass().getResource("FXMLTelaInicial.fxml"));
+        } catch (IOException ex) {
+            Logger.getLogger(FXMLTelaInicialController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+                TelaDoInicial.getStage().setScene(new Scene(root));
     }
     
     @Override
