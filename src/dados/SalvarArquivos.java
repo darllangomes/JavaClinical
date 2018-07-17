@@ -1,5 +1,5 @@
 package dados;
-
+import negocio.Exame;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileWriter;
@@ -20,6 +20,18 @@ public class SalvarArquivos {
 			return;
 		}
 		gravarArq.print(consultas);
+		arq.close();
+	}
+	
+	public void salvar(Exame[] exames) throws IOException {
+		FileWriter arq = new FileWriter("tabuada.txt");
+		PrintWriter gravarArq = new PrintWriter(arq);
+		if(exames == null) {
+			System.out.println("Dados de consulta vazio");
+			arq.close();
+			return;
+		}
+		gravarArq.print(exames);
 		arq.close();
 	}
 	/*
