@@ -25,6 +25,9 @@ public class Usuario {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
+	public void setNome() {
+		this.nome = nome;
+	}
 	public void setSenhaHash(int senha) {
 		this.senhaHash = senha;
 	}

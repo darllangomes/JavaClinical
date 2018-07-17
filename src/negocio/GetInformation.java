@@ -38,22 +38,7 @@ public class GetInformation {
 		}
 		return instance;
 	}
-	/*public void workPacientes() {
-		System.out.println("Digite o nome do Paciente: ");
-		Scanner n= new Scanner(System.in);
-		Usuario paciente= new Paciente();
-		paciente.setNome(n.nextLine());
-		
-		System.out.println("Digite o cpf do paciente: ");
-		paciente.setCpf(n.nextLine());
-		
-		System.out.println("crie uma senha: ");
-		String senha= n.nextLine();
-		paciente.setSenhaHash(senha.hashCode());
-		
-		ControladorUsuario b= new ControladorUsuario();
-		b.cadastrar(paciente);
-	}*/
+	
 	
 	private void clearBuffer() {
 		if(n.hasNextLine()) {
@@ -152,5 +137,20 @@ public class GetInformation {
 
 	public String lerSenha() {
 		return n.nextLine();
+	}
+	
+	public Exame lerExame() {
+		Exame e = new Exame();
+		System.out.println("Digite o seu ID: ");
+		//ver depois como fazer tudo pelo ID
+		System.out.println("Digite o nome do paciente: ");
+		e.setNomePaciente(n.nextLine());
+		System.out.println("Digite o nome do Médico solicitante: ");
+		e.setNomeMedico(n.nextLine());
+		System.out.println("Digite o tipo do Exame: ");
+		e.setTipoExame(n.nextLine());
+		System.out.println("Digite a data da Consulta: \n");
+		e.setData(lerData());
+		return e;
 	}
 }

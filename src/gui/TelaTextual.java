@@ -199,7 +199,7 @@ public class TelaTextual {
 		
 	}
 	public void marcarExame() {
-		s.marcarExame();
+		//s.marcarExame();
 	}
 
 	public void marcarConsulta() {

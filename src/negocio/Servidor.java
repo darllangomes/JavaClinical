@@ -12,7 +12,7 @@ public class Servidor implements IServidor {
 	private ControladorUsuario pacientes;
 	private ControladorUsuario recepcionistas;
 	private ControladorConsulta consultas;
-	private ControladorConsulta exames;
+	private ControladorExames exames;
 	private ControladorConsulta cirurgias;
 	private GetInformation leitor;
 	private static Servidor instance;
@@ -22,7 +22,7 @@ public class Servidor implements IServidor {
 		pacientes = new ControladorUsuario();
 		recepcionistas = new ControladorUsuario();
 		consultas = new ControladorConsulta();
-		exames = new ControladorConsulta();
+		exames = new ControladorExames();
 		cirurgias = new ControladorConsulta();
 		//leitor = GetInformation.getInstance();
 		
@@ -188,8 +188,9 @@ public class Servidor implements IServidor {
 	}
 	 public void marcarExame(Exame e) {
 		//e= leitor.lerConsulta(instance);
-		//exames.cadastrar(e);
-		 e= leitor.lerconsulta();
+		e=leitor.lerExame();
+		exames.cadastrar(e);
+		
 	}
 	 
 	 public void salvarDados() throws IOException {

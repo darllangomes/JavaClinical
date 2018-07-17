@@ -27,4 +27,4 @@ public interface IServidor {
 	Cirurgia procurarCirurgia(String id);
 	ArrayList<Consulta> procurarConsulta(LocalDate d);
 	void salvarDados() throws IOException;
-}
+	}
