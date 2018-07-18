@@ -13,7 +13,6 @@ public interface IServidor {
 	void descadastrarUsuario(String id);
 	void descadastrarConsulta(String id);
 	void descadastrarCirurgia();
-	void marcarExame(Exame e);
 	
 	Recepcionista efetuarLoginRecepcionista(Login l);
 	Medico efetuarLoginMedico(Login l);
@@ -27,4 +26,5 @@ public interface IServidor {
 	Cirurgia procurarCirurgia(String id);
 	ArrayList<Consulta> procurarConsulta(LocalDate d);
 	void salvarDados() throws IOException;
+	void marcarExame(Exame e);
 	}

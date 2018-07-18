@@ -1,6 +1,7 @@
 ﻿package gui;
 
 import java.util.ArrayList;
+
 import java.util.Scanner;
 import java.io.IOException;
 import java.time.LocalDate;
@@ -69,6 +70,7 @@ public class TelaTextual {
 		 * 3 - descadrastar usuario
 		 */
 		opcao = sc.nextInt();
+		sc.nextLine();
 		return opcao;
 	
 	}
@@ -199,7 +201,7 @@ public class TelaTextual {
 		
 	}
 	public void marcarExame() {
-		//s.marcarExame();
+	    s.marcarExame(leitor.lerExame());
 	}
 
 	public void marcarConsulta() {

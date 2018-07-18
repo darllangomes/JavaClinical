@@ -50,7 +50,7 @@ public class Main {
 										tt.marcarConsulta();
 										break;
 									case 6:
-										
+										tt.marcarExame();
 										break;
 									}
 								} while (tt.getOpcao() != 0);
