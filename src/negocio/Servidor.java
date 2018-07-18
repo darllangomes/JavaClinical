@@ -1,4 +1,4 @@
-﻿package negocio;
+package negocio;
 import java.io.IOException;
 /*
  * Classe servidor contem os controladores
@@ -48,9 +48,13 @@ public class Servidor implements IServidor {
 	
 	/*public Usuario efetuarLogin() {
 		Usuario u;
+		char tipo;
 		String id = leitor.lerId();
-				
-		if(id.charAt(0) == '1') {
+		System.out.println(id);
+		System.out.println(id.charAt(0));
+		tipo = id.charAt(0);
+		System.out.println(tipo);
+		if(tipo == '1') {
 			u = efetuarLoginRecepcionista(id);
 		} else if(id.charAt(0) == '2') {
 			u = efetuarLoginMedico(id);

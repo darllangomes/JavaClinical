@@ -1,4 +1,4 @@
-﻿package negocio;
+package negocio;
 import java.time.LocalDate;
 
 public class Consulta {

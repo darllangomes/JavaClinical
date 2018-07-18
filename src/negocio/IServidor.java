@@ -1,4 +1,4 @@
-﻿package negocio;
+package negocio;
 
 import java.io.IOException;
 import java.time.LocalDate;

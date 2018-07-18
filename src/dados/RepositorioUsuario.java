@@ -1,4 +1,4 @@
-﻿package dados;
+package dados;
 
 import negocio.Usuario;
 

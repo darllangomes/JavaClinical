@@ -130,3 +130,21 @@ fabric.properties
 
 
 # End of https://www.gitignore.io/api/eclipse,intellij
+/nbproject/private/
+/build/
+
+
+# Created by https://www.gitignore.io/api/netbeans
+
+### NetBeans ###
+nbproject/
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+build.xml
+manifest.mf
+
+# End of https://www.gitignore.io/api/netbeans

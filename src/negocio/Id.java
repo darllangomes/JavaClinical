@@ -1,4 +1,4 @@
-﻿package negocio;
+package negocio;
 
 import java.util.Random;
 

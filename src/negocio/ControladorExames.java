@@ -30,7 +30,7 @@ public class ControladorExames {
 		if(this.repositorio.existe(id)) {
 			this.repositorio.remover(id);
 		} else {
-			// Tratar caso usuario n„o exista
+			// Tratar caso usuario n√£o exista
 		}
 	}
 	

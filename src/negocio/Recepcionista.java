@@ -1,4 +1,4 @@
-﻿package negocio;
+package negocio;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Scanner;
