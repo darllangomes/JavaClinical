@@ -1,10 +1,13 @@
 package gui;
 
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
 import java.util.Scanner;
 import java.io.IOException;
 import java.time.LocalDate;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import negocio.Cirurgia;
 import negocio.Consulta;
@@ -209,5 +212,20 @@ public class TelaTextual {
 		Consulta c = leitor.lerConsulta(s);
 		s.cadastrarConsulta(c);
 	}
+        
+        public void salvarTudo() throws IOException{
+            s.salvarDados();
+        }
+        public void carregarArquivos() {
+            try {
+                s.carregarDados();
+            } catch (IOException ex) {
+                //Logger.getLogger(TelaTextual.class.getName()).log(Level.SEVERE, null, ex);
+                System.out.println("Arquivo não encontrado!");
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(TelaTextual.class.getName()).log(Level.SEVERE, null, ex);
+            }
+       
+               }
 
 }

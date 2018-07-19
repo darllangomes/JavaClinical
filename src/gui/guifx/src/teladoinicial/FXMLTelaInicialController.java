@@ -20,6 +20,11 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import negocio.Servidor;
+import negocio.ControladorUsuario;
+import dados.RepositorioUsuario;
+import negocio.Login;
+import negocio.IServidor;
 
 /**
  *
