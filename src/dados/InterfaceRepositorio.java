@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 import negocio.Consulta;
 
-public interface interfaceRepositorios {
+public interface InterfaceRepositorio {
 	
 	 Consulta procurar(String id);
 	 ArrayList<Consulta> procurar(LocalDate d);

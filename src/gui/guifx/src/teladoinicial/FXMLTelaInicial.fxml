@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="481.0" prefWidth="448.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="teladoinicial.FXMLTelaInicialController">
+<AnchorPane id="AnchorPane" prefHeight="481.0" prefWidth="448.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.guifx.src.teladoinicial.FXMLTelaInicialController">
     <children>
       <AnchorPane id="AnchorPane" layoutX="4.0" prefHeight="500.0" prefWidth="440.0">
           <children>
