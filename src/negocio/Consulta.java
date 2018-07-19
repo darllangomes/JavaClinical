@@ -2,13 +2,13 @@ package negocio;
 import java.time.LocalDate;
 
 public class Consulta {
-	LocalDate data;	
+	LocalDate data;
 	private Medico medico;
 	private Paciente paciente;
 	private Prontuario prontuario;
 	
 	 Consulta() {
-		
+             
 	}
 	
 	public Consulta(LocalDate data, Medico medico, Paciente paciente) {
@@ -96,6 +96,4 @@ public class Consulta {
 		
 		return true;
 	}
-	
-	
 }

@@ -61,7 +61,8 @@ public class TelaTextual {
 	public void exibeMenuPaciente() {
 		System.out.println("Menu Paciente\n1 - Exibir consulta\n2 - Exibir Resultado de exame\n3 - Exibir cirurgia\n4 - Desmarcar consulta\n0 - Sair");
 	}
-	
+	// *****************************************************************************************
+        
 	public int lerOpcao() {
 		/*
 		 * Valores de opção como exemplo

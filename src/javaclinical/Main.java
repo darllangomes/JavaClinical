@@ -2,13 +2,21 @@ package javaclinical;
 import java.time.LocalDate;
 
 import gui.TelaTextual;
+import static gui.guifx.src.teladoinicial.TelaDoInicial.setStage;
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 import negocio.Medico;
 import negocio.Paciente;
 import negocio.Recepcionista;
 import negocio.Usuario;
 
-public class Main {
-
+public class Main extends Application{
+        
+        private static Stage stage;
+        
 	public static void main(String[] args) {
 		Usuario u;
 		
@@ -16,7 +24,7 @@ public class Main {
 		TelaTextual tt = new TelaTextual();
 		// Cria a tela
 		while(tt.executando()) {
-			// Isto vai ficar dentro de um método depois
+			// TODO Isto vai ficar dentro de um método depois
 			switch (tt.getOpcao()) {
 			case -1: // Menu inicial
 				tt.exibirMenuInicial(); // Exibindo o menu da recep��o s� para teste
@@ -55,20 +63,19 @@ public class Main {
 									}
 								} while (tt.getOpcao() != 0);
 							} else if (u instanceof Medico) {
-                                do {
+                                                            do {
 								    tt.exibeMenuMedico();
 								    tt.lerOpcao();
 								    switch(tt.getOpcao()) {
-								    case 1:
-									    tt.procurarConsulta();
+                                                                        case 1:
+                                                                            tt.procurarConsulta();
 									    break;
-								    case 2:
-									    
+                                                                        case 2:
 									    break;
-									    case 3:
-										    break;
-								    }
-                                } while(tt.getOpcao() != 0);
+                                                                        case 3:
+                                                                            break;
+                                                                    }
+                                                            } while(tt.getOpcao() != 0);
 							}
 							else if (u instanceof Paciente) {
 								do {
@@ -119,7 +126,34 @@ public class Main {
 			}
 		}
 		System.out.println("Terminando");
+                //launch(args); // TODO Remover o comentario desta linha para testar o JavaFX
 	}
-	
+
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+        Parent root = FXMLLoader.load(getClass().getResource("gui/guifx/src/teladoinicial/FXMLTelaInicial.fxml"));
+        FXMLLoader.load(getClass().getResource(STYLESHEET_MODENA));
+        if(root == null) {
+            System.out.println("Erro ao carregar");
+        } else {
+            System.out.println("Carregado com sucesso");
+        }
+        Scene scene = new Scene(root);
+        
+        stage.setScene(scene);
+        stage.setTitle("JavaClinical");
+        stage.show();
+        setStage(stage);
+    }
+    
+    public static Stage getStage() {
+        return stage;
+    }
+
+    public static void setStage(Stage stage) {
+        Main.stage = stage;
+    }
 
 }
