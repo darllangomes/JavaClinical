@@ -41,6 +41,7 @@ public class FXMLTelaInicialController implements Initializable {
     @FXML private Button btMarcarConsulta;
     @FXML private Button btVoltar;
     
+    
     private Parent root;
     
     
@@ -80,7 +81,7 @@ public class FXMLTelaInicialController implements Initializable {
     }
     
     @FXML
-    void BotaoVoltar(ActionEvent event) {
+    private void BotaoVoltar(ActionEvent event) {
         System.out.println("Voltando para a tela inicial...");
         try {
             this.root = FXMLLoader.load(getClass().getResource("FXMLTelaInicial.fxml"));
@@ -89,6 +90,18 @@ public class FXMLTelaInicialController implements Initializable {
         }
                 TelaDoInicial.getStage().setScene(new Scene(root));
     }
+    
+    @FXML
+    private void botaoCadastroUsu(ActionEvent event) {
+        System.out.println("Abrindo tela de cadastro de usuarios...");
+        try {
+            this.root = FXMLLoader.load(getClass().getResource("FXMLCadstraUsusarios.fxml"));
+        } catch (IOException ex) {
+            Logger.getLogger(FXMLCadastraUsuariosController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+                TelaDoInicial.getStage().setScene(new Scene(root));
+    }
+ 
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
