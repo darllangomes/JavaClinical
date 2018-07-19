@@ -93,7 +93,7 @@ public class TelaTextual {
 
 	public void cadastrar() {
 		Usuario u = leitor.lerUsuarioCadastro();
-		s.cadastrarUsuario(u);
+		s.cadastrarUsuario(u); 
 	}
 
 	public void sair() {
