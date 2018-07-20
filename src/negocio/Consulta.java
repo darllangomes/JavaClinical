@@ -2,14 +2,19 @@ package negocio;
 import java.time.LocalDate;
 import java.io.Serializable;
 
+<<<<<<< HEAD
 public class Consulta implements Serializable {
 	LocalDate data;	
+=======
+public class Consulta {
+	LocalDate data;
+>>>>>>> master
 	private Medico medico;
 	private Paciente paciente;
 	private Prontuario prontuario;
 	
 	 Consulta() {
-		
+             
 	}
 	
 	public Consulta(LocalDate data, Medico medico, Paciente paciente) {
@@ -97,6 +102,4 @@ public class Consulta implements Serializable {
 		
 		return true;
 	}
-	
-	
 }
