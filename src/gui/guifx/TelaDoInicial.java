@@ -5,6 +5,7 @@
  */
 package gui.guifx;
 
+import java.util.ArrayList;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -18,19 +19,31 @@ import javafx.stage.Stage;
 public class TelaDoInicial extends Application {
     
     private static Stage stage;
+    private static ArrayList<Scene> cenas = new ArrayList<Scene>();
+    
     
     @Override
-    public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("FXMLTelaInicial.fxml"));
-        
-        Scene scene = new Scene(root);
-        
-        stage.setScene(scene);
+    public void start(Stage stagePrimare) throws Exception {
+        stage =  stagePrimare;
+        criaCena("FXMLTelaInicial.fxml");
+        criaCena("FXMLTelaRecepcao.fxml");
+//        criaCena("FXMLCadastraUsuarios.fxml");
+        stage.setScene(cenas.get(0));
         stage.setTitle("JavaClinical");
         stage.show();
         setStage(stage);
     }
-
+    
+    public void criaCena(String doc) throws Exception {
+        Parent root = FXMLLoader.load(getClass().getResource(doc));
+        Scene scene = new Scene(root);
+        cenas.add(scene);
+    }
+    
+    public void trocaCena(int i){
+        stage.setScene(cenas.get(i));
+    }
+    
     public static Stage getStage() {
         return stage;
     }

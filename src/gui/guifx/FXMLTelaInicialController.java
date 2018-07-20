@@ -40,7 +40,7 @@ public class FXMLTelaInicialController implements Initializable {
     @FXML private Button btRemoverUsuario;
     @FXML private Button btMarcarConsulta;
     @FXML private Button btVoltar;
-    
+    TelaDoInicial gui = new TelaDoInicial();
     
     private Parent root;
     
@@ -63,14 +63,15 @@ public class FXMLTelaInicialController implements Initializable {
     private void BotaoLogin(ActionEvent event) {
         
         LoginUsuario(event);
-        
+        //TelaDoInicial.trocaCena(1);
         System.out.println("Usuario entrando na tela de login...!");
-        try {
-            this.root = FXMLLoader.load(getClass().getResource("FXMLTelaDoLogin.fxml"));
+        gui.trocaCena(1);
+        /*try {
+            this.root = FXMLLoader.load(getClass().getResource("../gui/guifx/FXMLTelaDoLogin.fxml"));
         } catch (IOException ex) {
             Logger.getLogger(FXMLTelaInicialController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-                TelaDoInicial.getStage().setScene(new Scene(root));
+        }*/
+//                TelaDoInicial.getStage().setScene(new Scene(root));
     }
     
     @FXML
@@ -83,22 +84,23 @@ public class FXMLTelaInicialController implements Initializable {
     @FXML
     private void BotaoVoltar(ActionEvent event) {
         System.out.println("Voltando para a tela inicial...");
-        try {
+        
+        /*try {
             this.root = FXMLLoader.load(getClass().getResource("FXMLTelaInicial.fxml"));
         } catch (IOException ex) {
             Logger.getLogger(FXMLTelaInicialController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-                TelaDoInicial.getStage().setScene(new Scene(root));
+        }*/
+//                TelaDoInicial.getStage().setScene(new Scene(root));
     }
     
     @FXML
     private void botaoCadastroUsu(ActionEvent event) {
         System.out.println("Abrindo tela de cadastro de usuarios...");
-        try {
+        /*try {
             this.root = FXMLLoader.load(getClass().getResource("FXMLCadstraUsusarios.fxml"));
         } catch (IOException ex) {
             Logger.getLogger(FXMLCadastraUsuariosController.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        }*/
                 TelaDoInicial.getStage().setScene(new Scene(root));
     }
  

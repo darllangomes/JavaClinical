@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package gui.guifx.src.teladoinicial;
+package gui.guifx;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -26,26 +26,18 @@ public class FXMLCadastraUsuariosController implements Initializable {
      * Initializes the controller class.
      */
 
-    @FXML
-    private Button btCadastrarRecp;
-
-    @FXML
-    private Button btCadastrarMed;
-
-    @FXML
-    private Button btCadastroPac;
-
-    @FXML
-    private Text titolo;
-
-    @FXML
-    void botaoCadastroMed(ActionEvent event) {
-
+    @FXML    private Button btCadastrarRecp;
+    @FXML    private Button btCadastrarMed;
+    @FXML    private Button btCadastroPac;
+    @FXML    private Text titulo;
+    TelaDoInicial gui = new TelaDoInicial();
+    
+    @FXML    void botaoCadastroMed(ActionEvent event) {
     }
 
     @FXML
     void botaoCadastroPac(ActionEvent event) {
-
+         //gui.trocaCena(0);
     }
 
     @FXML
