@@ -1,7 +1,9 @@
+
 package gui;
 
 import excecao.UsuarioExisteException;
 import excecao.UsuarioNullException;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
 import java.util.Scanner;
@@ -220,5 +222,20 @@ public class TelaTextual {
 		Consulta c = leitor.lerConsulta(s);
 		s.cadastrarConsulta(c);
 	}
+        
+        public void salvarTudo() throws IOException{
+            s.salvarDados();
+        }
+        public void carregarArquivos() {
+            try {
+                s.carregarDados();
+            } catch (IOException ex) {
+                //Logger.getLogger(TelaTextual.class.getName()).log(Level.SEVERE, null, ex);
+                System.out.println("Arquivo não encontrado!");
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(TelaTextual.class.getName()).log(Level.SEVERE, null, ex);
+            }
+       
+               }
 
 }

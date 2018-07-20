@@ -2,9 +2,17 @@ package dados;
 
 import excecao.UsuarioInexistenteException;
 import excecao.UsuarioNullException;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import negocio.Usuario;
-
-public class RepositorioUsuario {
+import java.io.Serializable;
+import negocio.Exame;
+public class RepositorioUsuario implements Serializable {
 	private Usuario[] usuarios;
 	private int ultimo;
 	
@@ -82,4 +90,20 @@ public class RepositorioUsuario {
         }
 		
 	}
+        
+        public void salvarArquivos() throws FileNotFoundException, IOException{
+            File arquivo= new File("Usuários.txt");
+            FileOutputStream fos = new FileOutputStream(arquivo);
+            ObjectOutputStream ous = new ObjectOutputStream(fos);
+            ous.writeObject(this.usuarios);
+            ous.close();
+        }
+        
+        public void carregarArquivos() throws FileNotFoundException, IOException, ClassNotFoundException{
+            File arquivo = new File("Usuários.txt");
+            FileInputStream fis = new FileInputStream(arquivo);
+            ObjectInputStream ois = new ObjectInputStream(fis);
+            this.usuarios = (Usuario[]) ois.readObject();
+            ois.close();
+        }
 }

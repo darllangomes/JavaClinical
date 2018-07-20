@@ -5,6 +5,7 @@ import dados.SalvarArquivos;
 import java.util.ArrayList;
 
 import dados.RepositorioConsulta;
+import java.io.FileNotFoundException;
 
 public class ControladorConsulta {
 	private RepositorioConsulta repositorio;
@@ -45,9 +46,11 @@ public class ControladorConsulta {
 
 	public void salvarDados() throws IOException {
 		// TODO Auto-generated method stub
-		salva = new SalvarArquivos();
-		salva.salvar(repositorio.getDados());
+		repositorio.salvar();
 	}
+        public void carregarDados() throws IOException, FileNotFoundException, ClassNotFoundException{
+            repositorio.carregarArquivo();
+        }
 	
 	// Avaliar a necessidade de mais operações
 }

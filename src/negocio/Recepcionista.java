@@ -2,8 +2,9 @@ package negocio;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.io.Serializable;
 
-public class Recepcionista extends Usuario{
+public class Recepcionista extends Usuario implements Serializable{
 	
 	
 	

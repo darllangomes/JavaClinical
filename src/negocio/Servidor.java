@@ -1,4 +1,5 @@
 package negocio;
+import java.io.FileNotFoundException;
 import excecao.UsuarioExisteException;
 import excecao.UsuarioNullException;
 import java.io.IOException;
@@ -206,7 +207,20 @@ public class Servidor implements IServidor {
 		
 	}
 	 
+        
+        @Override
 	 public void salvarDados() throws IOException {
 		 consultas.salvarDados();
+                 exames.salvarDados();
+                 pacientes.salvarDados();
 	}
+
+  
+        
+         public void carregarDados() throws IOException, FileNotFoundException, ClassNotFoundException{
+             consultas.carregarDados();
+             exames.carregarDados();
+             pacientes.carregarDados();
+                     
+         }
 }

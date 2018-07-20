@@ -20,6 +20,11 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import negocio.Servidor;
+import negocio.ControladorUsuario;
+import dados.RepositorioUsuario;
+import negocio.Login;
+import negocio.IServidor;
 
 /**
  *
@@ -41,6 +46,7 @@ public class FXMLTelaInicialController implements Initializable {
     @FXML private Button btMarcarConsulta;
     @FXML private Button btVoltar;
     TelaDoInicial gui = new TelaDoInicial();
+    
     
     private Parent root;
     
@@ -101,6 +107,18 @@ public class FXMLTelaInicialController implements Initializable {
         } catch (IOException ex) {
             Logger.getLogger(FXMLCadastraUsuariosController.class.getName()).log(Level.SEVERE, null, ex);
         }*/
+                TelaDoInicial.getStage().setScene(new Scene(root));
+    }
+ 
+    
+    @FXML
+    private void botaoCadastroUsu(ActionEvent event) {
+        System.out.println("Abrindo tela de cadastro de usuarios...");
+        try {
+            this.root = FXMLLoader.load(getClass().getResource("FXMLCadstraUsusarios.fxml"));
+        } catch (IOException ex) {
+            Logger.getLogger(FXMLCadastraUsuariosController.class.getName()).log(Level.SEVERE, null, ex);
+        }
                 TelaDoInicial.getStage().setScene(new Scene(root));
     }
  

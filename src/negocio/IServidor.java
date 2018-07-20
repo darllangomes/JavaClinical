@@ -15,6 +15,10 @@ public interface IServidor {
 	void descadastrarUsuario(String id);
 	void descadastrarConsulta(String id);
 	void descadastrarCirurgia();
+        void carregarDados()throws IOException, FileNotFoundException, ClassNotFoundException;
+	Recepcionista efetuarLoginRecepcionista(Login l);
+	Medico efetuarLoginMedico(Login l);
+	Paciente efetuarLoginPaciente(Login l);
 	
 	Recepcionista efetuarLoginRecepcionista(Login l) throws UsuarioNullException ;
 	Medico efetuarLoginMedico(Login l) throws UsuarioNullException ;

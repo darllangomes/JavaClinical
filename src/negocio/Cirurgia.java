@@ -1,6 +1,7 @@
 package negocio;
+import java.io.Serializable;
 
-public class Cirurgia extends Consulta {
+public class Cirurgia extends Consulta  {
 	private String id;
 	private Paciente paciente;  // Atributo tipo Paciente;
 	private Medico medico;  // Atributo tipo Medico

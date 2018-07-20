@@ -1,13 +1,22 @@
 package dados;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.time.LocalDate;
 import java.util.ArrayList;
-
+import java.io.Serializable;
 import negocio.Consulta;
 
-public class RepositorioConsulta  {
+
+
+public class RepositorioConsulta implements Serializable  {
 	
-	private Consulta[] consultas;
+	private  Consulta[] consultas;
 	private int ultimo;
 	
 	public RepositorioConsulta(int tamanho) {
@@ -116,6 +125,29 @@ public class RepositorioConsulta  {
 	public Consulta[] getDados() {		
 		return this.consultas;
 	}
+        
+        public void salvar() throws IOException{
+            
+          
+            File arquivo= new File("Consultas.txt");
+            FileOutputStream fos = new FileOutputStream(arquivo);
+            ObjectOutputStream ous = new ObjectOutputStream(fos);
+            ous.writeObject(this.consultas);
+            ous.close();
+            
+            
+                
+            
+        }
+        public void carregarArquivo() throws FileNotFoundException, IOException, ClassNotFoundException{
+            File arquivo = new File("Consultas.txt");
+            FileInputStream fis = new FileInputStream(arquivo);
+            ObjectInputStream ois = new ObjectInputStream(fis);
+            this.consultas = (Consulta[]) ois.readObject();
+            ois.close();
+        }
+            
+        
 
 	
 }

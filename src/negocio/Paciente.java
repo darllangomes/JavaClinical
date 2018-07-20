@@ -1,6 +1,7 @@
 package negocio;
+import java.io.Serializable;
 
-public class Paciente extends Usuario  {
+public class Paciente extends Usuario implements Serializable  {
 
 	
 	//private Consulta consulta;
