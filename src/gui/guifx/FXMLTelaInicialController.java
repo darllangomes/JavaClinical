@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package gui.guifx.src.teladoinicial;
+package gui.guifx;
 
 import java.io.IOException;
 import java.net.URL;
@@ -28,7 +28,7 @@ import javafx.scene.control.TextField;
 public class FXMLTelaInicialController implements Initializable {
     
     @FXML private Button btSair;
-    @FXML private Label label2;
+    @FXML private Label erroNoLogin;
     @FXML private Label label1;
     @FXML private Button btLogin;
     @FXML private TextField TextId;
@@ -45,36 +45,32 @@ public class FXMLTelaInicialController implements Initializable {
     private Parent root;
     
     
-     @FXML
+    @FXML
     private void LoginUsuario(ActionEvent event) {
         String id = TextId.getText();
         System.out.println(id);
-        if(id == null){
-            
-        }
         
         String senha = SenhaField.getText();
         System.out.println(senha);
-
-       
+        
     }
     
     @FXML
-    private void BotaoLogin(ActionEvent event) {
+    void BotaoLogin(ActionEvent event) {
         
         LoginUsuario(event);
         
         System.out.println("Usuario entrando na tela de login...!");
         try {
-            this.root = FXMLLoader.load(getClass().getResource("FXMLTelaDoLogin.fxml"));
+            this.root = FXMLLoader.load(getClass().getResource("FXMLTelaRecepcao.fxml"));
         } catch (IOException ex) {
-            Logger.getLogger(FXMLTelaInicialController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(FXMLTelaRecepcaoController.class.getName()).log(Level.SEVERE, null, ex);
         }
                 TelaDoInicial.getStage().setScene(new Scene(root));
     }
     
     @FXML
-    private void BotaoSair(ActionEvent event) {
+    void BotaoSair(ActionEvent event) {
         System.out.println("Usuario fechou o programa...!");
         System.exit(0);
         
@@ -91,16 +87,7 @@ public class FXMLTelaInicialController implements Initializable {
                 TelaDoInicial.getStage().setScene(new Scene(root));
     }
     
-    @FXML
-    private void botaoCadastroUsu(ActionEvent event) {
-        System.out.println("Abrindo tela de cadastro de usuarios...");
-        try {
-            this.root = FXMLLoader.load(getClass().getResource("FXMLCadstraUsusarios.fxml"));
-        } catch (IOException ex) {
-            Logger.getLogger(FXMLCadastraUsuariosController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-                TelaDoInicial.getStage().setScene(new Scene(root));
-    }
+    
  
     
     @Override

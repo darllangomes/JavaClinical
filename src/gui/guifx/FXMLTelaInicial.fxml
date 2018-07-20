@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="481.0" prefWidth="448.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.guifx.src.teladoinicial.FXMLTelaInicialController">
+<AnchorPane id="AnchorPane" prefHeight="481.0" prefWidth="448.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.guifx.src.teladoinicial.FXMLTelaInicialController">
     <children>
       <AnchorPane id="AnchorPane" layoutX="4.0" prefHeight="500.0" prefWidth="440.0">
           <children>
@@ -17,7 +17,7 @@
                   <Font size="22.0" />
                </font>
             </Button>
-              <Label fx:id="label2" layoutX="87.0" layoutY="56.0" minHeight="16" minWidth="59.0" prefHeight="75.0" prefWidth="269.0" text="JavaClinical">
+              <Label fx:id="label2" layoutX="87.0" layoutY="56.0" minHeight="16" minWidth="59.0" prefHeight="75.0" prefWidth="269.0" text="JavaClinical" textFill="#79a453">
                <font>
                   <Font name="DFKai-SB" size="43.0" />
                </font>
@@ -30,6 +30,11 @@
             <Separator layoutX="76.0" layoutY="329.0" prefHeight="18.0" prefWidth="288.0" />
             <TextField fx:id="TextId" layoutX="72.0" layoutY="206.0" onAction="#LoginUsuario" promptText="Digite o ID.." />
             <PasswordField fx:id="SenhaField" layoutX="72.0" layoutY="255.0" onAction="#LoginUsuario" promptText="Digite a Senha..." />
+            <Label fx:id="erroNoLogin" layoutX="99.0" layoutY="307.0" onDragDetected="#LoginUsuario" textFill="#d71f1f">
+               <font>
+                  <Font name="Calibri" size="27.0" />
+               </font>
+            </Label>
           </children>
       </AnchorPane>
     </children>

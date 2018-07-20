@@ -2,7 +2,7 @@ package javaclinical;
 import java.time.LocalDate;
 
 import gui.TelaTextual;
-import static gui.guifx.src.teladoinicial.TelaDoInicial.setStage;
+import static gui.guifx.TelaDoInicial.setStage;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
