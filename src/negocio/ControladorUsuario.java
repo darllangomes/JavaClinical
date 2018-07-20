@@ -1,6 +1,8 @@
 package negocio;
 
 import dados.RepositorioUsuario;
+import excecao.UsuarioExisteException;
+import excecao.UsuarioNullException;
 
 public class ControladorUsuario {
 	private RepositorioUsuario repositorio;
@@ -9,13 +11,17 @@ public class ControladorUsuario {
 		this.repositorio = new RepositorioUsuario(128);
 	}
 	
-	public void cadastrar(Usuario u) {
+	public void cadastrar(Usuario u) throws UsuarioExisteException, UsuarioNullException {
 		if(u != null) {
 			if(!this.repositorio.existe(u.getCpf())) {
 				this.repositorio.cadastrarUsuario(u);
-			}
+			} else {
+                            UsuarioExisteException e = new UsuarioExisteException();
+                            throw e;
+                        }
 		} else {
-			// Tratar depois, caso o usuario seja null
+                    UsuarioNullException e = new UsuarioNullException();
+                    throw e;
 		}
 	}
 	
@@ -27,7 +33,7 @@ public class ControladorUsuario {
 		}
 	}
 	
-	public Usuario procurar(String id) {
+	public Usuario procurar(String id) throws UsuarioNullException {
 		return this.repositorio.procurar(id);
 	}
 	

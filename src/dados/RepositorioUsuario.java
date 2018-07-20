@@ -1,5 +1,7 @@
 package dados;
 
+import excecao.UsuarioInexistenteException;
+import excecao.UsuarioNullException;
 import negocio.Usuario;
 
 public class RepositorioUsuario {
@@ -22,13 +24,17 @@ public class RepositorioUsuario {
 		}
 	}
 	
-	public Usuario procurar(String id) {
-        int i = this.procurarIndice(id);
-        Usuario u = null;
-        if (i != this.ultimo) {
-            u = this.usuarios[i];
-        }
-        return u;
+	public Usuario procurar(String id) throws UsuarioNullException{
+            int i = this.procurarIndice(id);
+            Usuario u = null;
+            if (i != this.ultimo) {
+                u = this.usuarios[i];
+            }
+            if (u == null) {
+                UsuarioNullException e = new UsuarioNullException();
+                throw e;
+            }
+            return u;
     }
 	
 

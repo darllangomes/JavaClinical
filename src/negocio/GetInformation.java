@@ -4,7 +4,8 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
-import dados.RepositorioUsuario;;
+import dados.RepositorioUsuario;import excecao.UsuarioNullException;
+;
 
 // A classe basicamente tem os métodos que pegam as informações para jogar nos controladores de consultas e pacientes.
 //poderia ser simplesmente um método dentro da classe Recepcionista, mas achei melhor assim.
@@ -96,7 +97,7 @@ public class GetInformation {
 	}
 	
 	
-	public Consulta lerConsulta(IServidor s) {
+	public Consulta lerConsulta(IServidor s) throws UsuarioNullException {
 		Consulta c = new Consulta();
 		Medico m;
 		Paciente p;

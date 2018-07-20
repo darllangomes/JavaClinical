@@ -1,10 +1,14 @@
 package gui;
 
+import excecao.UsuarioExisteException;
+import excecao.UsuarioNullException;
 import java.util.ArrayList;
 
 import java.util.Scanner;
 import java.io.IOException;
 import java.time.LocalDate;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import negocio.Cirurgia;
 import negocio.Consulta;
@@ -28,7 +32,13 @@ public class TelaTextual {
 	public TelaTextual() {
 		executando = true;
 		continuarLogin = false;
-		s = Servidor.getInstance();
+            try {
+                s = Servidor.getInstance();
+            } catch (UsuarioExisteException e) {
+                System.out.println(e.getMessage());
+            } catch (UsuarioNullException e) {
+                System.out.println(e.getMessage());
+            }
 		leitor = GetInformation.getInstance();
 		opcao = -1;
 		sc = new Scanner(System.in);
@@ -91,7 +101,7 @@ public class TelaTextual {
 		
 	}
 
-	public void cadastrar() {
+	public void cadastrar() throws UsuarioExisteException, UsuarioNullException {
 		Usuario u = leitor.lerUsuarioCadastro();
 		s.cadastrarUsuario(u); 
 	}
@@ -106,12 +116,12 @@ public class TelaTextual {
 		}
 	}
 
-	public Paciente procurarPaciente() {
+	public Paciente procurarPaciente() throws UsuarioNullException {
 		return s.procurarPaciente(leitor.lerId());
 		
 	}
 	
-	public Medico procurarMedico() {
+	public Medico procurarMedico() throws UsuarioNullException {
 		return s.procurarMedico(leitor.lerId());
 	}
 	public ArrayList<Consulta> procurar(LocalDate d){
@@ -122,7 +132,7 @@ public class TelaTextual {
 		s.descadastrarUsuario(leitor.lerId());
 	}
 
-	public Usuario efetuarLogin() {
+	public Usuario efetuarLogin() throws UsuarioNullException {
 		System.out.println("Efetuar login\n\nDigite a sua id:\n");
 		Usuario u;
 		String id = leitor.lerId();
@@ -205,7 +215,7 @@ public class TelaTextual {
 	    s.marcarExame(leitor.lerExame());
 	}
 
-	public void marcarConsulta() {
+	public void marcarConsulta() throws UsuarioNullException {
 		
 		Consulta c = leitor.lerConsulta(s);
 		s.cadastrarConsulta(c);

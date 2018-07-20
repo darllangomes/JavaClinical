@@ -1,4 +1,6 @@
 package negocio;
+import excecao.UsuarioExisteException;
+import excecao.UsuarioNullException;
 import java.io.IOException;
 /*
  * Classe servidor contem os controladores
@@ -17,7 +19,7 @@ public class Servidor implements IServidor {
 	//private GetInformation leitor;
 	private static Servidor instance;
 	
-	private Servidor() {
+	private Servidor() throws UsuarioExisteException, UsuarioNullException {
 		medicos = new ControladorUsuario();
 		pacientes = new ControladorUsuario();
 		recepcionistas = new ControladorUsuario();
@@ -39,7 +41,7 @@ public class Servidor implements IServidor {
 		recepcionistas.cadastrar(r);
 	}
 	
-	public static Servidor getInstance() {
+	public static Servidor getInstance() throws UsuarioExisteException, UsuarioNullException {
 		if(instance == null) {
 			instance = new Servidor();
 		}
@@ -64,7 +66,7 @@ public class Servidor implements IServidor {
 		return u;
 	}*/
 	
-	public Recepcionista efetuarLoginRecepcionista(Login l) {
+	public Recepcionista efetuarLoginRecepcionista(Login l) throws UsuarioNullException {
 		
 		Recepcionista r = (Recepcionista) recepcionistas.procurar(l.getId());
 		if(r == null) {
@@ -79,7 +81,7 @@ public class Servidor implements IServidor {
 		}
 	}
 	
-	public Paciente efetuarLoginPaciente(Login l) {
+	public Paciente efetuarLoginPaciente(Login l) throws UsuarioNullException {
 		
 		Paciente p = (Paciente) pacientes.procurar(l.getId());
 		if(p == null) {
@@ -94,7 +96,7 @@ public class Servidor implements IServidor {
 		}
 	}
 	
-	public Medico efetuarLoginMedico(Login l) {
+	public Medico efetuarLoginMedico(Login l) throws UsuarioNullException {
 		
 		Medico r = (Medico) medicos.procurar(l.getId());
 		if(r == null) {
@@ -109,8 +111,14 @@ public class Servidor implements IServidor {
 		}
 	}
 
-	@Override
-	public void cadastrarUsuario(Usuario u) {
+    /**
+     *
+     * @param u
+     * @throws UsuarioExisteException
+     * @throws UsuarioNullException
+     */
+    @Override
+	public void cadastrarUsuario(Usuario u) throws UsuarioExisteException, UsuarioNullException {
 		//Usuario u = leitor.lerUsuarioCadastro();
 		if(u instanceof Recepcionista) {
 			recepcionistas.cadastrar(u);
@@ -157,16 +165,16 @@ public class Servidor implements IServidor {
 	 * (non-Javadoc)
 	 * @see negocio.IServidor#lerId()
 	 */
-	public Paciente procurarPaciente(String id) {
+	public Paciente procurarPaciente(String id) throws UsuarioNullException {
 		//return (Paciente) pacientes.procurar(leitor.lerId());
 		return (Paciente) pacientes.procurar(id);
 		}
 	
-	public Medico procurarMedico(String id) {
+	public Medico procurarMedico(String id) throws UsuarioNullException {
 		return (Medico) medicos.procurar(id);
 	}
 	
-	public Recepcionista procurarRecepcionista(String id) {
+	public Recepcionista procurarRecepcionista(String id) throws UsuarioNullException {
 		return (Recepcionista) recepcionistas.procurar(id);
 	}
 	
