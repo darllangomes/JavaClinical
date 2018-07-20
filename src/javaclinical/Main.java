@@ -20,7 +20,7 @@ public class Main extends Application{
 		Usuario u;
 		
 		   
-		/*TelaTextual tt = new TelaTextual();
+		/*TelaTextual tt = new TelaTextual(); // TODO Remover o bloco de comentários para testar em TelaTextual
 		// Cria a tela
 		while(tt.executando()) {
 			// TODO Isto vai ficar dentro de um método depois
