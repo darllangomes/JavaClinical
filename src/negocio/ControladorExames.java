@@ -6,15 +6,16 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-import dados.RepositorioExames;;
+import dados.RepositorioExames;import java.io.FileNotFoundException;
+;
 
 public class ControladorExames {
 	private RepositorioExames repositorio;
-	private SalvarArquivos salva;
-	
-	public ControladorExames() {
-		
-	}
+
+        
+public ControladorExames() {
+     repositorio= new RepositorioExames(128);               
+}
 	
 	public void cadastrar(Exame e) {
 		if(e != null) {
@@ -47,9 +48,11 @@ public class ControladorExames {
 
 	public void salvarDados() throws IOException {
 		// TODO Auto-generated method stub
-		salva = new SalvarArquivos();
-		salva.salvar(repositorio.getDados());
+		repositorio.salvarArquivos();
 	}
+        public void carregarDados() throws IOException, FileNotFoundException, ClassNotFoundException{
+            repositorio.carregarArquivos();
+        }
 	
 
 }

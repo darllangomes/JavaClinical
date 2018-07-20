@@ -10,6 +10,11 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import negocio.Servidor;
+import negocio.ControladorUsuario;
+import dados.RepositorioUsuario;
+import negocio.Login;
+import negocio.IServidor;
 
 /**
  *

@@ -1,7 +1,8 @@
 package negocio;
 import java.time.LocalDate;
+import java.io.Serializable;
 
-public class Consulta {
+public class Consulta implements Serializable {
 	LocalDate data;	
 	private Medico medico;
 	private Paciente paciente;

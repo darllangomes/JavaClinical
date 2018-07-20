@@ -1,7 +1,9 @@
 package javaclinical;
-import java.time.LocalDate;
+import  java.time.LocalDate;
 
 import gui.TelaTextual;
+import java.io.FileNotFoundException;
+import  java.io.IOException;
 import negocio.Medico;
 import negocio.Paciente;
 import negocio.Recepcionista;
@@ -9,7 +11,7 @@ import negocio.Usuario;
 
 public class Main {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException, FileNotFoundException, ClassNotFoundException {
 		Usuario u;
 		
 		   
@@ -17,6 +19,8 @@ public class Main {
 		// Cria a tela
 		while(tt.executando()) {
 			// Isto vai ficar dentro de um método depois
+                    //1
+                    tt.carregarArquivos();
 			switch (tt.getOpcao()) {
 			case -1: // Menu inicial
 				tt.exibirMenuInicial(); // Exibindo o menu da recep��o s� para teste

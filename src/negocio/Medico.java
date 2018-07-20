@@ -1,8 +1,9 @@
 package negocio;
 
 import java.util.Scanner;
+import java.io.Serializable;
 
-public class Medico extends Usuario {
+public class Medico extends Usuario implements Serializable {
 	
 	private String especialidade;
 	

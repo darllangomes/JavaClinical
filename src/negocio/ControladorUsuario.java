@@ -1,6 +1,8 @@
 package negocio;
 
 import dados.RepositorioUsuario;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 
 public class ControladorUsuario {
 	private RepositorioUsuario repositorio;
@@ -35,5 +37,13 @@ public class ControladorUsuario {
 		return repositorio.existe(id);
 	}
 	
+        public void salvarDados () throws IOException{
+            repositorio.salvarArquivos();
+        }
+        
+        public void carregarDados() throws IOException, FileNotFoundException, ClassNotFoundException{
+            repositorio.carregarArquivos();
+        }
+            
 	// Avaliar a necessidade de mais operações
 }

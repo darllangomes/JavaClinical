@@ -1,6 +1,6 @@
 package negocio;
-
-public class Usuario {
+import java.io.Serializable;
+public class Usuario implements Serializable {
 	private String nome;
 	private String cpf;
 	private int senhaHash;
