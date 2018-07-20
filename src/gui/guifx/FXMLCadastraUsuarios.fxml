@@ -5,8 +5,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="440.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="gui.guifx.src.teladoinicial.FXMLCadastraUsuariosController">
+<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="440.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.guifx.FXMLCadastraUsuariosController">
    <children>
       <Button fx:id="btCadastrarRecp" layoutX="57.0" layoutY="238.0" mnemonicParsing="false" onAction="#botaoRecp" text="Recepcionista" />
       <Button fx:id="btCadastrarMed" layoutX="203.0" layoutY="238.0" mnemonicParsing="false" onAction="#botaoCadastroMed" text="Médico" />

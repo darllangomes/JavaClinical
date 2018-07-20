@@ -2,7 +2,6 @@ package javaclinical;
 import java.time.LocalDate;
 
 import gui.TelaTextual;
-import static gui.guifx.src.teladoinicial.TelaDoInicial.setStage;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -21,7 +20,7 @@ public class Main extends Application{
 		Usuario u;
 		
 		   
-		TelaTextual tt = new TelaTextual();
+		/*TelaTextual tt = new TelaTextual();
 		// Cria a tela
 		while(tt.executando()) {
 			// TODO Isto vai ficar dentro de um método depois
@@ -125,27 +124,29 @@ public class Main extends Application{
 				break;
 			}
 		}
-		System.out.println("Terminando");
-                //launch(args); // TODO Remover o comentario desta linha para testar o JavaFX
+		System.out.println("Terminando");*/
+                launch(args); // TODO Remover o comentario desta linha para testar o JavaFX
 	}
 
     @Override
-    public void start(Stage primaryStage) throws Exception {
+    public void start(Stage stage) throws Exception {
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
         
-        Parent root = FXMLLoader.load(getClass().getResource("gui/guifx/src/teladoinicial/FXMLTelaInicial.fxml"));
-        FXMLLoader.load(getClass().getResource(STYLESHEET_MODENA));
+        Parent root = FXMLLoader.load(getClass().getResource("../gui/guifx/FXMLTelaInicial.fxml"));
         if(root == null) {
             System.out.println("Erro ao carregar");
         } else {
             System.out.println("Carregado com sucesso");
         }
         Scene scene = new Scene(root);
-        
-        stage.setScene(scene);
-        stage.setTitle("JavaClinical");
-        stage.show();
-        setStage(stage);
+        if(stage != null) {
+            stage.setScene(scene);
+            stage.setTitle("JavaClinical");
+            stage.show();
+            setStage(stage);
+        } else {
+            System.out.println("Erro!");
+        }
     }
     
     public static Stage getStage() {
