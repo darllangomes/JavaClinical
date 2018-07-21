@@ -60,19 +60,19 @@ public class Main extends Application {
                                                 Paciente p;
                                                 try {
                                                     p = tt.procurarPaciente();
+                                                    System.out.println(p);
                                                 } catch (UsuarioNullException e) {
                                                     System.out.println(e.getMessage());
-                                                }
-                                                System.out.println(p);
+                                                }                                                
                                                 break;
                                             case 3:
                                                 Medico m;
                                                 try {
                                                     m = tt.procurarMedico();
+                                                    System.out.println(m);
                                                 } catch (UsuarioNullException e) {
                                                     System.out.println(e.getMessage());
                                                 }
-                                                System.out.println(m);
                                                 break;
                                             case 4:
                                                 tt.removerUsuario();
