@@ -1,19 +1,18 @@
 package javaclinical;
+import excecao.UsuarioExisteException;
+import excecao.UsuarioNullException;
 import  java.time.LocalDate;
 
 import gui.TelaTextual;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-<<<<<<< HEAD
 import java.io.FileNotFoundException;
 import  java.io.IOException;
-=======
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
->>>>>>> master
 import negocio.Medico;
 import negocio.Paciente;
 import negocio.Recepcionista;

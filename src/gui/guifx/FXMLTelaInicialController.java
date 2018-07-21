@@ -99,16 +99,16 @@ public class FXMLTelaInicialController implements Initializable {
 //                TelaDoInicial.getStage().setScene(new Scene(root));
     }
     
-    @FXML
+    /*@FXML
     private void botaoCadastroUsu(ActionEvent event) {
         System.out.println("Abrindo tela de cadastro de usuarios...");
-        /*try {
+        try {
             this.root = FXMLLoader.load(getClass().getResource("FXMLCadstraUsusarios.fxml"));
         } catch (IOException ex) {
             Logger.getLogger(FXMLCadastraUsuariosController.class.getName()).log(Level.SEVERE, null, ex);
-        }*/
+        }
                 TelaDoInicial.getStage().setScene(new Scene(root));
-    }
+    }*/
  
     
     @FXML
