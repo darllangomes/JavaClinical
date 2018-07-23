@@ -23,15 +23,17 @@ import javafx.scene.control.TextField;
 import negocio.Servidor;
 import negocio.ControladorUsuario;
 import dados.RepositorioUsuario;
+import excecao.UsuarioNullException;
+import javaclinical.Main;
 import negocio.Login;
 import negocio.IServidor;
+import negocio.Usuario;
 
 /**
  *
  * @author HENRIQUE.FELIX
  */
 public class FXMLTelaInicialController implements Initializable {
-    
     @FXML private Button btSair;
     @FXML private Label label2;
     @FXML private Label label1;
@@ -45,6 +47,7 @@ public class FXMLTelaInicialController implements Initializable {
     @FXML private Button btRemoverUsuario;
     @FXML private Button btMarcarConsulta;
     @FXML private Button btVoltar;
+    // TODO @author Danilo Araujo Comentar para usar Main principal
     TelaDoInicial gui = new TelaDoInicial();
     
     
@@ -53,6 +56,7 @@ public class FXMLTelaInicialController implements Initializable {
     
      @FXML
     private void LoginUsuario(ActionEvent event) {
+        Usuario u = null;
         String id = TextId.getText();
         System.out.println(id);
         if(id == null){
@@ -61,7 +65,41 @@ public class FXMLTelaInicialController implements Initializable {
         
         String senha = SenhaField.getText();
         System.out.println(senha);
-
+        
+        /*
+         * Tentativa de pegar os dados do servidor
+         * @author Danilo Araújo
+         */
+        /*Login l = new Login(id,senha.hashCode());
+        switch (l.getId().charAt(0)) {
+            case '1':
+         {
+             try {
+                 u = Servidor.getInstance().efetuarLoginRecepcionista(l);
+             } catch (UsuarioNullException ex) {
+                 System.out.println(ex.getMessage());
+             }
+         }
+                break;
+            case '2':
+         {
+             try {
+                 u = Servidor.getInstance().efetuarLoginMedico(l);
+             } catch (UsuarioNullException ex) {
+                 System.out.println(ex.getMessage());
+             }
+         }
+                break;
+            default:
+         {
+             try {
+                 u = Servidor.getInstance().efetuarLoginPaciente(l);
+             } catch (UsuarioNullException ex) {
+                 System.out.println(ex.getMessage());
+             }
+         }
+                break;
+        }*/
        
     }
     
@@ -71,7 +109,11 @@ public class FXMLTelaInicialController implements Initializable {
         LoginUsuario(event);
         //TelaDoInicial.trocaCena(1);
         System.out.println("Usuario entrando na tela de login...!");
+        // TODO @author Danilo Araujo Comentar para usar Main principal
         gui.trocaCena(1);
+        
+        // TODO @author Danilo Araujo Descomentar para usar Main principal
+        //Main.trocaCena(1);
         /*try {
             this.root = FXMLLoader.load(getClass().getResource("../gui/guifx/FXMLTelaDoLogin.fxml"));
         } catch (IOException ex) {

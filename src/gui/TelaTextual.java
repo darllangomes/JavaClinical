@@ -1,4 +1,3 @@
-
 package gui;
 
 import excecao.UsuarioExisteException;
@@ -20,222 +19,349 @@ import negocio.IServidor;
 import negocio.Login;
 import negocio.Medico;
 import negocio.Paciente;
+import negocio.Recepcionista;
 import negocio.Servidor;
 import negocio.Usuario;
 
 public class TelaTextual {
-	private IServidor s;
-	private boolean executando;
-	private boolean continuarLogin;
-	private int opcao;
-	private Scanner sc;
-	private GetInformation leitor;
-	
-	public TelaTextual() {
-		executando = true;
-		continuarLogin = false;
-            try {
-                s = Servidor.getInstance();
-            } catch (UsuarioExisteException e) {
-                System.out.println(e.getMessage());
-            } catch (UsuarioNullException e) {
-                System.out.println(e.getMessage());
-            }
-		leitor = GetInformation.getInstance();
-		opcao = -1;
-		sc = new Scanner(System.in);
-	}
-	
-	public boolean executando() {
-		return this.executando;
-	}
-    
+
+    private IServidor s;
+    private boolean executando;
+    private boolean continuarLogin;
+    private int opcao;
+    private Scanner sc;
+    private GetInformation leitor;
+
+    public TelaTextual() {
+        executando = true;
+        continuarLogin = false;
+        try {
+            s = Servidor.getInstance();
+        } catch (UsuarioExisteException e) {
+            System.out.println(e.getMessage());
+        } catch (UsuarioNullException e) {
+            System.out.println(e.getMessage());
+        }
+        leitor = GetInformation.getInstance();
+        opcao = -1;
+        sc = new Scanner(System.in);
+    }
+
+    public boolean executando() {
+        return this.executando;
+    }
 
     //*************** Menus ****************	
-	public void exibirMenuInicial() {
-		System.out.println("Menu Inicial\n1 - Login \n0 - Sair");
-		
-	}
-	
-	public void exibirMenuLoginOpcao() {
-		System.out.println("Opções\n1 - Efetuar o login\n0 - Voltar ao menu inicial");
-	}
+    public void exibirMenuInicial() {
+        System.out.println("Menu Inicial\n1 - Login \n0 - Sair");
 
-	public void exibeMenuRecepcionista() {
-		System.out.println("Menu Recepção\n1 - Cadrastar usuario\n2 - Buscar paciente\n3 - Buscar medico \n4 - Remover usuario \n5 - Marcar consulta\n6 - Marcar exame \n0 - Sair");
-		
-	}
+    }
 
-	public void exibeMenuMedico() {
-		System.out.println("Menu Médico\n1 - Buscar Consultas do dia\n0 - Sair");
-	}
+    public void exibirMenuLoginOpcao() {
+        System.out.println("Opções\n1 - Efetuar o login\n0 - Voltar ao menu inicial");
+    }
 
-	public void exibeMenuPaciente() {
-		System.out.println("Menu Paciente\n1 - Exibir consulta\n2 - Exibir Resultado de exame\n3 - Exibir cirurgia\n4 - Desmarcar consulta\n0 - Sair");
-	}
-	// *****************************************************************************************
-        
-	public int lerOpcao() {
-		/*
+    public void exibeMenuRecepcionista() {
+        System.out.println("Menu Recepção\n1 - Cadrastar usuario\n2 - Buscar paciente\n3 - Buscar medico \n4 - Remover usuario \n5 - Marcar consulta\n6 - Marcar exame \n0 - Sair");
+
+    }
+
+    public void exibeMenuMedico() {
+        System.out.println("Menu Médico\n1 - Buscar Consultas do dia\n0 - Sair");
+    }
+
+    public void exibeMenuPaciente() {
+        System.out.println("Menu Paciente\n1 - Exibir consulta\n2 - Exibir Resultado de exame\n3 - Exibir cirurgia\n4 - Desmarcar consulta\n0 - Sair");
+    }
+    // *****************************************************************************************
+
+    public int lerOpcao() {
+        /*
 		 * Valores de opção como exemplo
 		 * 1 - cadastrar usuario
 		 * 2 - buscar usuario
 		 * 3 - descadrastar usuario
-		 */
-		opcao = sc.nextInt();
-		sc.nextLine();
-		return opcao;
-	
-	}
-	
-	public int getOpcao() {
-		return this.opcao;
-	}
+         */
+        opcao = sc.nextInt();
+        sc.nextLine();
+        return opcao;
 
-	public void setOpcao(int opcao) {
-		this.opcao = opcao;
-	}
+    }
 
-	public void limparTela() {
-		System.out.println("\n \n");
-		System.out.println("\n \n");
-		System.out.println("\n \n");
-		
-	}
+    public int getOpcao() {
+        return this.opcao;
+    }
 
-	public void cadastrar() throws UsuarioExisteException, UsuarioNullException {
-		Usuario u = leitor.lerUsuarioCadastro();
-		s.cadastrarUsuario(u); 
-	}
+    public void setOpcao(int opcao) {
+        this.opcao = opcao;
+    }
 
-	public void sair() {
-		this.executando = false;
-		try {
-		s.salvarDados();
-		}catch(IOException e){
-			System.out.println("erro ao salvar arquivo");
-			System.out.println(e);
-		}
-	}
+    public void limparTela() {
+        System.out.println("\n \n");
+        System.out.println("\n \n");
+        System.out.println("\n \n");
 
-	public Paciente procurarPaciente() throws UsuarioNullException {
-		return s.procurarPaciente(leitor.lerId());
-		
-	}
-	
-	public Medico procurarMedico() throws UsuarioNullException {
-		return s.procurarMedico(leitor.lerId());
-	}
-	public ArrayList<Consulta> procurar(LocalDate d){
-		return s.procurarConsulta(d);
-	}
+    }
 
-	public void removerUsuario() {
-		s.descadastrarUsuario(leitor.lerId());
-	}
+    public void cadastrar() throws UsuarioExisteException, UsuarioNullException {
+        Usuario u = leitor.lerUsuarioCadastro();
+        s.cadastrarUsuario(u);
+    }
 
-	public Usuario efetuarLogin() throws UsuarioNullException {
-		System.out.println("Efetuar login\n\nDigite a sua id:\n");
-		Usuario u;
-		String id = leitor.lerId();
-		
-		
-		System.out.println("Insira a senha: \n");
-		int sh = leitor.lerSenha().hashCode();
-		
-		Login l = new Login(id, sh);
-		
-		/*
+    public void sair() {
+        this.executando = false;
+        try {
+            s.salvarDados();
+        } catch (IOException e) {
+            System.out.println("erro ao salvar arquivo");
+            System.out.println(e);
+        }
+    }
+
+    public Paciente procurarPaciente() throws UsuarioNullException {
+        return s.procurarPaciente(leitor.lerId());
+
+    }
+
+    public Medico procurarMedico() throws UsuarioNullException {
+        return s.procurarMedico(leitor.lerId());
+    }
+
+    public ArrayList<Consulta> procurar(LocalDate d) {
+        return s.procurarConsulta(d);
+    }
+
+    public void removerUsuario() {
+        s.descadastrarUsuario(leitor.lerId());
+    }
+
+    public Usuario efetuarLogin() throws UsuarioNullException {
+        System.out.println("Efetuar login\n\nDigite a sua id:\n");
+        Usuario u;
+        String id = leitor.lerId();
+
+        System.out.println("Insira a senha: \n");
+        int sh = leitor.lerSenha().hashCode();
+
+        Login l = new Login(id, sh);
+
+        /*
 		 * Por questões de segurança
 		 * Perde-se as referências da id e hash
-		 */
-		id = null;
-		sh = 0;
-		
-		switch (l.getId().charAt(0)) {
-		case '1':
-			u = s.efetuarLoginRecepcionista(l);
-			break;
-		case '2':
-			u = s.efetuarLoginMedico(l);
-			break;
-		default:
-			u = s.efetuarLoginPaciente(l);
-			break;
-		}
-		
-		/*if(l.getId().charAt(0) == '1') {
+         */
+        id = null;
+        sh = 0;
+
+        switch (l.getId().charAt(0)) {
+            case '1':
+                u = s.efetuarLoginRecepcionista(l);
+                break;
+            case '2':
+                u = s.efetuarLoginMedico(l);
+                break;
+            default:
+                u = s.efetuarLoginPaciente(l);
+                break;
+        }
+
+        /*if(l.getId().charAt(0) == '1') {
 			u = s.efetuarLoginRecepcionista(l);
 		} else if(id.charAt(0) == '2') {
 			u = s.efetuarLoginMedico(l);
 		} else {
 			u = s.efetuarLoginPaciente(l);
 		}*/
-        
-		/*
+ /*
 		 * Por questões de segurança
 		 * Perde-se a referência do objeto login
-		 */
+         */
         l = null;
-		return u;
-	}
+        return u;
+    }
 
-	public boolean isContinuarLogin() {
-		return continuarLogin;
-	}
+    public boolean isContinuarLogin() {
+        return continuarLogin;
+    }
 
-	public void setContinuarLogin(boolean continuarLogin) {
-		this.continuarLogin = continuarLogin;
-	}
+    public void setContinuarLogin(boolean continuarLogin) {
+        this.continuarLogin = continuarLogin;
+    }
 
-	public void exibirConsulta(String id) {
-		Consulta c = s.procurarConsulta(id);
-		System.out.println(c);
-	}
-	
-	/*
+    public void exibirConsulta(String id) {
+        Consulta c = s.procurarConsulta(id);
+        System.out.println(c);
+    }
+
+    /*
 	public void exibirExame(String id) {
 		Exame e = s.procurarExame(id);
 		System.out.println(e);
 	}
-    */
-	public void exibirCirurgia(String id) {
-		Cirurgia c = s.procurarCirurgia(id);
-		System.out.println(c);
-	}
+     */
+    public void exibirCirurgia(String id) {
+        Cirurgia c = s.procurarCirurgia(id);
+        System.out.println(c);
+    }
 
-	public void cancelarConsulta(String id) {
-		s.descadastrarConsulta(id);
-	}
+    public void cancelarConsulta(String id) {
+        s.descadastrarConsulta(id);
+    }
 
-	public void procurarConsulta() {
-		
-		System.out.println(s.procurarConsulta(leitor.lerData()));
-		
-	}
-	public void marcarExame() {
-	    s.marcarExame(leitor.lerExame());
-	}
+    public void procurarConsulta() {
 
-	public void marcarConsulta() throws UsuarioNullException {
-		
-		Consulta c = leitor.lerConsulta(s);
-		s.cadastrarConsulta(c);
-	}
-        
-        public void salvarTudo() throws IOException{
-            s.salvarDados();
+        System.out.println(s.procurarConsulta(leitor.lerData()));
+
+    }
+
+    public void marcarExame() {
+        s.marcarExame(leitor.lerExame());
+    }
+
+    public void marcarConsulta() throws UsuarioNullException {
+
+        Consulta c = leitor.lerConsulta(s);
+        s.cadastrarConsulta(c);
+    }
+
+    public void salvarTudo() throws IOException {
+        s.salvarDados();
+    }
+
+    public void carregarArquivos() {
+        try {
+            s.carregarDados();
+        } catch (IOException ex) {
+            //Logger.getLogger(TelaTextual.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("Arquivo não encontrado!");
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(TelaTextual.class.getName()).log(Level.SEVERE, null, ex);
         }
-        public void carregarArquivos() {
-            try {
-                s.carregarDados();
-            } catch (IOException ex) {
-                //Logger.getLogger(TelaTextual.class.getName()).log(Level.SEVERE, null, ex);
-                System.out.println("Arquivo não encontrado!");
-            } catch (ClassNotFoundException ex) {
-                Logger.getLogger(TelaTextual.class.getName()).log(Level.SEVERE, null, ex);
-            }
-       
-               }
+
+    }
+
+    public void executarOperacoes() {
+        Usuario u = null;
+        switch (this.getOpcao()) {
+            case -1: // Menu inicial
+                this.exibirMenuInicial(); // Exibindo o menu da recep��o s� para teste
+                this.lerOpcao();
+                switch (this.getOpcao()) {
+                    case 1:
+                        do {
+                            try {
+                                u = this.efetuarLogin();
+                                if (u instanceof Recepcionista) {
+                                    do {
+                                        this.exibeMenuRecepcionista();
+                                        this.lerOpcao();
+                                        switch (this.getOpcao()) {
+                                            case 1: {
+                                                try {
+                                                    this.cadastrar();
+                                                } catch (UsuarioExisteException e) {
+                                                    System.out.println(e.getMessage());
+                                                } catch (UsuarioNullException e) {
+                                                    System.out.println(e.getMessage());
+                                                }
+                                            }
+                                            break;
+                                            case 2:
+                                                Paciente p;
+                                                try {
+                                                    p = this.procurarPaciente();
+                                                    System.out.println(p);
+                                                } catch (UsuarioNullException e) {
+                                                    System.out.println(e.getMessage());
+                                                }
+                                                break;
+                                            case 3:
+                                                Medico m;
+                                                try {
+                                                    m = this.procurarMedico();
+                                                    System.out.println(m);
+                                                } catch (UsuarioNullException e) {
+                                                    System.out.println(e.getMessage());
+                                                }
+                                                break;
+                                            case 4:
+                                                this.removerUsuario();
+                                                break;
+                                            case 5: {
+                                                try {
+                                                    this.marcarConsulta();
+                                                } catch (UsuarioNullException e) {
+                                                    System.out.println(e.getMessage());
+                                                }
+                                            }
+                                            break;
+                                            case 6:
+                                                this.marcarExame();
+                                                break;
+                                        }
+                                    } while (this.getOpcao() != 0);
+                                } else if (u instanceof Medico) {
+                                    do {
+                                        this.exibeMenuMedico();
+                                        this.lerOpcao();
+                                        switch (this.getOpcao()) {
+                                            case 1:
+                                                this.procurarConsulta();
+                                                break;
+                                            case 2:
+                                                break;
+                                            case 3:
+                                                break;
+                                        }
+                                    } while (this.getOpcao() != 0);
+                                } else if (u instanceof Paciente) {
+                                    do {
+                                        this.exibeMenuPaciente();
+                                        this.lerOpcao();
+                                        switch (this.getOpcao()) {
+                                            case 1:
+                                                this.exibirConsulta(u.getId());
+                                                break;
+                                            case 2:
+                                                //this.exibirExame(u.getId());
+                                                break;
+
+                                            case 3:
+                                                this.exibirCirurgia(u.getId());
+                                                break;
+
+                                            case 4:
+                                                this.cancelarConsulta(u.getId());
+                                                break;
+
+                                            default:
+                                                break;
+                                        }
+                                    } while (this.getOpcao() != 0);
+                                } else {
+                                    this.exibirMenuLoginOpcao();
+                                    this.lerOpcao();
+                                    if (this.getOpcao() == 0) {
+                                        this.setContinuarLogin(false);
+                                    } else {
+                                        this.setContinuarLogin(true);
+                                    }
+                                }
+                            } catch (UsuarioNullException e) {
+                                System.out.println(e.getMessage());
+                            }
+                        } while (u != null && this.isContinuarLogin());
+                        this.setOpcao(-1); // Setar o valor opção com o valor do menu anterior
+                        break;
+
+                    default:
+                        break;
+                }
+                break;
+
+            default:
+                this.sair();
+                break;
+        }
+    }
 
 }
