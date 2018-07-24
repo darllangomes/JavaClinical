@@ -14,7 +14,7 @@ public interface IServidor {
 	void cadastrarUsuario(Usuario u) throws UsuarioExisteException, UsuarioNullException;
 	void cadastrarConsulta(Consulta c);
 	void cadastrarCirurgia();
-	void descadastrarUsuario(String id);
+	void descadastrarUsuario(String id) throws UsuarioNullException;
 	void descadastrarConsulta(String id);
 	void descadastrarCirurgia();
         void carregarDados()throws IOException, FileNotFoundException, ClassNotFoundException;

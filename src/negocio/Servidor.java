@@ -9,6 +9,8 @@ import java.io.IOException;
  */
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Servidor implements IServidor {
 
@@ -22,9 +24,9 @@ public class Servidor implements IServidor {
     private static Servidor instance;
 
     private Servidor() throws UsuarioExisteException, UsuarioNullException {
-        medicos = new ControladorUsuario();
-        pacientes = new ControladorUsuario();
-        recepcionistas = new ControladorUsuario();
+        medicos = new ControladorUsuario("medicos.txt");
+        pacientes = new ControladorUsuario("pacientes.txt");
+        recepcionistas = new ControladorUsuario("recepcionistas.txt");
         consultas = new ControladorConsulta();
         exames = new ControladorExames();
         cirurgias = new ControladorConsulta();
@@ -118,9 +120,9 @@ public class Servidor implements IServidor {
     }
 
     @Override
-    public void descadastrarUsuario(String id) {
-        //pacientes.descadrastar(leitor.lerId());
-        pacientes.descadrastar(id);
+    public void descadastrarUsuario(String id) throws UsuarioNullException {
+            //pacientes.descadrastar(leitor.lerId());
+            pacientes.descadrastar(id);
     }
 
     @Override
@@ -182,15 +184,18 @@ public class Servidor implements IServidor {
 
     @Override
     public void salvarDados() throws IOException {
-        consultas.salvarDados();
-        exames.salvarDados();
-        pacientes.salvarDados();
+        consultas.salvarDados("consultas.txt");
+        exames.salvarDados("exames");
+        pacientes.salvarDados("pacientes.txt");
+        medicos.salvarDados("medicos.txt");
+        recepcionistas.salvarDados("recepcionistas.txt");
     }
 
     public void carregarDados() throws IOException, FileNotFoundException, ClassNotFoundException {
-        consultas.carregarDados();
-        exames.carregarDados();
-        pacientes.carregarDados();
-
+        consultas.carregarDados("consultas.txt");
+        exames.carregarDados("exames.txt");
+        pacientes.carregarDados("pacientes.txt");
+        medicos.carregarDados("medicos.txt");
+        recepcionistas.carregarDados("recepcionistas.txt");
     }
 }

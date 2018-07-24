@@ -10,88 +10,58 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import negocio.Usuario;
-import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import negocio.Exame;
-public class RepositorioUsuario implements Serializable {
-	private Usuario[] usuarios;
-	private int ultimo;
-	
-	public RepositorioUsuario(int tamanho) {
-		this.usuarios = new Usuario[tamanho];
-		this.ultimo = 0;
-	}
-	
-	// quando for para o paciente marcar uma consulta e ele colocar o nome do médico, tem que buscar por nome.
-	// o paciente não é obrigado a saber o cpf do médico.
-	
-	public void cadastrarUsuario(Usuario u) {
-		this.usuarios[ultimo] = u;
-		this.ultimo += 1;
-		if(this.ultimo == this.usuarios.length) {
-			this.duplicarLimite();
-		}
-	}
-	
-	public Usuario procurar(String id) throws UsuarioNullException{
-            int i = this.procurarIndice(id);
-            Usuario u = null;
-            if (i != this.ultimo) {
-                u = this.usuarios[i];
-            }
-            if (u == null) {
-                UsuarioNullException e = new UsuarioNullException();
-                throw e;
-            }
-            return u;
-    }
-	
 
-	private int procurarIndice(String id) {
+public class RepositorioUsuario {
+
+    ArrayList<Usuario> usuarios;
+
+    public RepositorioUsuario(int tamanho) {
+        this.usuarios = new ArrayList<Usuario>(tamanho);
+    }
+
+    public RepositorioUsuario(ArrayList<Usuario> usuarios) {
+        this.usuarios = usuarios;
+    }
+    
+    // quando for para o paciente marcar uma consulta e ele colocar o nome do médico, tem que buscar por nome.
+    // o paciente não é obrigado a saber o cpf do médico.
+    public void cadastrarUsuario(Usuario u) {
+        try {
+            procurar(u.getId());
+        } catch (UsuarioNullException ex) {
+            usuarios.add(u);
+        }
+    }
+
+    public Usuario procurar(String id) throws UsuarioNullException {
         int i = 0;
-        boolean encontrado = false;
-        while ((!encontrado) && (i < this.ultimo)) {
-            if (id.equals(this.usuarios[i].getId())) {
-                encontrado = true;
-            } else {
-                i = i + 1;
+        Usuario u = null;
+        boolean continuar = true;
+
+        for (int j = 0; j < usuarios.size() && continuar; j++) {
+            if (usuarios.get(j).getId().equals(id)) {
+                u = usuarios.get(j);
+                continuar = false;
             }
         }
-        return i;
-    }
-	
-	public boolean existe(String id) {
-        boolean existe = false;
-        int indice = this.procurarIndice(id);
-        if (indice != this.ultimo) {
-            existe = true;
+
+        if (u == null) {
+            UsuarioNullException e = new UsuarioNullException();
+            throw e;
         }
-        return existe;
+        return u;
     }
-	
-	public void remover(String id) {
-        int i = this.procurarIndice(id);
-        if (i != this.ultimo) {
-            this.usuarios[i] = this.usuarios[this.ultimo - 1];
-            this.usuarios[this.ultimo - 1] = null;
-            this.ultimo = this.ultimo - 1;
-        } else {
-            // Usuario inexistente, arrumar uma forma de exibir mensagem
-        	// de erro.
-        }
+
+    public void remover(String id) throws UsuarioNullException {
+        Usuario u = procurar(id);
+        usuarios.remove(u);
     }
-	
-	private void duplicarLimite() {
-		if (this.usuarios != null && this.usuarios.length > 0) {
-            Usuario[] aux = new Usuario[this.usuarios.length * 2];
-            for (int i = 0; i < this.usuarios.length; i++) {
-                aux[i] = this.usuarios[i];
-            }
-            this.usuarios = aux;
-        }
-		
-	}
-        
-        public void salvarArquivos() throws FileNotFoundException, IOException{
+
+    /*public void salvarArquivos() throws FileNotFoundException, IOException{
             File arquivo= new File("Usuários.txt");
             FileOutputStream fos = new FileOutputStream(arquivo);
             ObjectOutputStream ous = new ObjectOutputStream(fos);
@@ -105,5 +75,8 @@ public class RepositorioUsuario implements Serializable {
             ObjectInputStream ois = new ObjectInputStream(fis);
             this.usuarios = (Usuario[]) ois.readObject();
             ois.close();
-        }
+        }*/
+    public ArrayList<Usuario> getDados() {
+        return usuarios;
+    }
 }

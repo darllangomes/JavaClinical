@@ -6,7 +6,13 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-import dados.RepositorioExames;import java.io.FileNotFoundException;
+import dados.RepositorioExames;import dados.RepositorioUsuario;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 ;
 
 public class ControladorExames {
@@ -46,12 +52,30 @@ public ControladorExames() {
 	
 	
 
-	public void salvarDados() throws IOException {
+	public void salvarDados(String file) throws IOException {
 		// TODO Auto-generated method stub
-		repositorio.salvarArquivos();
+		//repositorio.salvarArquivos();
+                /*
+             * @author Danilo Araújo salvamento de dados,
+             * utiliza o objeto repositório direto;
+             */
+            File arquivo= new File(file);
+            FileOutputStream fos = new FileOutputStream(arquivo);
+            ObjectOutputStream ous = new ObjectOutputStream(fos);
+            ous.writeObject(this.repositorio);
+            ous.close();
 	}
-        public void carregarDados() throws IOException, FileNotFoundException, ClassNotFoundException{
-            repositorio.carregarArquivos();
+        public void carregarDados(String file) throws IOException, FileNotFoundException, ClassNotFoundException{
+            //repositorio.carregarArquivos();
+            /*
+             * @author Danilo Araújo leitura de dados,
+             * utiliza o objeto repositório direto;
+             */
+            File arquivo = new File(file);
+            FileInputStream fis = new FileInputStream(arquivo);
+            ObjectInputStream ois = new ObjectInputStream(fis);
+            this.repositorio = (RepositorioExames) ois.readObject();
+            ois.close();
         }
 	
 

@@ -25,7 +25,7 @@ import negocio.Usuario;
 
 public class TelaTextual {
 
-    private IServidor s;
+    private Servidor s;
     private boolean executando;
     private boolean continuarLogin;
     private int opcao;
@@ -41,6 +41,13 @@ public class TelaTextual {
             System.out.println(e.getMessage());
         } catch (UsuarioNullException e) {
             System.out.println(e.getMessage());
+        }
+        try {
+            s.carregarDados();
+        } catch (IOException ex) {
+            System.out.println(ex.getMessage());
+        } catch (ClassNotFoundException ex) {
+            System.out.println(ex.getMessage());
         }
         leitor = GetInformation.getInstance();
         opcao = -1;
@@ -62,7 +69,7 @@ public class TelaTextual {
     }
 
     public void exibeMenuRecepcionista() {
-        System.out.println("Menu Recepção\n1 - Cadrastar usuario\n2 - Buscar paciente\n3 - Buscar medico \n4 - Remover usuario \n5 - Marcar consulta\n6 - Marcar exame \n0 - Sair");
+        System.out.println("Menu Recepção\n1 - Cadrastar usuario\n2 - Buscar paciente\n3 - Buscar medico \n4 - Remover usuario \n5 - Marcar consulta\n6 - Marcar exame \n7 - Exibir lista de Pacientes\n0 - Sair");
 
     }
 
@@ -132,7 +139,11 @@ public class TelaTextual {
     }
 
     public void removerUsuario() {
-        s.descadastrarUsuario(leitor.lerId());
+        try {
+            s.descadastrarUsuario(leitor.lerId());
+        } catch (UsuarioNullException ex) {
+            System.out.println("Usuário não existe no sistema");
+        }
     }
 
     public Usuario efetuarLogin() throws UsuarioNullException {

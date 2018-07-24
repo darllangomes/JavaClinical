@@ -1,5 +1,6 @@
 package dados;
 
+import excecao.ConsultaInexistenteException;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -16,54 +17,65 @@ import negocio.Consulta;
 
 public class RepositorioConsulta implements Serializable  {
 	
-	private  Consulta[] consultas;
-	private int ultimo;
+	   ArrayList<Consulta> consultas;
 	
 	public RepositorioConsulta(int tamanho) {
-		this.consultas = new Consulta[tamanho];
-		this.ultimo = 0;
-	}
+        this.consultas = new ArrayList<Consulta>(tamanho);
+    }
+
+    public RepositorioConsulta(ArrayList<Consulta> consultas) {
+        this.consultas = consultas;
+    }
 	
 	/*public void cadastrarUsuario(String nome, String cpf, String ) {
         Usuario u = new Usuario(nome, cpf, );
         this.cadastrar(c);
     }*/
 	
-	public void cadastrarConsulta(Consulta u) {
-		this.consultas[ultimo] = u;
-		this.ultimo += 1;
-		if(this.ultimo == this.consultas.length) {
-			this.duplicarLimite();
-		}
-
-	}
+	public void cadastrarConsulta(Consulta c) {
+            
+            try {
+                procurar(c);
+            } catch(ConsultaInexistenteException ex) {
+                consultas.add(c);
+            }
+            
+        
+    }
 	
 	/*
 	 * Ver como tratar a busca por consulta
 	 * Devolver um consulta ou um vetor de consultas do paciente
 	 */
-	public Consulta procurar(String id) {
-        int i = this.procurarIndice(id);
-        Consulta c = null;
-        if (i != this.ultimo) {
-            c = this.consultas[i];
-        }
+	public Consulta procurar(Consulta c) throws ConsultaInexistenteException {
+            Consulta get = null;
+            for (int i = 0; i < consultas.size(); i++) {
+                get = consultas.get(i);
+            }
+            if(get == null) {
+                throw new ConsultaInexistenteException();
+            }
         return c;
     }
 	
 	public ArrayList<Consulta> procurar(LocalDate d) {
-        ArrayList<Consulta>  listaConsultas = new ArrayList();
-        if(this.ultimo > 0) {
+        ArrayList<Consulta>  listaConsultas = new ArrayList<Consulta>();
+        
+            for (Consulta consulta : consultas) {
+                consulta.getData().equals(d);
+                listaConsultas.add(consulta);
+            }
+        /*if(this.ultimo > 0) {
         	for(int i=0; i<this.consultas.length;i++) {
             	if(consultas[i].getData().equals(d)) {
             		listaConsultas.add(consultas[i]);
             	}
             }
-        }
+        }*/
         return listaConsultas;
     }
 
-	private int procurarIndice(String id) {
+	/*private int procurarIndice(String id) {
         int i = 0;
         boolean encontrado = false;
         while ((!encontrado) && (i < this.ultimo)) {
@@ -97,10 +109,12 @@ public class RepositorioConsulta implements Serializable  {
             existe = true;
         }
         return existe;
-    }
+    }*/
 	
-	public void remover(String cpf) {
-        int i = this.procurarIndice(cpf);
+	public void remover(Consulta c) {
+            
+            consultas.remove(c);
+        /*int i = this.procurarIndice(cpf);
         if (i != this.ultimo) {
             this.consultas[i] = this.consultas[this.ultimo - 1];
             this.consultas[this.ultimo - 1] = null;
@@ -108,25 +122,16 @@ public class RepositorioConsulta implements Serializable  {
         } else {
             // Consulta inexistente, arrumar uma forma de exibir mensagem
         	// de erro.
-        }
+        }*/
     }
 	
-	private void duplicarLimite() {
-		if (this.consultas != null && this.consultas.length > 0) {
-            Consulta[] aux = new Consulta[this.consultas.length * 2];
-            for (int i = 0; i < this.consultas.length; i++) {
-                aux[i] = this.consultas[i];
-            }
-            this.consultas = aux;
-        }
-		
-	}
 	
-	public Consulta[] getDados() {		
+	
+	public ArrayList<Consulta> getDados() {		
 		return this.consultas;
 	}
         
-        public void salvar() throws IOException{
+        /*public void salvar() throws IOException{
             
           
             File arquivo= new File("Consultas.txt");
@@ -145,7 +150,7 @@ public class RepositorioConsulta implements Serializable  {
             ObjectInputStream ois = new ObjectInputStream(fis);
             this.consultas = (Consulta[]) ois.readObject();
             ois.close();
-        }
+        }*/
             
         
 
