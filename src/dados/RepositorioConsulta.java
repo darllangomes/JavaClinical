@@ -10,61 +10,58 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.io.Serializable;
 import negocio.Consulta;
 
-
-
 public class RepositorioConsulta {
-	
-	   ArrayList<Consulta> consultas;
-	
-	public RepositorioConsulta(int tamanho) {
+
+    ArrayList<Consulta> consultas;
+
+    public RepositorioConsulta(int tamanho) {
         this.consultas = new ArrayList<Consulta>(tamanho);
     }
 
     public RepositorioConsulta(ArrayList<Consulta> consultas) {
         this.consultas = consultas;
     }
-	
-	/*public void cadastrarUsuario(String nome, String cpf, String ) {
+
+    /*public void cadastrarUsuario(String nome, String cpf, String ) {
         Usuario u = new Usuario(nome, cpf, );
         this.cadastrar(c);
     }*/
-	
-	public void cadastrarConsulta(Consulta c) {
-            
-            try {
-                procurar(c);
-            } catch(ConsultaInexistenteException ex) {
-                consultas.add(c);
-            }
-            
-        
+    public void cadastrarConsulta(Consulta c) {
+
+        try {
+            procurar(c);
+        } catch (ConsultaInexistenteException ex) {
+            consultas.add(c);
+        }
+
     }
-	
-	/*
+
+    /*
 	 * Ver como tratar a busca por consulta
 	 * Devolver um consulta ou um vetor de consultas do paciente
-	 */
-	public Consulta procurar(Consulta c) throws ConsultaInexistenteException {
-            Consulta get = null;
-            for (int i = 0; i < consultas.size(); i++) {
-                get = consultas.get(i);
-            }
-            if(get == null) {
-                throw new ConsultaInexistenteException();
-            }
+     */
+    public Consulta procurar(Consulta c) throws ConsultaInexistenteException {
+        Consulta get = null;
+        boolean continuar = true;
+        for (int i = 0; i < consultas.size() && continuar == true; i++) {
+            get = consultas.get(i);
+            continuar = false;
+        }
+        if (get == null) {
+            throw new ConsultaInexistenteException();
+        }
         return c;
     }
-	
-	public ArrayList<Consulta> procurar(LocalDate d) {
-        ArrayList<Consulta>  listaConsultas = new ArrayList<Consulta>();
-        
-            for (Consulta consulta : consultas) {
-                consulta.getData().equals(d);
-                listaConsultas.add(consulta);
-            }
+
+    public ArrayList<Consulta> procurar(LocalDate d) {
+        ArrayList<Consulta> listaConsultas = new ArrayList<Consulta>();
+
+        for (Consulta consulta : consultas) {
+            consulta.getData().equals(d);
+            listaConsultas.add(consulta);
+        }
         /*if(this.ultimo > 0) {
         	for(int i=0; i<this.consultas.length;i++) {
             	if(consultas[i].getData().equals(d)) {
@@ -75,7 +72,7 @@ public class RepositorioConsulta {
         return listaConsultas;
     }
 
-	/*private int procurarIndice(String id) {
+    /*private int procurarIndice(String id) {
         int i = 0;
         boolean encontrado = false;
         while ((!encontrado) && (i < this.ultimo)) {
@@ -110,10 +107,9 @@ public class RepositorioConsulta {
         }
         return existe;
     }*/
-	
-	public void remover(Consulta c) {
-            
-            consultas.remove(c);
+    public void remover(Consulta c) {
+
+        consultas.remove(c);
         /*int i = this.procurarIndice(cpf);
         if (i != this.ultimo) {
             this.consultas[i] = this.consultas[this.ultimo - 1];
@@ -124,14 +120,12 @@ public class RepositorioConsulta {
         	// de erro.
         }*/
     }
-	
-	
-	
-	public ArrayList<Consulta> getDados() {		
-		return this.consultas;
-	}
-        
-        /*public void salvar() throws IOException{
+
+    public ArrayList<Consulta> getDados() {
+        return this.consultas;
+    }
+
+    /*public void salvar() throws IOException{
             
           
             File arquivo= new File("Consultas.txt");
@@ -151,8 +145,4 @@ public class RepositorioConsulta {
             this.consultas = (Consulta[]) ois.readObject();
             ois.close();
         }*/
-            
-        
-
-	
 }

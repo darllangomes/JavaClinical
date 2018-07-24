@@ -16,7 +16,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
+import negocio.Exame;
 ;
 
 public class ControladorExames {
@@ -81,8 +81,7 @@ public class ControladorExames {
             fis = new FileInputStream(arquivo);
             try {
                 ois = new ObjectInputStream(fis);
-                ArrayList<Exame> e = (ArrayList<Exame>) ois.readObject();
-                this.repositorio = new RepositorioExames(e);
+                this.repositorio = new RepositorioExames((ArrayList<Exame>) ois.readObject());
                 ois.close();
             } catch (IOException ex) {
                 this.repositorio = new RepositorioExames(128);
