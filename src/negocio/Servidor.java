@@ -27,9 +27,9 @@ public class Servidor implements IServidor {
         medicos = new ControladorUsuario("medicos.txt");
         pacientes = new ControladorUsuario("pacientes.txt");
         recepcionistas = new ControladorUsuario("recepcionistas.txt");
-        consultas = new ControladorConsulta();
-        exames = new ControladorExames();
-        cirurgias = new ControladorConsulta();
+        consultas = new ControladorConsulta("consultas.txt");
+        //exames = new ControladorExames("exames.txt");
+        cirurgias = new ControladorConsulta("cirugias.txt");
         //leitor = GetInformation.getInstance();
 
         /*
@@ -185,7 +185,7 @@ public class Servidor implements IServidor {
     @Override
     public void salvarDados() throws IOException {
         consultas.salvarDados("consultas.txt");
-        exames.salvarDados("exames");
+        //exames.salvarDados("exames");
         pacientes.salvarDados("pacientes.txt");
         medicos.salvarDados("medicos.txt");
         recepcionistas.salvarDados("recepcionistas.txt");
@@ -193,7 +193,7 @@ public class Servidor implements IServidor {
 
     public void carregarDados() throws IOException, FileNotFoundException, ClassNotFoundException {
         consultas.carregarDados("consultas.txt");
-        exames.carregarDados("exames.txt");
+        //exames.carregarDados("exames.txt");
         pacientes.carregarDados("pacientes.txt");
         medicos.carregarDados("medicos.txt");
         recepcionistas.carregarDados("recepcionistas.txt");

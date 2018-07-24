@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.time.LocalDate;
 import dados.SalvarArquivos;
 import java.util.ArrayList;
-
 import dados.RepositorioConsulta;
 import dados.RepositorioUsuario;
 import java.io.File;
@@ -13,14 +12,16 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class ControladorConsulta {
 
     private RepositorioConsulta repositorio;
     private SalvarArquivos salva;
 
-    public ControladorConsulta() {
-        this.repositorio = new RepositorioConsulta(128);
+    public ControladorConsulta(String file) {
+        carregarDados(file);
     }
 
     public void cadastrar(Consulta c) {
@@ -65,21 +66,37 @@ public class ControladorConsulta {
         File arquivo = new File(file);
         FileOutputStream fos = new FileOutputStream(arquivo);
         ObjectOutputStream ous = new ObjectOutputStream(fos);
-        ous.writeObject(this.repositorio);
+        ous.writeObject(this.repositorio.getDados());
         ous.close();
     }
 
-    public void carregarDados(String file) throws IOException, FileNotFoundException, ClassNotFoundException {
+    public void carregarDados(String file) {
         //repositorio.carregarArquivo();
         /*
              * @author Danilo Araújo leitura de dados,
              * utiliza o objeto repositório direto;
          */
         File arquivo = new File(file);
-        FileInputStream fis = new FileInputStream(arquivo);
-        ObjectInputStream ois = new ObjectInputStream(fis);
-        this.repositorio = (RepositorioConsulta) ois.readObject();
-        ois.close();
+        FileInputStream fis;
+        ObjectInputStream ois;
+
+        try {
+            fis = new FileInputStream(arquivo);
+            try {
+                ois = new ObjectInputStream(fis);
+                // Erro macabro
+                //ArrayList<Consulta> c = (ArrayList<Consulta>) ois.readObject();
+                this.repositorio = new RepositorioConsulta((ArrayList<Consulta>) ois.readObject());
+                ois.close();
+            } catch (IOException ex) {
+                this.repositorio = new RepositorioConsulta(128);
+            } catch (ClassNotFoundException ex) {
+                this.repositorio = new RepositorioConsulta(128);
+            }
+
+        } catch (FileNotFoundException ex) {
+            this.repositorio = new RepositorioConsulta(128);
+        }
     }
 
     // Avaliar a necessidade de mais operações

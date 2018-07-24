@@ -15,7 +15,7 @@ import negocio.Consulta;
 
 
 
-public class RepositorioConsulta implements Serializable  {
+public class RepositorioConsulta {
 	
 	   ArrayList<Consulta> consultas;
 	

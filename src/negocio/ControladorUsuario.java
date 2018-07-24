@@ -82,7 +82,7 @@ public class ControladorUsuario {
             } catch (IOException ex) {
               this.repositorio = new RepositorioUsuario(128);   
             } catch (ClassNotFoundException ex) {
-                Logger.getLogger(ControladorUsuario.class.getName()).log(Level.SEVERE, null, ex);
+                this.repositorio = new RepositorioUsuario(128);   
             }
         } catch (FileNotFoundException ex) {
             this.repositorio = new RepositorioUsuario(128);
