@@ -1,6 +1,8 @@
 package negocio;
 
-public class Prontuario {
+import java.io.Serializable;
+
+public class Prontuario implements Serializable {
 	private String queixaPaciente;
 
 	public String getQueixaPaciente() {

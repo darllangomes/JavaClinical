@@ -15,7 +15,7 @@ import java.io.ObjectOutputStream;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class ControladorConsulta {
+public  class ControladorConsulta {
 
     private RepositorioConsulta repositorio;
     private SalvarArquivos salva;
