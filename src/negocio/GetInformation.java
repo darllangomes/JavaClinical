@@ -122,8 +122,8 @@ public class GetInformation {
 				}
 				
 		}
-		d = this.lerData();
-		c.setData(d);
+		//d = this.lerData();
+		//c.setData(d);
 		
 		return c;
 	}

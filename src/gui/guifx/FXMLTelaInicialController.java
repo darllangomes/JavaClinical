@@ -34,19 +34,22 @@ import negocio.Usuario;
  * @author HENRIQUE.FELIX
  */
 public class FXMLTelaInicialController implements Initializable {
-    @FXML private Button btSair;
-    @FXML private Label label2;
-    @FXML private Label label1;
-    @FXML private Button btLogin;
-    @FXML private TextField TextId;
-    @FXML private PasswordField SenhaField;
-    @FXML private Button btCadastroUsuario;
-    @FXML private Button btMArcarExame;
-    @FXML private Button btBuscarMedico;
-    @FXML private Button btBuscaUsuario;
-    @FXML private Button btRemoverUsuario;
-    @FXML private Button btMarcarConsulta;
-    @FXML private Button btVoltar;
+    
+    @FXML
+    private Button btSair;
+
+    @FXML
+    private Label label2;
+
+    @FXML
+    private Button btLogin;
+
+    @FXML
+    private TextField TextId;
+
+    @FXML
+    private PasswordField SenhaField;
+    
     // TODO @author Danilo Araujo Comentar para usar Main principal
     TelaDoInicial gui = new TelaDoInicial();
     
@@ -54,7 +57,6 @@ public class FXMLTelaInicialController implements Initializable {
     private Parent root;
     
     
-     @FXML
     private void LoginUsuario(ActionEvent event) {
         Usuario u = null;
         String id = TextId.getText();
@@ -103,7 +105,6 @@ public class FXMLTelaInicialController implements Initializable {
        
     }
     
-    @FXML
     private void BotaoLogin(ActionEvent event) {
         
         LoginUsuario(event);
@@ -122,52 +123,20 @@ public class FXMLTelaInicialController implements Initializable {
 //                TelaDoInicial.getStage().setScene(new Scene(root));
     }
     
-    @FXML
     private void BotaoSair(ActionEvent event) {
         System.out.println("Usuario fechou o programa...!");
         System.exit(0);
         
     }
     
-    @FXML
-    private void BotaoVoltar(ActionEvent event) {
-        System.out.println("Voltando para a tela inicial...");
-        
-        /*try {
-            this.root = FXMLLoader.load(getClass().getResource("FXMLTelaInicial.fxml"));
-        } catch (IOException ex) {
-            Logger.getLogger(FXMLTelaInicialController.class.getName()).log(Level.SEVERE, null, ex);
-        }*/
-//                TelaDoInicial.getStage().setScene(new Scene(root));
-    }
-    
-    /*@FXML
-    private void botaoCadastroUsu(ActionEvent event) {
-        System.out.println("Abrindo tela de cadastro de usuarios...");
-        try {
-            this.root = FXMLLoader.load(getClass().getResource("FXMLCadstraUsusarios.fxml"));
-        } catch (IOException ex) {
-            Logger.getLogger(FXMLCadastraUsuariosController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-                TelaDoInicial.getStage().setScene(new Scene(root));
-    }*/
- 
-    
-    @FXML
-    private void botaoCadastroUsu(ActionEvent event) {
-        System.out.println("Abrindo tela de cadastro de usuarios...");
-        try {
-            this.root = FXMLLoader.load(getClass().getResource("FXMLCadstraUsusarios.fxml"));
-        } catch (IOException ex) {
-            Logger.getLogger(FXMLCadastraUsuariosController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-                TelaDoInicial.getStage().setScene(new Scene(root));
-    }
- 
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
+
+    @FXML
+    private void botaoCadastroUsu(ActionEvent event) {
+    }
     
 }
