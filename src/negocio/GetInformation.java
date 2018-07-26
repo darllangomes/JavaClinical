@@ -122,8 +122,9 @@ public class GetInformation {
 				}
 				
 		}
-		//d = this.lerData();
-		//c.setData(d);
+                System.out.println("Insira a data da Consulta:");
+		d = this.lerData();
+		c.setData(d);
 		
 		return c;
 	}

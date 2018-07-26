@@ -73,21 +73,24 @@ public class ControladorUsuario {
         FileInputStream fis;
         ObjectInputStream ois;
         try {
-            fis = new FileInputStream(arquivo);            
-            
+            fis = new FileInputStream(arquivo);
+
             try {
                 ois = new ObjectInputStream(fis);
-                this.repositorio = new RepositorioUsuario( (ArrayList<Usuario>) ois.readObject());
+                this.repositorio = new RepositorioUsuario((ArrayList<Usuario>) ois.readObject());
                 ois.close();
             } catch (IOException ex) {
-              this.repositorio = new RepositorioUsuario(128);   
+                this.repositorio = new RepositorioUsuario(128);
             } catch (ClassNotFoundException ex) {
-                this.repositorio = new RepositorioUsuario(128);   
+                this.repositorio = new RepositorioUsuario(128);
             }
         } catch (FileNotFoundException ex) {
             this.repositorio = new RepositorioUsuario(128);
         }
     }
 
+    public ArrayList<Usuario> getDados() {
+        return this.repositorio.getDados();
+    }
     // Avaliar a necessidade de mais operações
 }

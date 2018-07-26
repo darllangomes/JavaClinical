@@ -13,7 +13,7 @@ public class Paciente extends Usuario implements Serializable  {
 	}
 	
 	public String toString() {
-		return "Paciente:\nNome: " + this.getNome() + "\nIdade: " + this.getIdade() + "\nCPF: " + this.getCpf();
+		return "Paciente:\nNome: " + this.getNome() + "\nIdade: " + this.getIdade() +"\nIdade: " + this.getId()+ "\nCPF: " + this.getCpf();
 	}
 
 	
