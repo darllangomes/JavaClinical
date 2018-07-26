@@ -162,6 +162,20 @@ public class Servidor implements IServidor {
     public Consulta procurarConsulta(String id) {
         return consultas.procurar(id);
     }
+    
+    public ArrayList<Usuario> getDadosRepositorioRecepcionistas() {
+        return recepcionistas.getDados();
+    }
+    
+    public ArrayList<Usuario> getDadosRepositorioMedicos() {
+        return medicos.getDados();
+    }
+    
+    public ArrayList<Usuario> getDadosRepositorioPacientes() {
+        return pacientes.getDados();
+    }
+    
+    
 
     /*
 	public Exame procurarExame(String id) {
@@ -185,7 +199,7 @@ public class Servidor implements IServidor {
     @Override
     public void salvarDados() throws IOException {
         consultas.salvarDados("consultas.txt");
-        exames.salvarDados("exames");
+        exames.salvarDados("exames.txt");
         pacientes.salvarDados("pacientes.txt");
         medicos.salvarDados("medicos.txt");
         recepcionistas.salvarDados("recepcionistas.txt");

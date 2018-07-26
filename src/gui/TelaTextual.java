@@ -69,7 +69,7 @@ public class TelaTextual {
     }
 
     public void exibeMenuRecepcionista() {
-        System.out.println("Menu Recepção\n1 - Cadrastar usuario\n2 - Buscar paciente\n3 - Buscar medico \n4 - Remover usuario \n5 - Marcar consulta\n6 - Marcar exame \n7 - Exibir lista de Pacientes\n0 - Sair");
+        System.out.println("Menu Recepção\n1 - Cadrastar usuario\n2 - Buscar paciente\n3 - Buscar medico \n4 - Remover usuario \n5 - Marcar consulta\n6 - Marcar exame \n7 - Exibir lista de Recepcionistas cadastrados\n8 - Exibir lista de Médicos cadastrados\n9 - Exibir lista de Pacientes cadastrados\n0 - Sair");
 
     }
 
@@ -297,16 +297,24 @@ public class TelaTextual {
                                             case 4:
                                                 this.removerUsuario();
                                                 break;
-                                            case 5: {
+                                            case 5: 
                                                 try {
                                                     this.marcarConsulta();
                                                 } catch (UsuarioNullException e) {
                                                     System.out.println(e.getMessage());
                                                 }
-                                            }
-                                            break;
+                                                break;
                                             case 6:
                                                 this.marcarExame();
+                                                break;
+                                            case 7:
+                                                System.out.println(s.getDadosRepositorioRecepcionistas());
+                                                break;
+                                            case 8:
+                                                System.out.println(s.getDadosRepositorioMedicos());
+                                                break;
+                                            case 9:
+                                                System.out.println(s.getDadosRepositorioPacientes());
                                                 break;
                                         }
                                     } while (this.getOpcao() != 0);

@@ -122,6 +122,7 @@ public class GetInformation {
 				}
 				
 		}
+                System.out.println("Insira a data da Consulta:");
 		d = this.lerData();
 		c.setData(d);
 		
