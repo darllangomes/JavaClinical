@@ -25,6 +25,38 @@ import negocio.Usuario;
  */
 public class TelaDoZeroController implements Initializable {
 
+    public TelaDoInicial getGui() {
+        return gui;
+    }
+
+    public void setGui(TelaDoInicial gui) {
+        this.gui = gui;
+    }
+
+    public TextField getTextId() {
+        return TextId;
+    }
+
+    public void setTextId(TextField TextId) {
+        this.TextId = TextId;
+    }
+
+    public PasswordField getSenhaField() {
+        return SenhaField;
+    }
+
+    public void setSenhaField(PasswordField SenhaField) {
+        this.SenhaField = SenhaField;
+    }
+
+    public Parent getRoot() {
+        return root;
+    }
+
+    public void setRoot(Parent root) {
+        this.root = root;
+    }
+
     /**
      * Initializes the controller class.
      */
