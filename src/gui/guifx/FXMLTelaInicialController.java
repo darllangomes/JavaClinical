@@ -52,6 +52,14 @@ public class FXMLTelaInicialController implements Initializable {
     
     // TODO @author Danilo Araujo Comentar para usar Main principal
     TelaDoInicial gui = new TelaDoInicial();
+
+    public Parent getRoot() {
+        return root;
+    }
+
+    public void setRoot(Parent root) {
+        this.root = root;
+    }
     
     
     private Parent root;

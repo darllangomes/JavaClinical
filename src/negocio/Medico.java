@@ -30,7 +30,7 @@ public class Medico extends Usuario implements Serializable {
 	}
 	
 	public String toString() {
-		return "MÃ©dico:\nNome: " + this.getNome() + "\nEspecialidade: " + especialidade;
+		return "Médico:\nNome: " + this.getNome() + "\nID: " + this.getId() + "\nEspecialidade: " + especialidade;
 	}
 	
 	public void work(Paciente paciente, Prontuario prontuario ) {

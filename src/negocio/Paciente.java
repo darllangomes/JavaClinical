@@ -1,5 +1,6 @@
 package negocio;
 import java.io.Serializable;
+import java.util.Objects;
 
 public class Paciente extends Usuario implements Serializable  {
 

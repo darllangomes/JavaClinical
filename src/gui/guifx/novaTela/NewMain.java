@@ -26,6 +26,14 @@ public class NewMain {
     private Stage primaryStage;
     private BorderPane rootLayout;
 
+    public BorderPane getRootLayout() {
+        return rootLayout;
+    }
+
+    public void setRootLayout(BorderPane rootLayout) {
+        this.rootLayout = rootLayout;
+    }
+
     /**
      *
      * @param primaryStage

@@ -6,13 +6,13 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="440.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.guifx.FXMLCadastraUsuariosController">
+<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="440.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.guifx.FXMLCadastraUsuariosController">
    <children>
       <Button fx:id="btCadastrarRecp" layoutX="57.0" layoutY="238.0" mnemonicParsing="false" onAction="#botaoRecp" text="Recepcionista" />
       <Button fx:id="btCadastrarMed" layoutX="203.0" layoutY="238.0" mnemonicParsing="false" onAction="#botaoCadastroMed" text="Médico" />
       <Button fx:id="btCadastroPac" layoutX="323.0" layoutY="238.0" mnemonicParsing="false" onAction="#botaoCadastroPac" text="Paciente" />
       <Separator layoutX="57.0" layoutY="210.0" prefHeight="6.0" prefWidth="327.0" />
-      <Text fx:id="titulo" layoutX="132.0" layoutY="82.0" strokeWidth="0.0" text="Cadastrar Usuários">
+      <Text fx:id="titulo" layoutX="113.0" layoutY="80.0" strokeWidth="0.0" text="Cadastrar Usuários">
          <font>
             <Font size="24.0" />
          </font></Text>

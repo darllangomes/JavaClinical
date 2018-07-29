@@ -69,7 +69,7 @@ public class TelaTextual {
     }
 
     public void exibeMenuRecepcionista() {
-        System.out.println("Menu Recepção\n1 - Cadrastar usuario\n2 - Buscar paciente\n3 - Buscar medico \n4 - Remover usuario \n5 - Marcar consulta\n6 - Marcar exame \n7 - Exibir lista de Recepcionistas cadastrados\n8 - Exibir lista de Médicos cadastrados\n9 - Exibir lista de Pacientes cadastrados\n0 - Sair");
+        System.out.println("Menu Recepção\n1 - Cadrastar usuario\n2 - Buscar paciente\n3 - Buscar medico \n4 - Remover usuario \n5 - Marcar consulta\n6 - Marcar exame \n7 - Exibir lista de Recepcionistas cadastrados\n8 - Exibir lista de Médicos cadastrados\n9 - Exibir lista de Pacientes cadastrados\n10 - Exibir as consultas do dia\n0 - Sair");
 
     }
 
@@ -249,6 +249,10 @@ public class TelaTextual {
         }
 
     }
+    
+    public ArrayList<Consulta> exibirConsultasDia(LocalDate d) {
+        return s.procurarConsultasDia(d);
+    }
 
     public void executarOperacoes() {
         Usuario u = null;
@@ -288,6 +292,7 @@ public class TelaTextual {
                                             case 3:
                                                 Medico m;
                                                 try {
+                                                    System.out.println("Insira a ID");
                                                     m = this.procurarMedico();
                                                     System.out.println(m);
                                                 } catch (UsuarioNullException e) {
@@ -316,6 +321,8 @@ public class TelaTextual {
                                             case 9:
                                                 System.out.println(s.getDadosRepositorioPacientes());
                                                 break;
+                                            case 10:
+                                                System.out.println(s.procurarConsultasDia(LocalDate.now()));
                                         }
                                     } while (this.getOpcao() != 0);
                                 } else if (u instanceof Medico) {
@@ -379,6 +386,7 @@ public class TelaTextual {
 
             default:
                 this.sair();
+                
                 break;
         }
     }

@@ -3,15 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package gui.guifx;
+package gui.guifx.novaTela;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
 import javafx.scene.control.Button;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 import javax.xml.soap.Text;
 
 /**
@@ -19,49 +20,58 @@ import javax.xml.soap.Text;
  *
  * @author HENRIQUE.FELIX
  */
-
-
-
-
-public class FXMLCadastraUsuariosController implements Initializable {
+public class TelaCadastroRecpController implements Initializable {
 
     /**
      * Initializes the controller class.
      */
     
-    TelaDoInicial gui = new TelaDoInicial();
-    private Parent root;
-    
-    
-     @FXML
-    private Button btCadastrarRecp;
-
-    @FXML
-    private Button btCadastrarMed;
-
-    @FXML
-    private Button btCadastroPac;
-
     @FXML
     private Text titulo;
 
     @FXML
-    void botaoCadastroMed(ActionEvent event) {
+    private Text textRecp;
+
+    @FXML
+    private Text textCpf;
+
+    @FXML
+    private TextField filedCpf;
+
+    @FXML
+    private Text textIdade;
+
+    @FXML
+    private TextField fieldIdade;
+
+    @FXML
+    private Text textSenha;
+
+    @FXML
+    private Text textNome;
+
+    @FXML
+    private TextField filedNome;
+
+    @FXML
+    private Button btVoltar;
+
+    @FXML
+    private Button btCadastro;
+
+    @FXML
+    private PasswordField fieldSenha;
+
+    @FXML
+    void cadastrar(ActionEvent event) {
 
     }
 
     @FXML
-    void botaoCadastroPac(ActionEvent event) {
-
-    }
-
-    @FXML
-    void botaoRecp(ActionEvent event) {
+    void voltar(ActionEvent event) {
 
     }
     
-    
-
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO

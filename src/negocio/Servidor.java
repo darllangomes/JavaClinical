@@ -212,4 +212,8 @@ public class Servidor implements IServidor {
         medicos.carregarDados("medicos.txt");
         recepcionistas.carregarDados("recepcionistas.txt");*/
     }
+
+    public ArrayList<Consulta> procurarConsultasDia(LocalDate d) {
+        return consultas.procurar(d);
+    }
 }

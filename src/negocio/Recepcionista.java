@@ -14,6 +14,6 @@ public class Recepcionista extends Usuario implements Serializable{
 
 	@Override
 	public String toString() {
-		return "Recepcionista [nome=" + this.getNome() + ", cpf=" + this.getCpf() + "]";
+		return "Recepcionista [nome=" + this.getNome() + ", cpf=" + this.getCpf() + "\nID: " + this.getId() + "]";
 	}
 }
