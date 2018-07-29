@@ -55,21 +55,39 @@ public class RepositorioConsulta {
         return c;
     }
 
+    public ArrayList<Consulta> procurar(String id) {
+        ArrayList<Consulta> listaConsultas = new ArrayList<Consulta>();
+
+        for (Consulta consulta : consultas) {
+            if(id.equals(consulta.getPaciente().getId()))
+            listaConsultas.add(consulta);
+        }
+        
+        return listaConsultas;
+    }
+    
     public ArrayList<Consulta> procurar(LocalDate d) {
         ArrayList<Consulta> listaConsultas = new ArrayList<Consulta>();
 
         for (Consulta consulta : consultas) {
-            consulta.getData().equals(d);
+            if(d.equals(consulta.getData()))
             listaConsultas.add(consulta);
         }
-        /*if(this.ultimo > 0) {
-        	for(int i=0; i<this.consultas.length;i++) {
-            	if(consultas[i].getData().equals(d)) {
-            		listaConsultas.add(consultas[i]);
-            	}
-            }
-        }*/
+        
         return listaConsultas;
+    }
+    
+    public Consulta procurar(String id, LocalDate d) {
+        Consulta consultaUnica = null;
+        boolean continuar = true;
+        for (int i=0; i<consultas.size() && continuar;i++) {
+            if(consultas.get(i).getPaciente().getId().equals(id) && consultas.get(i).getData().equals(d)){
+                consultaUnica=consultas.get(i);
+                continuar = false;
+            }
+            
+        }
+        return consultaUnica;
     }
 
     /*private int procurarIndice(String id) {

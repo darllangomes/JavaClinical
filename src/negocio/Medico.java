@@ -23,11 +23,6 @@ public class Medico extends Usuario implements Serializable {
 		super.setId(id);
 	}
 	
-	public void consultar(Consulta c, Prontuario p) {
-		System.out.println("Qual é a sua queixa? ");
-		Scanner sc = new Scanner(System.in);
-		p.setQueixaPaciente(sc.nextLine());
-	}
 	
 	public String toString() {
 		return "Médico:\nNome: " + this.getNome() + "\nID: " + this.getId() + "\nEspecialidade: " + especialidade;

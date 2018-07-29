@@ -26,10 +26,9 @@ public interface IServidor {
 	Medico procurarMedico(String id) throws UsuarioNullException ;
 	Paciente procurarPaciente(String id) throws UsuarioNullException ;
 	Recepcionista procurarRecepcionista(String id) throws UsuarioNullException ;
-	Consulta procurarConsulta(String id);
-	
+        ArrayList<Consulta> procurarConsulta(String id);
+        Consulta procurarConsulta(String id, LocalDate d);
 	Cirurgia procurarCirurgia(String id);
-	ArrayList<Consulta> procurarConsulta(LocalDate d);
 	void salvarDados() throws IOException;
 	void marcarExame(Exame e);
 	}

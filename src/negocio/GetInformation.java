@@ -118,6 +118,7 @@ public class GetInformation {
 					System.out.println("Paciente não encontrado.");
 				}else {
 					c.setPaciente(p);
+                                        c.setId(p.getId());
 					c.setProntuario(new Prontuario());
 				}
 				

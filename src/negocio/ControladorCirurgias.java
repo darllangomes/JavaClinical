@@ -1,5 +1,10 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package negocio;
-
+import dados.RepositorioCirurgias;
 import java.io.IOException;
 import java.time.LocalDate;
 import dados.SalvarArquivos;
@@ -14,18 +19,21 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
-public class ControladorConsulta {
-
-    private RepositorioConsulta repositorio;
-
-    public ControladorConsulta(String file) {
+/**
+ *
+ * @author Darllan Gomes
+ */
+public class ControladorCirurgias {
+     private RepositorioCirurgias repositorio;
+     
+     
+      public ControladorCirurgias(String file) {
         carregarDados(file);
     }
 
-    public void cadastrar(Consulta c) {
+    public void cadastrar(Cirurgia c) {
         if (c != null) {
-            repositorio.cadastrarConsulta(c);
+            repositorio.cadastrarCirurgia(c);
         }
         /*if(c != null) {
 			if(!this.repositorio.existe(c.getPaciente().getId())) {
@@ -35,7 +43,7 @@ public class ControladorConsulta {
 			// Tratar depois, caso o usuario seja null
 		}*/
     }
-
+    
     public void descadrastar(String id) {
         // TODO implementar
         /*if(this.repositorio.existe(id)) {
@@ -45,20 +53,14 @@ public class ControladorConsulta {
 		}*/
     }
 
-    public ArrayList<Consulta> procurar(String id) {
+    public Cirurgia procurar(String id) {
         // TODO implementar
         //return this.repositorio.procurar(id);
-        return this.repositorio.procurar(id);
-    }
-    
-    public ArrayList<Consulta> procurar(LocalDate d) {
-        // TODO implementar
-        //return this.repositorio.procurar(id);
-        return this.repositorio.procurar(d);
+        return null;
     }
 
-    public Consulta procurar(String id,LocalDate d) {
-        return this.repositorio.procurar(id,d);
+    public ArrayList<Cirurgia> procurar(LocalDate d) {
+        return this.repositorio.procurar(d);
     }
 
     public void salvarDados(String file) throws IOException {
@@ -91,27 +93,18 @@ public class ControladorConsulta {
                 ois = new ObjectInputStream(fis);
                 // Erro macabro
                 //ArrayList<Consulta> c = (ArrayList<Consulta>) ois.readObject();
-                this.repositorio = new RepositorioConsulta((ArrayList<Consulta>) ois.readObject());
+                this.repositorio = new RepositorioCirurgias((ArrayList<Cirurgia>) ois.readObject());
                 ois.close();
             } catch (IOException ex) {
-                this.repositorio = new RepositorioConsulta(128);
+                this.repositorio = new RepositorioCirurgias(128);
             } catch (ClassNotFoundException ex) {
-                this.repositorio = new RepositorioConsulta(128);
+                this.repositorio = new RepositorioCirurgias(128);
             }
 
         } catch (FileNotFoundException ex) {
-            this.repositorio = new RepositorioConsulta(128);
+            this.repositorio = new RepositorioCirurgias(128);
         }
     }
 
-    // Avaliar a necessidade de mais operações
-    public String gerarProntuario(String id) {
-        ArrayList<Consulta> c = this.procurar(id);
-        String prontuario = "";
-        for (Consulta consulta : c) {
-            prontuario += consulta.toString();
-            prontuario += "\n";
-        }
-        return prontuario;
-    }
+   
 }

@@ -19,7 +19,7 @@ public class Servidor implements IServidor {
     private ControladorUsuario recepcionistas;
     private ControladorConsulta consultas;
     private ControladorExames exames;
-    private ControladorConsulta cirurgias;
+    private ControladorCirurgias cirurgias;
     //private GetInformation leitor;
     private static Servidor instance;
 
@@ -27,9 +27,10 @@ public class Servidor implements IServidor {
         medicos = new ControladorUsuario("medicos.txt");
         pacientes = new ControladorUsuario("pacientes.txt");
         recepcionistas = new ControladorUsuario("recepcionistas.txt");
+
         consultas = new ControladorConsulta("consultas.txt");
         exames = new ControladorExames("exames.txt");
-        cirurgias = new ControladorConsulta("cirugias.txt");
+        cirurgias = new ControladorCirurgias("cirugias.txt");
         //leitor = GetInformation.getInstance();
 
         /*
@@ -155,12 +156,17 @@ public class Servidor implements IServidor {
         return (Recepcionista) recepcionistas.procurar(id);
     }
 
-    public ArrayList<Consulta> procurarConsulta(LocalDate d) {
-        return consultas.procurar(d);
+    public Consulta procurarConsulta(String id,LocalDate d) {
+        return consultas.procurar(id,d);
     }
 
-    public Consulta procurarConsulta(String id) {
+    
+    public ArrayList<Consulta> procurarConsulta(String id) {
         return consultas.procurar(id);
+    }
+    
+    public ArrayList<Consulta> procurarConsulta(LocalDate d) {
+        return consultas.procurar(d);
     }
     
     public ArrayList<Usuario> getDadosRepositorioRecepcionistas() {
@@ -195,6 +201,10 @@ public class Servidor implements IServidor {
         exames.cadastrar(e);
 
     }
+    
+    public String gerarProntuario(String id) {
+        return consultas.gerarProntuario(id);
+    }
 
     @Override
     public void salvarDados() throws IOException {
@@ -213,7 +223,4 @@ public class Servidor implements IServidor {
         recepcionistas.carregarDados("recepcionistas.txt");*/
     }
 
-    public ArrayList<Consulta> procurarConsultasDia(LocalDate d) {
-        return consultas.procurar(d);
-    }
 }

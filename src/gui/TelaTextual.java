@@ -198,10 +198,11 @@ public class TelaTextual {
         this.continuarLogin = continuarLogin;
     }
 
-    public void exibirConsulta(String id) {
-        Consulta c = s.procurarConsulta(id);
+    public void exibirConsulta(String id, LocalDate data) {
+        Consulta c = s.procurarConsulta(id, data);
         System.out.println(c);
     }
+    
 
     /*
 	public void exibirExame(String id) {
@@ -256,6 +257,9 @@ public class TelaTextual {
 
     public void executarOperacoes() {
         Usuario u = null;
+        Consulta c = null;
+        String id = null; // @author Danilo Araújo Variável que irá guardar a ID do paciente na conulta
+                   // Solução temporária
         switch (this.getOpcao()) {
             case -1: // Menu inicial
                 this.exibirMenuInicial(); // Exibindo o menu da recep��o s� para teste
@@ -334,6 +338,9 @@ public class TelaTextual {
                                                 this.procurarConsulta();
                                                 break;
                                             case 2:
+                                                System.out.println("Insira a ID do paciente");
+                                                id = leitor.lerId();
+                                                this.gerarProntuario(id);
                                                 break;
                                             case 3:
                                                 break;
@@ -345,7 +352,8 @@ public class TelaTextual {
                                         this.lerOpcao();
                                         switch (this.getOpcao()) {
                                             case 1:
-                                                this.exibirConsulta(u.getId());
+                                                System.out.println("Insira a data da consulta");
+                                                this.exibirConsulta(u.getId(),leitor.lerData());
                                                 break;
                                             case 2:
                                                 //this.exibirExame(u.getId());
@@ -389,6 +397,10 @@ public class TelaTextual {
                 
                 break;
         }
+    }
+
+    public String gerarProntuario(String id) {
+        return s.gerarProntuario(id);
     }
 
 }
