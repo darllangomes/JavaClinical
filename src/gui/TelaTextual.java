@@ -252,7 +252,7 @@ public class TelaTextual {
     }
     
     public ArrayList<Consulta> exibirConsultasDia(LocalDate d) {
-        return s.procurarConsultasDia(d);
+        return s.procurarConsulta(d);
     }
 
     public void executarOperacoes() {
@@ -326,7 +326,7 @@ public class TelaTextual {
                                                 System.out.println(s.getDadosRepositorioPacientes());
                                                 break;
                                             case 10:
-                                                System.out.println(s.procurarConsultasDia(LocalDate.now()));
+                                                System.out.println(s.procurarConsulta(LocalDate.now()));
                                         }
                                     } while (this.getOpcao() != 0);
                                 } else if (u instanceof Medico) {
