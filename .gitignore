@@ -137,14 +137,14 @@ fabric.properties
 # Created by https://www.gitignore.io/api/netbeans
 
 ### NetBeans ###
-nbproject/
-nbproject/private/
+#nbproject/
+#nbproject/private/
 build/
 nbbuild/
-dist/
-nbdist/
-.nb-gradle/
-build.xml
-manifest.mf
+#dist/
+#nbdist/
+#.nb-gradle/
+#build.xml
+#manifest.mf
 
 # End of https://www.gitignore.io/api/netbeans
