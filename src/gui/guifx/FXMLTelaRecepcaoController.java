@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package gui.guifx.novaTela;
+package gui.guifx;
 
-import gui.guifx.TelaDoInicial;
+//import gui.guifx.TelaDoInicial; // TODO @author Danilo Araújo
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -26,12 +26,11 @@ import javafx.scene.control.Label;
  * @author HENRIQUE.FELIX
  */
 public class FXMLTelaRecepcaoController implements Initializable {
-    TelaDoInicial gui = new TelaDoInicial();
+    AgoraEuAchoQueVai gui = new AgoraEuAchoQueVai();
     /**
      * Initializes the controller class.
      */
-    
-    public class FXMLTelaInicialController {
+   
 
     @FXML
     private Button btCadastroUsuario;
@@ -56,29 +55,17 @@ public class FXMLTelaRecepcaoController implements Initializable {
 
     @FXML
     private Label label1;
-        
-    private Object root;
 
     @FXML
     void BotaoVoltar(ActionEvent event) {
-        gui.trocaCena(0);
+
     }
 
     @FXML
-    private void botaoCadastroUsu(ActionEvent event) {
-        System.out.println("Abrindo tela de cadastro de usuarios...");
-        gui.trocaCena(2);
-        /*try {
-            this.root = FXMLLoader.load(getClass().getResource("../gui/guifx/FXMLCadstraUsusarios.fxml"));
-        } catch (IOException ex) {
-            Logger.getLogger(FXMLCadastraUsuariosController.class.getName()).log(Level.SEVERE, null, ex);
-        }*/
-                TelaDoInicial.getStage().setScene(new Scene((Parent) root));
+    void botaoCadastroUsu(ActionEvent event) {
+
     }
-
-}
-
-    
+ 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO

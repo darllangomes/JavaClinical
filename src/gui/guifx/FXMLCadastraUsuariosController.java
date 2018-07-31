@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package gui.guifx.novaTela;
+package gui.guifx;
 
-import gui.guifx.TelaDoInicial;
+//import gui.guifx.TelaDoInicial; // TODO @author Danilo Araújo
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -30,7 +30,7 @@ public class FXMLCadastraUsuariosController implements Initializable {
      * Initializes the controller class.
      */
     
-    TelaDoInicial gui = new TelaDoInicial();
+    //TelaDoInicial gui = new TelaDoInicial(); // TODO @author Danilo Araújo
     private Parent root;
     
     
