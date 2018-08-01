@@ -28,23 +28,22 @@ import negocio.Servidor;
  *
  * @author HENRIQUE.FELIX
  */
-public class MainFx extends Application{ 
+public class MainFx extends Application {
 
     private static ArrayList<Scene> cenas = new ArrayList<Scene>();
     private static Stage stage;
     private static Servidor s;
-  
-    
-    public void criaCena(String doc) throws Exception {
+
+    public  void criaCena(String doc) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource(doc));
         Scene scene = new Scene(root);
         cenas.add(scene);
     }
-    
-    public static void trocaCena(int i){
+
+    public static void trocaCena(int i) {
         stage.setScene(cenas.get(i));
     }
-    
+
     public static Stage getStage() {
         return stage;
     }
@@ -52,60 +51,59 @@ public class MainFx extends Application{
     public static void setStage(Stage stage) {
         MainFx.stage = stage;
     }
-    
-    
 
     @Override
-    public void start(Stage stagePrimare) throws Exception{
+    public void start(Stage stagePrimare) throws Exception {
 
-        stage =  stagePrimare;
+        stage = stagePrimare;
         criaCena("TelaDoZero.fxml");//0
         criaCena("FXMLTelaRecepcao.fxml");
         criaCena("FXMLCadastraUsuarios.fxml");
-    //    criaCena("TelaMarcarExame.fxml");
-    //    criaCena("TelaCadastroRecp.fxml");
-    //    criaCena("TelaCadastroUsu.fxml");
-    //    criaCena("TelaBuscartPaciente.fxml");
-    //    criaCena("TelaBuscarMedico.fxml");
+        //    criaCena("TelaCadastroMed.fxml");
+        //    criaCena("TelaCadastroRecp.fxml");
+        //    criaCena("TelaCadastroUsu.fxml");
+        //    criaCena("TelaBuscartPaciente.fxml");
+        //    criaCena("TelaBuscarMedico.fxml");
         stage.setScene(cenas.get(0));
         stage.setTitle("JavaClinical");
         stage.show();
         setStage(stage);
-    } 
-    
-    public static void fazerLogin(String id, String senha){
+    }
+
+    public static void fazerLogin(String id, String senha) throws UsuarioNullException {
         s = Servidor.getInstance();
         Usuario u = null;
         Login l = new Login(id, senha.hashCode());
-        
-        switch(l.getId().charAt(0)) {
+
+        switch (l.getId().charAt(0)) {
             case '1':
-            try {
                 u = s.efetuarLoginRecepcionista(l);
-                System.out.println(u);
-            } catch (UsuarioNullException ex) {
-                // Chamar gui para exceção
-            }
-            break;
-            case '2':
-                try {
-                u = s.efetuarLoginMedico(l);
-            } catch (UsuarioNullException ex) {
-                // Chamar gui para exceção
-            }
+                if (u.getSenhaHash() != l.getSenhaHash()) {
+                    throw new UsuarioNullException();
+                }
+
                 break;
-                case '3':
-            try {
+            case '2':
+                u = s.efetuarLoginMedico(l);
+                if (u.getSenhaHash() != l.getSenhaHash()) {
+                    throw new UsuarioNullException();
+                }
+
+                break;
+            case '3':
                 u = s.efetuarLoginPaciente(l);
-            } catch (UsuarioNullException ex) {
-                // Chamar gui para exceção
-            }
-            break;
+                if (u.getSenhaHash() != l.getSenhaHash()) {
+                    throw new UsuarioNullException();
+                }
+
+                break;
             default:
                 break;
         }
     }
-    
-    public static void main(String [] args){launch(args);}
-    
+
+    public static void main(String[] args) {
+        launch(args);
+    }
+
 }
