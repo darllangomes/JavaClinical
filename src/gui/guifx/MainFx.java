@@ -60,7 +60,7 @@ public class MainFx extends Application {
         criaCena("FXMLTelaRecepcao.fxml");
         criaCena("FXMLCadastraUsuarios.fxml");
         criaCena("TelaMenuPaciente.fxml");
-        criaCena("TelaMenuMedico.fxml");
+        //criaCena("TelaMenuMedico.fxml");
         //    criaCena("TelaCadastroMed.fxml");
         //    criaCena("TelaCadastroRecp.fxml");
         //    criaCena("TelaCadastroUsu.fxml");
