@@ -35,13 +35,9 @@ public class TelaTextual {
     public TelaTextual() {
         executando = true;
         continuarLogin = false;
-        try {
-            s = Servidor.getInstance();
-        } catch (UsuarioExisteException e) {
-            System.out.println(e.getMessage());
-        } catch (UsuarioNullException e) {
-            System.out.println(e.getMessage());
-        }
+
+        s = Servidor.getInstance();
+
         try {
             s.carregarDados();
         } catch (IOException ex) {
@@ -202,7 +198,7 @@ public class TelaTextual {
         Consulta c = s.procurarConsulta(id, data);
         System.out.println(c);
     }
-    
+
 
     /*
 	public void exibirExame(String id) {
@@ -250,7 +246,7 @@ public class TelaTextual {
         }
 
     }
-    
+
     public ArrayList<Consulta> exibirConsultasDia(LocalDate d) {
         return s.procurarConsulta(d);
     }
@@ -259,7 +255,7 @@ public class TelaTextual {
         Usuario u = null;
         Consulta c = null;
         String id = null; // @author Danilo Araújo Variável que irá guardar a ID do paciente na conulta
-                   // Solução temporária
+        // Solução temporária
         switch (this.getOpcao()) {
             case -1: // Menu inicial
                 this.exibirMenuInicial(); // Exibindo o menu da recep��o s� para teste
@@ -306,7 +302,7 @@ public class TelaTextual {
                                             case 4:
                                                 this.removerUsuario();
                                                 break;
-                                            case 5: 
+                                            case 5:
                                                 try {
                                                     this.marcarConsulta();
                                                 } catch (UsuarioNullException e) {
@@ -328,7 +324,7 @@ public class TelaTextual {
                                             case 10:
                                                 System.out.println(s.procurarConsulta(LocalDate.now()));
                                                 break;
-                                            case 11:                                            
+                                            case 11:
                                                 System.out.println(s.procurar(LocalDate.now()));
                                                 break;
                                         }
@@ -339,7 +335,7 @@ public class TelaTextual {
                                         this.lerOpcao();
                                         switch (this.getOpcao()) {
                                             case 1:
-                                               System.out.println(s.procurarConsulta(LocalDate.now()));
+                                                System.out.println(s.procurarConsulta(LocalDate.now()));
                                                 break;
                                             case 2:
                                                 System.out.println("Insira a ID do paciente");
@@ -357,7 +353,7 @@ public class TelaTextual {
                                         switch (this.getOpcao()) {
                                             case 1:
                                                 System.out.println("Insira a data da consulta");
-                                                this.exibirConsulta(u.getId(),leitor.lerData());
+                                                this.exibirConsulta(u.getId(), leitor.lerData());
                                                 break;
                                             case 2:
                                                 //this.exibirExame(u.getId());
@@ -398,7 +394,7 @@ public class TelaTextual {
 
             default:
                 this.sair();
-                
+
                 break;
         }
     }

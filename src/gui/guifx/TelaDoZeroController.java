@@ -53,11 +53,11 @@ public class TelaDoZeroController implements Initializable {
 
     @FXML
     void LoginUsuario(ActionEvent event) {
-        String carai = SenhaField.getText();
-        String porra = TextId.getText();
+        String senha = SenhaField.getText();
+        String id = TextId.getText();
         
         MainFx a = new MainFx();
-        a.fazerLogin(porra, carai);
+        a.fazerLogin(id, senha);
     }
     @Override
     public void initialize(URL url, ResourceBundle rb) {
