@@ -58,12 +58,12 @@ public class FXMLTelaRecepcaoController implements Initializable {
 
     @FXML
     void BotaoVoltar(ActionEvent event) {
-
+        this.gui.trocaCena(0);
     }
 
     @FXML
     void botaoCadastroUsu(ActionEvent event) {
-
+        this.gui.trocaCena(2);
     }
  
     @Override

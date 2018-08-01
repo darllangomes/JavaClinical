@@ -8,7 +8,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="440.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.guifx.FXMLCadastraUsuariosController">
+<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="440.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.guifx.TelaCadastroMedController">
    <children>
       <Separator layoutX="57.0" layoutY="246.0" prefHeight="6.0" prefWidth="327.0" />
       <Text fx:id="titulo" layoutX="117.0" layoutY="65.0" strokeWidth="0.0" text="Cadastrar Usuários">

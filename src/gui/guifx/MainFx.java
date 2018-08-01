@@ -61,7 +61,12 @@ public class MainFx extends Application{
         stage =  stagePrimare;
         criaCena("TelaDoZero.fxml");//0
         criaCena("FXMLTelaRecepcao.fxml");
-        //criaCena("FXMLCadastraUsuarios.fxml");
+        criaCena("FXMLCadastraUsuarios.fxml");
+        criaCena("TelaCadastroMed.fxml");
+    //    criaCena("TelaCadastroRecp.fxml");
+    //    criaCena("TelaCadastroUsu.fxml");
+    //    criaCena("TelaBuscartPaciente.fxml");
+    //    criaCena("TelaBuscarMedico.fxml");
         stage.setScene(cenas.get(0));
         stage.setTitle("JavaClinical");
         stage.show();

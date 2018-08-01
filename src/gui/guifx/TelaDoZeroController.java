@@ -23,8 +23,11 @@ import negocio.Usuario;
  *
  * @author Darllan Gomes
  */
-public class TelaDoZeroController implements Initializable {
 
+public class TelaDoZeroController implements Initializable {
+    
+    MainFx gui = new MainFx();
+    
     @FXML
     private Button btSair;
 
@@ -43,21 +46,22 @@ public class TelaDoZeroController implements Initializable {
     @FXML
     void BotaoLogin(ActionEvent event) {
         LoginUsuario(event);
+        this.gui.trocaCena(1);
         
     }
 
     @FXML
     void BotaoSair(ActionEvent event) {
-
+        System.exit(1);
     }
 
     @FXML
     void LoginUsuario(ActionEvent event) {
-        String carai = SenhaField.getText();
-        String porra = TextId.getText();
+        String senha = SenhaField.getText();
+        String id = TextId.getText();
         
         MainFx a = new MainFx();
-        a.fazerLogin(porra, carai);
+        a.fazerLogin(id, senha);
     }
     @Override
     public void initialize(URL url, ResourceBundle rb) {

@@ -13,7 +13,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
-import javax.xml.soap.Text;
+import javafx.scene.control.Label;
 
 /**
  * FXML Controller class
@@ -29,12 +29,11 @@ public class FXMLCadastraUsuariosController implements Initializable {
     /**
      * Initializes the controller class.
      */
-    
-    //TelaDoInicial gui = new TelaDoInicial(); // TODO @author Danilo Araújo
+    MainFx gui = new MainFx(); // TODO @author Danilo Araújo
     private Parent root;
     
     
-     @FXML
+    @FXML
     private Button btCadastrarRecp;
 
     @FXML
@@ -44,21 +43,21 @@ public class FXMLCadastraUsuariosController implements Initializable {
     private Button btCadastroPac;
 
     @FXML
-    private Text titulo;
+    private Label label2;
 
     @FXML
     void botaoCadastroMed(ActionEvent event) {
-
+        this.gui.trocaCena(0);
     }
 
     @FXML
     void botaoCadastroPac(ActionEvent event) {
-
+        this.gui.trocaCena(0);
     }
 
     @FXML
     void botaoRecp(ActionEvent event) {
-
+        this.gui.trocaCena(0);
     }
     
     
