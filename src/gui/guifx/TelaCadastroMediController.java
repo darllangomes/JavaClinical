@@ -5,66 +5,79 @@
  */
 package gui.guifx;
 
-//import gui.guifx.TelaDoInicial; // TODO @author Danilo Araújo
-import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 
 /**
  * FXML Controller class
  *
- * @author HENRIQUE.FELIX
+ * @author christian.lira
  */
-public class FXMLTelaRecepcaoController implements Initializable {
+public class TelaCadastroMediController implements Initializable {
+
     /**
      * Initializes the controller class.
      */
-   
+    
+    @FXML
+    private TextField filedCpf;
 
     @FXML
-    private Button btCadastroUsuario;
+    private TextField fieldIdade;
 
     @FXML
-    private Button btMArcarExame;
-
-    @FXML
-    private Button btBuscarMedico;
-
-    @FXML
-    private Button btBuscaUsuario;
-
-    @FXML
-    private Button btRemoverUsuario;
-
-    @FXML
-    private Button btMarcarConsulta;
+    private TextField filedNome;
 
     @FXML
     private Button btVoltar;
 
     @FXML
+    private Button btCadastro;
+
+    @FXML
+    private PasswordField fieldSenha;
+
+    @FXML
+    private PasswordField fieldExpecialidade;
+
+    @FXML
     private Label label1;
 
     @FXML
-    void BotaoVoltar(ActionEvent event) {
-        MainFx.trocaCena(0);
+    private Label label2;
+
+    @FXML
+    private Label label3;
+
+    @FXML
+    private Label label4;
+
+    @FXML
+    private Label label5;
+
+    @FXML
+    private Label label6;
+
+    @FXML
+    private Label label7;
+
+    @FXML
+    void cadastrar(ActionEvent event) {
+
     }
 
     @FXML
-    void botaoCadastroUsu(ActionEvent event) {
-        MainFx.trocaCena(2);
+    void voltar(ActionEvent event) {
+
     }
- 
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO

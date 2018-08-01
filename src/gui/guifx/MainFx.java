@@ -32,7 +32,7 @@ public class MainFx extends Application{
 
     private static ArrayList<Scene> cenas = new ArrayList<Scene>();
     private static Stage stage;
-    private Servidor s;
+    private static Servidor s;
   
     
     public void criaCena(String doc) throws Exception {
@@ -41,7 +41,7 @@ public class MainFx extends Application{
         cenas.add(scene);
     }
     
-    public void trocaCena(int i){
+    public static void trocaCena(int i){
         stage.setScene(cenas.get(i));
     }
     
@@ -62,7 +62,7 @@ public class MainFx extends Application{
         criaCena("TelaDoZero.fxml");//0
         criaCena("FXMLTelaRecepcao.fxml");
         criaCena("FXMLCadastraUsuarios.fxml");
-        criaCena("TelaCadastroMed.fxml");
+    //    criaCena("TelaMarcarExame.fxml");
     //    criaCena("TelaCadastroRecp.fxml");
     //    criaCena("TelaCadastroUsu.fxml");
     //    criaCena("TelaBuscartPaciente.fxml");
@@ -73,7 +73,7 @@ public class MainFx extends Application{
         setStage(stage);
     } 
     
-    public void fazerLogin(String id, String senha){
+    public static void fazerLogin(String id, String senha){
         s = Servidor.getInstance();
         Usuario u = null;
         Login l = new Login(id, senha.hashCode());
