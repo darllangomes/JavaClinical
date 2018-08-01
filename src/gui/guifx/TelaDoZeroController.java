@@ -50,7 +50,18 @@ public class TelaDoZeroController implements Initializable {
     void BotaoLogin(ActionEvent event) {
         try {
             LoginUsuario(event);
-            MainFx.trocaCena(1);
+            switch (TextId.getText().charAt(0)) {
+            case '1':
+                MainFx.trocaCena(1);
+                break;
+            case '2':
+                // TODO @author Danilo Araújo trocaCena para médico
+                break;
+            default:
+                // TODO @author Danilo Araújo trocaCena para paciente
+                break;
+        }
+            
         } catch (UsuarioNullException ex) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Erro no Login");
