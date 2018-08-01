@@ -5,36 +5,26 @@
  */
 package gui.guifx;
 
-import java.io.IOException;
+//import gui.guifx.TelaDoInicial; // TODO @author Danilo Araújo
 import java.net.URL;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import negocio.Servidor;
-import negocio.ControladorUsuario;
-import dados.RepositorioUsuario;
-import excecao.UsuarioNullException;
-import javaclinical.Main;
-import negocio.Login;
-import negocio.IServidor;
 import negocio.Usuario;
 
 /**
+ * FXML Controller class
  *
- * @author HENRIQUE.FELIX
+ * @author Darllan Gomes
  */
-public class FXMLTelaInicialController implements Initializable {
-    
+public class TelaDoZeroController implements Initializable {
+
     @FXML
     private Button btSair;
 
@@ -51,7 +41,7 @@ public class FXMLTelaInicialController implements Initializable {
     private PasswordField SenhaField;
     
     // TODO @author Danilo Araujo Comentar para usar Main principal
-    TelaDoInicial gui = new TelaDoInicial();
+    AgoraEuAchoQueVai gui = new AgoraEuAchoQueVai();
 
     public Parent getRoot() {
         return root;
@@ -65,7 +55,7 @@ public class FXMLTelaInicialController implements Initializable {
     private Parent root;
     
     
-    private void LoginUsuario(ActionEvent event) {
+    public void LoginUsuario(ActionEvent event) {
         Usuario u = null;
         String id = TextId.getText();
         System.out.println(id);
@@ -113,7 +103,7 @@ public class FXMLTelaInicialController implements Initializable {
        
     }
     
-    private void BotaoLogin(ActionEvent event) {
+    public void BotaoLogin(ActionEvent event) {
         
         LoginUsuario(event);
         //TelaDoInicial.trocaCena(1);
@@ -131,20 +121,14 @@ public class FXMLTelaInicialController implements Initializable {
 //                TelaDoInicial.getStage().setScene(new Scene(root));
     }
     
-    private void BotaoSair(ActionEvent event) {
+    public void BotaoSair(ActionEvent event) {
         System.out.println("Usuario fechou o programa...!");
         System.exit(0);
         
     }
-    
-    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
-
-    @FXML
-    private void botaoCadastroUsu(ActionEvent event) {
-    }
+    }   
     
 }
