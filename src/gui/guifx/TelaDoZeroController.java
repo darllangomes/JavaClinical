@@ -6,12 +6,16 @@
 package gui.guifx;
 
 //import gui.guifx.TelaDoInicial; // TODO @author Danilo Araújo
+import excecao.UsuarioNullException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
@@ -23,11 +27,10 @@ import negocio.Usuario;
  *
  * @author Darllan Gomes
  */
-
 public class TelaDoZeroController implements Initializable {
-    
-    MainFx gui = new MainFx();
-    
+
+    //MainFx gui = new MainFx();
+
     @FXML
     private Button btSair;
 
@@ -45,9 +48,16 @@ public class TelaDoZeroController implements Initializable {
 
     @FXML
     void BotaoLogin(ActionEvent event) {
-        LoginUsuario(event);
-        this.gui.trocaCena(1);
-        
+        try {
+            LoginUsuario(event);
+            MainFx.trocaCena(1);
+        } catch (UsuarioNullException ex) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Erro no Login");
+            alert.setHeaderText("Informações inválidas.");
+            alert.setContentText("Usuário ou senha fornecidas estão incorretas.");
+            alert.showAndWait();
+        }
     }
 
     @FXML
@@ -56,16 +66,17 @@ public class TelaDoZeroController implements Initializable {
     }
 
     @FXML
-    void LoginUsuario(ActionEvent event) {
+    void LoginUsuario(ActionEvent event) throws UsuarioNullException {
         String senha = SenhaField.getText();
         String id = TextId.getText();
-        
-        MainFx a = new MainFx();
-        a.fazerLogin(id, senha);
+
+        //MainFx a = new MainFx();
+        MainFx.fazerLogin(id, senha);
     }
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }   
-    
+    }
+
 }
