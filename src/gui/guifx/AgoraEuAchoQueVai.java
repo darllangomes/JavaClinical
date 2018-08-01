@@ -5,6 +5,7 @@
  */
 package gui.guifx;
 
+import excecao.UsuarioNullException;
 import java.util.ArrayList;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -13,6 +14,15 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
+import negocio.Medico;
+import negocio.Paciente;
+import negocio.Recepcionista;
+import negocio.Usuario;
+import gui.TelaTextual;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import negocio.Login;
+import negocio.Servidor;
 
 /**
  *
@@ -22,7 +32,7 @@ public class AgoraEuAchoQueVai extends Application{
 
     private static ArrayList<Scene> cenas = new ArrayList<Scene>();
     private static Stage stage;
-
+    private Servidor s;
   
     
     public void criaCena(String doc) throws Exception {
@@ -56,7 +66,41 @@ public class AgoraEuAchoQueVai extends Application{
         stage.setTitle("JavaClinical");
         stage.show();
         setStage(stage);
-    }  
+    } 
+    
+    public void fazerLogin(String id, String senha){
+        s = Servidor.getInstance();
+        Usuario u = null;
+        Login l = new Login(id, senha.hashCode());
+        
+        switch(l.getId().charAt(0)) {
+            case '1':
+            try {
+                u = s.efetuarLoginRecepcionista(l);
+                System.out.println(u);
+            } catch (UsuarioNullException ex) {
+                // Chamar gui para exceção
+            }
+            break;
+            case '2':
+                try {
+                u = s.efetuarLoginMedico(l);
+            } catch (UsuarioNullException ex) {
+                // Chamar gui para exceção
+            }
+                break;
+                case '3':
+            try {
+                u = s.efetuarLoginPaciente(l);
+            } catch (UsuarioNullException ex) {
+                // Chamar gui para exceção
+            }
+            break;
+            default:
+                break;
+        }
+    }
+    
     public static void main(String [] args){launch(args);}
     
 }

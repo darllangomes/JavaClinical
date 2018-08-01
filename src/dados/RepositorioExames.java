@@ -28,7 +28,7 @@ public class RepositorioExames {
     public void cadastrarExame(Exame e) {
         
         try {
-            procurar(String id);
+            procurar(e);
         } catch (ExameInexistenteException ex) {
             exames.add(e);
         }
@@ -54,6 +54,26 @@ public class RepositorioExames {
         }
         return get;
     }
+    
+    
+    public Exame procurar(Exame e) throws ExameInexistenteException {
+        int i = 0;
+        Exame get = null;
+        boolean continuar = true;
+        for (i = 0; i < exames.size() && continuar == true; i++) {
+            
+            if (exames.get(i).getConsulta().getPaciente().getNome().equals(e.getNomePaciente())) {
+                get = exames.get(i);
+                continuar = false;
+            }
+        }
+        
+        if (exames.get(i) == null) {
+            throw new ExameInexistenteException();
+        }
+        return get;
+    }
+    
     
     
     
