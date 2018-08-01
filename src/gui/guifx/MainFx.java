@@ -28,7 +28,7 @@ import negocio.Servidor;
  *
  * @author HENRIQUE.FELIX
  */
-public class AgoraEuAchoQueVai extends Application{ 
+public class MainFx extends Application{ 
 
     private static ArrayList<Scene> cenas = new ArrayList<Scene>();
     private static Stage stage;
@@ -50,7 +50,7 @@ public class AgoraEuAchoQueVai extends Application{
     }
 
     public static void setStage(Stage stage) {
-        AgoraEuAchoQueVai.stage = stage;
+        MainFx.stage = stage;
     }
     
     

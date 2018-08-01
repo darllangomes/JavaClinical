@@ -26,7 +26,7 @@ import javafx.scene.control.Label;
  * @author HENRIQUE.FELIX
  */
 public class FXMLTelaRecepcaoController implements Initializable {
-    AgoraEuAchoQueVai gui = new AgoraEuAchoQueVai();
+    MainFx gui = new MainFx();
     /**
      * Initializes the controller class.
      */

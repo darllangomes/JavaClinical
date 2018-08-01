@@ -56,7 +56,7 @@ public class TelaDoZeroController implements Initializable {
         String carai = SenhaField.getText();
         String porra = TextId.getText();
         
-        AgoraEuAchoQueVai a = new AgoraEuAchoQueVai();
+        MainFx a = new MainFx();
         a.fazerLogin(porra, carai);
     }
     @Override
