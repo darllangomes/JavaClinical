@@ -20,9 +20,16 @@ public class Id {
                 id += opcao;
                 id += random();
                 break;
+            case 4:
+                id+=opcao;
+                id+= random();
+             break;
             default:
                 break;
         }
+        
+        
+            
         System.out.println("Id do Usuário: " + id);
         return id;
     }

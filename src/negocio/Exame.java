@@ -8,6 +8,8 @@ public class Exame  {
 	private String tipoExame;
 	private Consulta consulta;
 	private  LocalDate data;
+        private String idPaciente;
+        private String idExame;
 	
 	public Exame(Consulta consulta, LocalDate data){
 		this.nomeMedico= consulta.getMedico().getNome();
@@ -75,6 +77,25 @@ public class Exame  {
 	public void setTipoExame(String tipoExame) {
 		this.tipoExame = tipoExame;
 	}
+
+    public String getIdPaciente() {
+        return idPaciente;
+    }
+
+    public void setIdPaciente(String idPaciente) {
+        this.idPaciente = idPaciente;
+    }
+
+    public String getIdExame() {
+        return idExame;
+    }
+
+    public void setIdExame(String idExame) {
+        this.idExame = idExame;
+    }
+
+        
+        
 	@Override
 	public int hashCode() {
 		final int prime = 31;

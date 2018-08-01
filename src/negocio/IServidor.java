@@ -1,5 +1,6 @@
 package negocio;
 
+import excecao.ExameInexistenteException;
 import excecao.LoginErradoException;
 import excecao.UsuarioExisteException;
 import excecao.UsuarioNullException;

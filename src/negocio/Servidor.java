@@ -1,5 +1,6 @@
 package negocio;
 
+import excecao.ExameInexistenteException;
 import java.io.FileNotFoundException;
 import excecao.UsuarioExisteException;
 import excecao.UsuarioNullException;
@@ -194,6 +195,7 @@ public class Servidor implements IServidor {
     public Cirurgia procurarCirurgia(String id) {
         return (Cirurgia) cirurgias.procurar(id);
     }
+   
 
     public void marcarExame(Exame e) {
         //e= leitor.lerConsulta(instance);
@@ -222,5 +224,12 @@ public class Servidor implements IServidor {
         medicos.carregarDados("medicos.txt");
         recepcionistas.carregarDados("recepcionistas.txt");*/
     }
+    
+    public ArrayList<Exame> procurar(LocalDate d){
+      return exames.procurar(d);
+    }
+        
+    
+   
 
 }

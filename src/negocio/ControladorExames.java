@@ -44,9 +44,11 @@ public class ControladorExames {
             // Tratar caso usuario não exista
         }*/
     }
+    
+    
 
-    public Exame procurar(Exame e) throws ExameInexistenteException {
-        return this.repositorio.procurar(e);
+    public Exame procurar(String id) throws ExameInexistenteException {
+        return this.repositorio.procurar(id);
     }
 
     public ArrayList<Exame> procurar(LocalDate d) {

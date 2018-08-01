@@ -8,6 +8,7 @@ public class Consulta implements Serializable {
 	private Medico medico;
 	private Paciente paciente;
 	private Prontuario prontuario;
+        private String id;
 	
 	 Consulta() {
              
@@ -99,7 +100,13 @@ public class Consulta implements Serializable {
 		return true;
 	}
 
-    void setId(String id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public String getId() {
+        return id;
     }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    
 }

@@ -327,6 +327,10 @@ public class TelaTextual {
                                                 break;
                                             case 10:
                                                 System.out.println(s.procurarConsulta(LocalDate.now()));
+                                                break;
+                                            case 11:                                            
+                                                System.out.println(s.procurar(LocalDate.now()));
+                                                break;
                                         }
                                     } while (this.getOpcao() != 0);
                                 } else if (u instanceof Medico) {
@@ -335,7 +339,7 @@ public class TelaTextual {
                                         this.lerOpcao();
                                         switch (this.getOpcao()) {
                                             case 1:
-                                                this.procurarConsulta();
+                                               System.out.println(s.procurarConsulta(LocalDate.now()));
                                                 break;
                                             case 2:
                                                 System.out.println("Insira a ID do paciente");
