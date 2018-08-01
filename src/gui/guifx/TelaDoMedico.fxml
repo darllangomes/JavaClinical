@@ -8,23 +8,23 @@
 
 <AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="440.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.guifx.TelaDoZeroController">
    <children>
-      <Button fx:id="btVoltar" layoutX="169.0" layoutY="378.0" onAction="#BotaoVoltar" prefHeight="45.0" prefWidth="103.0" text="Voltar">
+      <Button fx:id="btVoltar1" layoutX="170.0" layoutY="379.0" onAction="#BotaoVoltar1" prefHeight="45.0" prefWidth="103.0" text="Sair">
          <font>
             <Font size="22.0" />
          </font>
       </Button>
-      <Button fx:id="btExames" layoutX="66.0" layoutY="143.0" onAction="#BotaoExame" prefHeight="48.0" prefWidth="103.0" text="Exames">
+      <Button fx:id="btListar" layoutX="25.0" layoutY="202.0" onAction="#BotaoListar" prefHeight="48.0" prefWidth="196.0" text="Listar Consultas">
          <font>
             <Font size="22.0" />
          </font>
       </Button>
       <Separator layoutX="76.0" layoutY="329.0" prefHeight="18.0" prefWidth="288.0" />
-      <Label layoutX="36.0" layoutY="27.0" text="Menu Paciente:">
+      <Label layoutX="49.0" layoutY="35.0" text="Menu Médico">
          <font>
-            <Font size="22.0" />
+            <Font size="24.0" />
          </font>
       </Label>
-      <Button fx:id="btConsulta" layoutX="245.0" layoutY="143.0" onAction="#BotaoConsulta" prefHeight="48.0" prefWidth="128.0" text="Consultas">
+      <Button fx:id="btProntuario" layoutX="261.0" layoutY="202.0" onAction="#BotaoProntuario" prefHeight="48.0" prefWidth="140.0" text="Prontuario">
          <font>
             <Font size="22.0" />
          </font>

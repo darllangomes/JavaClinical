@@ -73,6 +73,56 @@ public class TelaDoZeroController implements Initializable {
         //MainFx a = new MainFx();
         MainFx.fazerLogin(id, senha);
     }
+    
+    
+    @FXML
+    private Button btVoltar;
+
+    @FXML
+    private Button btExames;
+
+    @FXML
+    private Button btConsulta;
+
+    @FXML
+    void BotaoConsulta(ActionEvent event) {
+
+    }
+
+    @FXML
+    void BotaoExame(ActionEvent event) {
+
+    }
+
+    @FXML
+    void BotaoVoltar(ActionEvent event) {
+
+    }
+    
+     @FXML
+    private Button btVoltar1;
+
+    @FXML
+    private Button btListar;
+
+    @FXML
+    private Button btProntuario;
+
+    @FXML
+    void BotaoListar(ActionEvent event) {
+
+    }
+
+    @FXML
+    void BotaoProntuario(ActionEvent event) {
+
+    }
+
+    @FXML
+    void BotaoVoltar1(ActionEvent event) {
+
+    }
+    
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
