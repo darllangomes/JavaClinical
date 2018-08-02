@@ -107,7 +107,7 @@ public class TelaDoZeroController implements Initializable {
 
     @FXML
     void BotaoVoltar(ActionEvent event) {
-
+        MainFx.trocaCena(0);
     }
     
      @FXML
@@ -131,7 +131,7 @@ public class TelaDoZeroController implements Initializable {
 
     @FXML
     void BotaoVoltar1(ActionEvent event) {
-
+        MainFx.trocaCena(0);
     }
     
 
