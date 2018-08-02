@@ -73,7 +73,7 @@ public class TelaDoZeroController implements Initializable {
 
     @FXML
     void BotaoSair(ActionEvent event) {
-        System.exit(1);
+        System.exit(0); // @author Danilo Araújo Valor padrão para encerramento de um programa sem erro
     }
 
     @FXML
