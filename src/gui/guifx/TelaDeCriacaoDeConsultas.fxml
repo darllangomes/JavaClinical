@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="440.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.guifx.FXMLTelaRecepcaoController">
+   <children>
+      <Label fx:id="label0" layoutX="177.0" layoutY="14.0" text="Colsulta">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <Label fx:id="label2" layoutX="30.0" layoutY="73.0" text="Queixa do Paciente: ">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Button fx:id="btProntuario" layoutX="31.0" layoutY="313.0" mnemonicParsing="false" onAction="#fazerProntuario" prefHeight="44.0" prefWidth="183.0" text="Gerar Prontuario">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Button fx:id="btVoltar1" layoutX="177.0" layoutY="406.0" mnemonicParsing="false" onAction="#voltar" text="Voltar">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Button>
+      <TextField fx:id="queixaDoUsuario" layoutX="23.0" layoutY="111.0" prefHeight="179.0" prefWidth="397.0" />
+   </children>
+</AnchorPane>

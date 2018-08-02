@@ -42,7 +42,9 @@
             <Font size="16.0" />
          </font>
       </Text>
-      <TextField fx:id="filedDataCons" layoutX="199.0" layoutY="296.0" prefHeight="25.0" prefWidth="182.0" />
+      <TextField fx:id="filedDia" layoutX="199.0" layoutY="296.0" prefHeight="25.0" prefWidth="42.0" promptText="Dia" />
       <Separator layoutX="46.0" layoutY="334.0" prefHeight="11.0" prefWidth="348.0" />
+      <TextField fx:id="filedMes" layoutX="260.0" layoutY="296.0" prefHeight="25.0" prefWidth="42.0" promptText="Mes" />
+      <TextField fx:id="filedAno" layoutX="321.0" layoutY="296.0" prefHeight="25.0" prefWidth="42.0" promptText="Ano" />
    </children>
 </AnchorPane>

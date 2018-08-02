@@ -50,7 +50,13 @@ public class TelaMarcarConsultaController implements Initializable {
     private Text textDataCon;
 
     @FXML
-    private TextField filedDataCons;
+    private TextField filedDia;
+
+    @FXML
+    private TextField filedMes;
+
+    @FXML
+    private TextField filedAno;
 
     @FXML
     void botaoMarcar(ActionEvent event) {
@@ -61,7 +67,6 @@ public class TelaMarcarConsultaController implements Initializable {
     void botaoVoltar(ActionEvent event) {
 
     }
-    
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {

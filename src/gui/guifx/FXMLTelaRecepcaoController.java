@@ -19,6 +19,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 
 /**
  * FXML Controller class
@@ -65,6 +67,26 @@ public class FXMLTelaRecepcaoController implements Initializable {
         MainFx.trocaCena(2);
     }
  
+    @FXML
+    private Label label0;
+
+    @FXML
+    private Label label2;
+
+    @FXML
+    private Button btProntuario;
+
+    @FXML
+    private Button btVoltar1;
+
+    @FXML
+    private TextField queixaDoUsuario;
+
+    @FXML
+    void fazerProntuario(ActionEvent event) {
+
+    }
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO

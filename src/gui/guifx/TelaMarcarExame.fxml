@@ -38,12 +38,14 @@
       </Text>
       <TextField fx:id="filedIdPaci" layoutX="172.0" layoutY="218.0" prefHeight="25.0" prefWidth="209.0" />
       <Separator layoutX="46.0" layoutY="256.0" prefHeight="11.0" prefWidth="348.0" />
-      <Text fx:id="textDataCon" layoutX="56.0" layoutY="315.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Data do Exame:   ">
+      <Text fx:id="filedDataCons" layoutX="56.0" layoutY="299.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Data do Exame:  ">
          <font>
             <Font size="16.0" />
          </font>
       </Text>
-      <TextField fx:id="filedDataCons" layoutX="172.0" layoutY="296.0" prefHeight="25.0" prefWidth="209.0" />
-      <Separator layoutX="46.0" layoutY="334.0" prefHeight="11.0" prefWidth="348.0" />
+      <TextField fx:id="filedDia" layoutX="199.0" layoutY="280.0" prefHeight="25.0" prefWidth="42.0" promptText="Dia" />
+      <Separator layoutX="46.0" layoutY="318.0" prefHeight="11.0" prefWidth="348.0" />
+      <TextField fx:id="filedMes" layoutX="260.0" layoutY="280.0" prefHeight="25.0" prefWidth="42.0" promptText="Mes" />
+      <TextField fx:id="filedAno" layoutX="321.0" layoutY="280.0" prefHeight="25.0" prefWidth="42.0" promptText="Ano" />
    </children>
 </AnchorPane>
