@@ -50,7 +50,13 @@ public class TelaMarcarConsultaController implements Initializable {
     private Text textDataCon;
 
     @FXML
-    private TextField filedDataCons;
+    private TextField filedDia;
+
+    @FXML
+    private TextField filedMes;
+
+    @FXML
+    private TextField filedAno;
 
     @FXML
     void botaoMarcar(ActionEvent event) {
@@ -62,7 +68,6 @@ public class TelaMarcarConsultaController implements Initializable {
         //MainFx.trocaCena(0);
         //ver qual é a cena certa
     }
-    
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
