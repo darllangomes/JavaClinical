@@ -60,10 +60,11 @@ public class MainFx extends Application {
         criaCena("FXMLTelaRecepcao.fxml");
         criaCena("FXMLCadastraUsuarios.fxml");
         criaCena("TelaMenuPaciente.fxml");
-        //criaCena("TelaMenuMedico.fxml");
-        //    criaCena("TelaCadastroMed.fxml");
-        //    criaCena("TelaCadastroRecp.fxml");
-        //    criaCena("TelaCadastroUsu.fxml");
+        criaCena("TelaDoMedico.fxml");
+        criaCena("TelaCadastroMedi.fxml");
+        criaCena("TelaCadastroRecp.fxml");
+        criaCena("TelaCadastroUsu.fxml");
+        criaCena("TelaCadastroRecp.fxml");
         //    criaCena("TelaBuscartPaciente.fxml");
         //    criaCena("TelaBuscarMedico.fxml");
         stage.setScene(cenas.get(0));

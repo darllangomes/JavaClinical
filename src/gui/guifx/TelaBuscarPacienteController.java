@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package gui.guifx.novaTela;
+package gui.guifx;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -12,7 +12,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import javax.xml.soap.Text;
+import javafx.scene.control.Label;
 
 /**
  * FXML Controller class
@@ -25,29 +25,29 @@ public class TelaBuscarPacienteController implements Initializable {
      * Initializes the controller class.
      */
     
-    @FXML
+        @FXML
     private Button btVoltar;
 
     @FXML
-    private Button btMarcar;
-
-    @FXML
-    private Text titulo;
-
-    @FXML
-    private Text textIdPac;
+    private Button btBuscar;
 
     @FXML
     private TextField filedIdPaci;
 
     @FXML
-    void botaoMarcar(ActionEvent event) {
+    private Label label1;
+
+    @FXML
+    private Label label2;
+
+    @FXML
+    void botaoBuscar(ActionEvent event) {
 
     }
 
     @FXML
     void botaoVoltar(ActionEvent event) {
-
+     
     }
     
     @Override

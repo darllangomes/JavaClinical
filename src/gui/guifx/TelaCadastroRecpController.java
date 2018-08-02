@@ -11,9 +11,9 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javax.xml.soap.Text;
 
 /**
  * FXML Controller class
@@ -27,28 +27,10 @@ public class TelaCadastroRecpController implements Initializable {
      */
     
     @FXML
-    private Text titulo;
-
-    @FXML
-    private Text textRecp;
-
-    @FXML
-    private Text textCpf;
-
-    @FXML
     private TextField filedCpf;
 
     @FXML
-    private Text textIdade;
-
-    @FXML
     private TextField fieldIdade;
-
-    @FXML
-    private Text textSenha;
-
-    @FXML
-    private Text textNome;
 
     @FXML
     private TextField filedNome;
@@ -61,6 +43,24 @@ public class TelaCadastroRecpController implements Initializable {
 
     @FXML
     private PasswordField fieldSenha;
+
+    @FXML
+    private Label label1;
+
+    @FXML
+    private Label label2;
+
+    @FXML
+    private Label label3;
+
+    @FXML
+    private Label label4;
+
+    @FXML
+    private Label label5;
+
+    @FXML
+    private Label label6;
 
     @FXML
     void cadastrar(ActionEvent event) {
