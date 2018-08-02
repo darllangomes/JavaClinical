@@ -5,8 +5,12 @@
  */
 package gui.guifx;
 
+import excecao.UsuarioExisteException;
+import excecao.UsuarioNullException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -14,7 +18,12 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-
+import negocio.ControladorUsuario;
+import negocio.Id;
+import negocio.Servidor;
+import negocio.IServidor;
+import negocio.Medico;
+import negocio.Recepcionista;
 /**
  * FXML Controller class
  *
@@ -27,7 +36,8 @@ public class TelaCadastroRecpController implements Initializable {
      */
     
     @FXML
-    private TextField filedCpf;
+    private TextField fieldCpf;
+
 
     @FXML
     private TextField fieldIdade;
@@ -64,12 +74,26 @@ public class TelaCadastroRecpController implements Initializable {
 
     @FXML
     void cadastrar(ActionEvent event) {
-
+      //Acessar o servidor
+      Recepcionista r = new Recepcionista();
+      
+      r.setNome(filedNome.getText());
+      r.setCpf(fieldCpf.getText());
+      r.setIdade(Integer.parseInt(fieldIdade.getText()));
+      r.setSenhaHash(fieldSenha.getText().hashCode());
+      r.setId(Id.gerarId(1));
+        try {
+            MainFx.getServidor().cadastrarUsuario(r);
+        } catch (UsuarioExisteException ex) {
+            Logger.getLogger(TelaCadastroRecpController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (UsuarioNullException ex) {
+            Logger.getLogger(TelaCadastroRecpController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     @FXML
     void voltar(ActionEvent event) {
-
+        MainFx.trocaCena(1);
     }
     
     @Override

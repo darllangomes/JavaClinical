@@ -97,12 +97,12 @@ public class TelaDoZeroController implements Initializable {
 
     @FXML
     void BotaoConsulta(ActionEvent event) {
-
+        //MainFx.trocaCena(0);
     }
 
     @FXML
     void BotaoExame(ActionEvent event) {
-
+            //MainFx.trocaCena(0);
     }
 
     @FXML
@@ -121,12 +121,16 @@ public class TelaDoZeroController implements Initializable {
 
     @FXML
     void BotaoListar(ActionEvent event) {
-
+        //a tela ainda não foi criada
+        //MainFx.trocaCena(0);
+        //acessar o servidor
     }
 
     @FXML
     void BotaoProntuario(ActionEvent event) {
-
+        //a tela ainda não foi criada
+        //MainFx.trocaCena(0);
+        //acessar o servidor
     }
 
     @FXML

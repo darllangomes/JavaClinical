@@ -35,6 +35,9 @@ public class FXMLCadastraUsuariosController implements Initializable {
     
     @FXML
     private Button btCadastrarRecp;
+    
+     @FXML
+    private Button btVoltar;
 
     @FXML
     private Button btCadastrarMed;
@@ -47,18 +50,23 @@ public class FXMLCadastraUsuariosController implements Initializable {
 
     @FXML
     void botaoCadastroMed(ActionEvent event) {
-        this.gui.trocaCena(0);
+        this.gui.trocaCena(5);
     }
 
     @FXML
     void botaoCadastroPac(ActionEvent event) {
-        this.gui.trocaCena(0);
+        this.gui.trocaCena(7);
     }
 
     @FXML
     void botaoRecp(ActionEvent event) {
-        this.gui.trocaCena(0);
+        this.gui.trocaCena(6);
     }
+    @FXML
+    void botaoVoltar(ActionEvent event){
+        MainFx.trocaCena(0);
+    }
+        
     
     
 

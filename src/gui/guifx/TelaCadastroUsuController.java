@@ -14,6 +14,12 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import negocio.ControladorUsuario;
+import negocio.Servidor;
+import negocio.IServidor;
+import negocio.GetInformation;
+import negocio.Usuario;
+import dados.RepositorioUsuario;
 
 /**
  * FXML Controller class
@@ -64,12 +70,12 @@ public class TelaCadastroUsuController implements Initializable {
 
     @FXML
     void cadastrar(ActionEvent event) {
-
+      MainFx.trocaCena(0);
     }
 
     @FXML
     void voltar(ActionEvent event) {
-
+           MainFx.trocaCena(0);
     }
     
     @Override

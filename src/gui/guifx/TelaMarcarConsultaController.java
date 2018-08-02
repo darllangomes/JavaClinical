@@ -59,7 +59,8 @@ public class TelaMarcarConsultaController implements Initializable {
 
     @FXML
     void botaoVoltar(ActionEvent event) {
-
+        //MainFx.trocaCena(0);
+        //ver qual é a cena certa
     }
     
     

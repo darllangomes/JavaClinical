@@ -70,12 +70,12 @@ public class TelaCadastroMediController implements Initializable {
 
     @FXML
     void cadastrar(ActionEvent event) {
-
+      //Acessar o Servidor
     }
 
     @FXML
     void voltar(ActionEvent event) {
-
+           MainFx.trocaCena(2);
     }
     
     @Override

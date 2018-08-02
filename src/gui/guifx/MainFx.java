@@ -47,6 +47,7 @@ public class MainFx extends Application {
     public static Stage getStage() {
         return stage;
     }
+    
 
     public static void setStage(Stage stage) {
         MainFx.stage = stage;
@@ -56,17 +57,17 @@ public class MainFx extends Application {
     public void start(Stage stagePrimare) throws Exception {
 
         stage = stagePrimare;
-        criaCena("TelaDoZero.fxml");//0
-        criaCena("FXMLTelaRecepcao.fxml");
-        criaCena("FXMLCadastraUsuarios.fxml");
-        criaCena("TelaMenuPaciente.fxml");
-        criaCena("TelaDoMedico.fxml");
-        criaCena("TelaCadastroMedi.fxml");
-        criaCena("TelaCadastroRecp.fxml");
-        criaCena("TelaCadastroUsu.fxml");
-        criaCena("TelaCadastroRecp.fxml");
-        //    criaCena("TelaBuscartPaciente.fxml");
-        //    criaCena("TelaBuscarMedico.fxml");
+        criaCena("TelaDoZero.fxml");            //0
+        criaCena("FXMLTelaRecepcao.fxml");      //1
+        criaCena("FXMLCadastraUsuarios.fxml");  //2
+        criaCena("TelaMenuPaciente.fxml");      //3
+        criaCena("TelaDoMedico.fxml");          //4
+        criaCena("TelaCadastroMedi.fxml");      //5
+        criaCena("TelaCadastroRecp.fxml");      //6
+        criaCena("TelaCadastroUsu.fxml");       //7
+        criaCena("TelaCadastroRecp.fxml");      //8
+        criaCena("TelaBuscarPaciente.fxml");    //9
+            criaCena("TelaBuscarMedico.fxml");//10
         stage.setScene(cenas.get(0));
         stage.setTitle("JavaClinical");
         stage.show();
@@ -105,8 +106,13 @@ public class MainFx extends Application {
         }
     }
 
+    public static Servidor getServidor() {
+        return s;
+    }
+    
+    
     public static void main(String[] args) {
         launch(args);
     }
-
+    
 }

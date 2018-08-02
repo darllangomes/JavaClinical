@@ -55,12 +55,13 @@ public class TelaMarcarExameController implements Initializable {
 
     @FXML
     void botaoMarcar(ActionEvent event) {
-
+        //MainFx.trocaCena(0);
+        //acessar o servidor
     }
 
     @FXML
     void botaoVoltar(ActionEvent event) {
-
+        //MainFx.trocaCena(0);
     }
     
     @Override

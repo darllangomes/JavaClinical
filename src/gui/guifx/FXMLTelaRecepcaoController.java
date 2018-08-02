@@ -64,6 +64,16 @@ public class FXMLTelaRecepcaoController implements Initializable {
     void botaoCadastroUsu(ActionEvent event) {
         MainFx.trocaCena(2);
     }
+    
+    @FXML
+    void buscarUsuario(ActionEvent event) {
+        MainFx.trocaCena(9);
+    }
+    
+    @FXML
+    void buscarMedico(ActionEvent event) {
+      MainFx.trocaCena(10);
+    }
  
     @Override
     public void initialize(URL url, ResourceBundle rb) {

@@ -1,12 +1,19 @@
 package negocio;
 import java.io.Serializable;
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleStringProperty;
 public class Usuario implements Serializable {
 	private String nome;
 	private String cpf;
 	private int senhaHash;
 	private String id;
 	private int idade;
-
+        
+        // TODO @author Danilo Araujo, apagar se der merda
+        private SimpleStringProperty nomeColumm;
+        private SimpleIntegerProperty idadeColumm;
+        private SimpleStringProperty cpfColumm;
+        
 	public int getIdade() {
 		return idade;
 	}
@@ -50,6 +57,27 @@ public class Usuario implements Serializable {
 	public void setId(String id) {
 		this.id = id;
 	}
+        
+        public void setColumms() {
+            if(nomeColumm == null) {
+                nomeColumm = new SimpleStringProperty(nome);
+            } else {
+                nomeColumm.set(nome);
+            }
+            
+            if(idadeColumm == null) {
+                idadeColumm = new SimpleIntegerProperty(idade);
+            } else {
+                idadeColumm.set(idade);
+            }
+            
+            if(cpfColumm == null) {
+                cpfColumm = new SimpleStringProperty(cpf);
+            } else {
+                cpfColumm.set(cpf);
+            }
+            
+        }
 
 	@Override
 	public String toString() {

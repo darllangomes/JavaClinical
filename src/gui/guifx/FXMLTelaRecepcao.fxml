@@ -10,8 +10,8 @@
    <children>
       <Button fx:id="btCadastroUsuario" layoutX="51.0" layoutY="182.0" mnemonicParsing="false" onAction="#botaoCadastroUsu" text="Cadastrar Usuario" textAlignment="CENTER" />
       <Button fx:id="btMArcarExame" layoutX="292.0" layoutY="320.0" mnemonicParsing="false" text="Marcar Exame" textAlignment="CENTER" />
-      <Button fx:id="btBuscarMedico" layoutX="292.0" layoutY="182.0" mnemonicParsing="false" text="Buscar Médico" textAlignment="CENTER" />
-      <Button fx:id="btBuscaUsuario" layoutX="58.0" layoutY="251.0" mnemonicParsing="false" text="Buscar Usuário" textAlignment="CENTER" />
+      <Button fx:id="btBuscarMedico" layoutX="292.0" layoutY="182.0" mnemonicParsing="false" onAction="#buscarMedico" text="Buscar Médico" textAlignment="CENTER" />
+      <Button fx:id="btBuscaUsuario" layoutX="58.0" layoutY="251.0" mnemonicParsing="false" onAction="#buscarUsuario" text="Buscar Usuário" textAlignment="CENTER" />
       <Button fx:id="btRemoverUsuario" layoutX="51.0" layoutY="320.0" mnemonicParsing="false" text="Remover Usuário" textAlignment="CENTER" />
       <Button fx:id="btMarcarConsulta" layoutX="287.0" layoutY="251.0" mnemonicParsing="false" text="Marcar Consulta" textAlignment="CENTER" />
       <Separator layoutX="213.0" layoutY="145.0" orientation="VERTICAL" prefHeight="237.0" prefWidth="7.0" />
