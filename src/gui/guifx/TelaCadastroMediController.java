@@ -104,7 +104,7 @@ public class TelaCadastroMediController implements Initializable {
             m.setNome(fieldNome.getText());
             m.setCpf(fieldCpf.getText());
             m.setSenhaHash(fieldSenha.getText().hashCode());
-            labelId.setText(m.getId());
+            fieldID.setText(m.getId());
        
       try{
             //m.setSenhaHash(senhaInt);

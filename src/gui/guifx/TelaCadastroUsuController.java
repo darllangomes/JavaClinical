@@ -97,7 +97,7 @@ public class TelaCadastroUsuController implements Initializable {
             p.setIdade(idade);
             p.setCpf(filedCpf.getText());
             p.setSenhaHash(fieldSenha.getText().hashCode());
-            labelId.setText(p.getId());
+            fieldId.setText(p.getId());
        
       try{
             //m.setSenhaHash(senhaInt);

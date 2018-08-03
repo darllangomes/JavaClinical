@@ -120,6 +120,31 @@ public class TelaBuscasDeID implements Initializable {
     void botaoVoltar0(ActionEvent event) {
 
     }
+    
+    @FXML
+    private Label label0;
+
+    @FXML
+    private Label label;
+
+    @FXML
+    private Button btProntuario;
+
+    @FXML
+    private Button btVoltar3;
+
+    @FXML
+    private TextArea queixaDoUsuario;
+
+    @FXML
+    void fazerProntuario(ActionEvent event) {
+
+    }
+
+    @FXML
+    void voltar(ActionEvent event) {
+
+    }
 
     
     @Override
