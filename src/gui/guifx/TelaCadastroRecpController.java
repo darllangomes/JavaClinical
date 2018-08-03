@@ -43,7 +43,7 @@ public class TelaCadastroRecpController implements Initializable {
     private TextField fieldIdade;
 
     @FXML
-    private TextField filedNome;
+    private TextField fieldNome;
 
     @FXML
     private Button btVoltar;
@@ -71,17 +71,27 @@ public class TelaCadastroRecpController implements Initializable {
 
     @FXML
     private Label label6;
+    
+    
+    @FXML
+    private TextField fieldId;
+
+    @FXML
+    private Label label51;
+
 
     @FXML
     void cadastrar(ActionEvent event) {
       //Acessar o servidor
       Recepcionista r = new Recepcionista();
       
-      r.setNome(filedNome.getText());
+      r.setNome(fieldNome.getText());
       r.setCpf(fieldCpf.getText());
       r.setIdade(Integer.parseInt(fieldIdade.getText()));
       r.setSenhaHash(fieldSenha.getText().hashCode());
       r.setId(Id.gerarId(1));
+      fieldId.setText(r.getId());
+        System.out.println(r);
         try {
             MainFx.getServidor().cadastrarUsuario(r);
         } catch (UsuarioExisteException ex) {
