@@ -150,7 +150,7 @@ public class TelaDoZeroController implements Initializable {
 
     @FXML
     void BotaoConsultar(ActionEvent event) {
-        MainFx.trocaCena(13);
+        MainFx.trocaCena(14);
     }
     
     @FXML

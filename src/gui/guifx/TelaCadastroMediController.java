@@ -60,7 +60,7 @@ public class TelaCadastroMediController implements Initializable {
     private PasswordField fieldSenha;
 
     @FXML
-    private PasswordField fieldExpecialidade;
+    private TextField fieldEspecialidade;
 
     @FXML
     private Label label1;
@@ -99,12 +99,12 @@ public class TelaCadastroMediController implements Initializable {
        int senha =  fieldSenha.getText().hashCode();
        //int senhaInt=Integer.parseInt(fieldSenha.getText());
           // m = MainFx.getServidor().procurarMedico(m.getId());
-            m.setEspecialidade(fieldExpecialidade.getText());
+            m.setEspecialidade(fieldEspecialidade.getText());
             m.setId(Id.gerarId(2));
             m.setNome(fieldNome.getText());
             m.setCpf(fieldCpf.getText());
             m.setSenhaHash(fieldSenha.getText().hashCode());
-            fieldID.setText(m.getId());
+            labelId.setText(m.getId());
        
       try{
             //m.setSenhaHash(senhaInt);
