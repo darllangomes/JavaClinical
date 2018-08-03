@@ -4,7 +4,8 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
-import dados.RepositorioUsuario;import excecao.UsuarioNullException;
+import dados.RepositorioUsuario;
+import excecao.UsuarioNullException;
 ;
 
 // A classe basicamente tem os métodos que pegam as informações para jogar nos controladores de consultas e pacientes.

@@ -20,7 +20,7 @@ public class Id {
                 id += opcao;
                 id += random();
                 break;
-            case 4:
+            case 4: // Consulta
                 id+=opcao;
                 id+= random();
              break;

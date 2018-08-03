@@ -75,7 +75,7 @@ public class TelaMarcarConsultaController implements Initializable {
             Paciente p = MainFx.getServidor().procurarPaciente(fieldIdPaci.getText());
             LocalDate d = LocalDate.of(Integer.parseInt(fieldAno.getText()), Integer.parseInt(fieldMes.getText()), Integer.parseInt(fieldDia.getText()));
             Consulta c = new Consulta(d, m.getEspecialidade(), m, p, false, false, false);
-            c.setId(Id.gerarId(5));
+            c.setId(Id.gerarId(4));
             MainFx.getServidor().cadastrarConsulta(c);
             System.out.println(c.toString()); //Depuração
             

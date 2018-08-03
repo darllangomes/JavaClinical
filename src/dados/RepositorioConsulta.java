@@ -81,7 +81,7 @@ public class RepositorioConsulta {
         Consulta consultaUnica = null;
         boolean continuar = true;
         for (int i=0; i<consultas.size() && continuar;i++) {
-            if(consultas.get(i).getPaciente().getId().equals(id) && consultas.get(i).getData().equals(d)){
+            if(consultas.get(i).getId().equals(id) && consultas.get(i).getData().isEqual(d)){
                 consultaUnica=consultas.get(i);
                 continuar = false;
             }

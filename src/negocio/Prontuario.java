@@ -14,7 +14,7 @@ public class Prontuario implements Serializable {
 	}
 	
 	public String toString() {
-		return "Prontuário:\nQueixa: " + queixaPaciente;
+		return "Prontuário:\nQueixa:\n" + queixaPaciente;
 	}
 	
 	public boolean equals(Object obj) {

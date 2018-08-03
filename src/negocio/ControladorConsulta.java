@@ -58,6 +58,8 @@ public class ControladorConsulta {
     }
 
     public Consulta procurar(String id,LocalDate d) {
+        System.out.println("Id: " + id);
+        System.out.println("Data: " + d);
         return this.repositorio.procurar(id,d);
     }
 
