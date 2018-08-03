@@ -37,13 +37,13 @@ public class TelaBuscasDeID implements Initializable {
     private Button btBuscar;
 
     @FXML
-    private Text titulo;
+    private TextField fieldIdMed;
 
     @FXML
-    private Text textIdPac;
+    private Label titulo;
 
     @FXML
-    private TextField filedIdPaci;
+    private Label idUsuarioLabel;
 
     @FXML
     void botaoBuscar(ActionEvent event) {

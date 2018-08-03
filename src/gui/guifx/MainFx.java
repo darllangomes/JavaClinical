@@ -123,6 +123,7 @@ public class MainFx extends Application {
     
     
     public static void main(String[] args) {
+        s = Servidor.getInstance();
         launch(args);
     }
     

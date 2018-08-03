@@ -9,6 +9,8 @@ import excecao.UsuarioExisteException;
 import excecao.UsuarioNullException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -37,13 +39,13 @@ public class TelaCadastroMediController implements Initializable {
      */
     
     @FXML
-    private TextField filedCpf;
+    private TextField fieldCpf;
 
     @FXML
     private TextField fieldIdade;
 
     @FXML
-    private TextField filedNome;
+    private TextField fieldNome;
 
     @FXML
     private Button btVoltar;
@@ -80,6 +82,9 @@ public class TelaCadastroMediController implements Initializable {
 
     @FXML
     private Label label7;
+    
+    @FXML
+    private PasswordField fieldId;
 
     @FXML
     void cadastrar(ActionEvent event) throws UsuarioNullException, UsuarioExisteException {
