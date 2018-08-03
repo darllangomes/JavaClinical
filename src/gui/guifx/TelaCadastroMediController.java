@@ -93,7 +93,7 @@ public class TelaCadastroMediController implements Initializable {
         //String nome = filedNome.getText();
        //String cpf = filedCpf.getText();
        //String especialidade= fieldExpecialidade.getText();
-       int senha =  fieldSenha.hashCode();
+       int senha =  fieldSenha.getText().hashCode();
        //int senhaInt=Integer.parseInt(fieldSenha.getText());
           // m = MainFx.getServidor().procurarMedico(m.getId());
             m.setEspecialidade(fieldExpecialidade.getText());
