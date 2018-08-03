@@ -9,14 +9,14 @@
 
 <AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="440.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.guifx.TelaDoZeroController">
    <children>
-      <Button fx:id="btVoltar1" layoutX="271.0" layoutY="407.0" onAction="#BotaoVoltar1" prefHeight="45.0" prefWidth="103.0" text="Sair">
+      <Button fx:id="btVoltar1" layoutX="267.0" layoutY="412.0" onAction="#BotaoVoltar1" prefHeight="39.0" prefWidth="82.0" text="Sair">
          <font>
-            <Font size="22.0" />
+            <Font size="18.0" />
          </font>
       </Button>
-      <Button fx:id="btListar" layoutX="220.0" layoutY="90.0" onAction="#BotaoListar" prefHeight="35.0" prefWidth="184.0" text="Listar Consultas">
+      <Button fx:id="btListar" layoutX="249.0" layoutY="97.0" onAction="#BotaoListar" prefHeight="39.0" prefWidth="148.0" text="Listar Consultas">
          <font>
-            <Font size="22.0" />
+            <Font size="18.0" />
          </font>
       </Button>
       <Separator layoutX="77.0" layoutY="371.0" prefHeight="18.0" prefWidth="288.0" />
@@ -26,9 +26,9 @@
          </font>
       </Label>
       <TextArea fx:id="listaDeConsultas" layoutX="47.0" layoutY="157.0" prefHeight="200.0" prefWidth="346.0" />
-      <Button fx:id="btConsultar" layoutX="74.0" layoutY="407.0" mnemonicParsing="false" onAction="#BotaoConsultar" text="Consultar">
+      <Button fx:id="btConsultar" layoutX="73.0" layoutY="412.0" mnemonicParsing="false" onAction="#BotaoConsultar" text="Consultar">
          <font>
-            <Font size="22.0" />
+            <Font size="18.0" />
          </font>
       </Button>
    </children>

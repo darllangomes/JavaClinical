@@ -41,7 +41,8 @@ public class FXMLTelaRecepcaoController implements Initializable {
 
     @FXML
     private Button btBuscarMedico;
-
+    
+   
     @FXML
     private Button btBuscaUsuario;
 
@@ -96,6 +97,9 @@ public class FXMLTelaRecepcaoController implements Initializable {
 
     @FXML
     private TextField queixaDoUsuario;
+    
+    
+
 
     @FXML
     void fazerProntuario(ActionEvent event) {
@@ -107,6 +111,17 @@ public class FXMLTelaRecepcaoController implements Initializable {
         MainFx.trocaCena(11);
     }
     
+    @FXML
+    void btMArcarExame(ActionEvent event) {
+        MainFx.trocaCena(11);
+    }
+    @FXML
+    void btRemoverUsuario(ActionEvent event){
+        MainFx.trocaCena(13);
+    }
+        
+    
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO

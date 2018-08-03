@@ -37,7 +37,7 @@ public class TelaDoMedicoController {
 
     @FXML
     void BotaoConsultar(ActionEvent event) {
-        MainFx.trocaCena(13);
+        MainFx.trocaCena(14);
     }
 
     @FXML
@@ -48,7 +48,7 @@ public class TelaDoMedicoController {
 
     @FXML
     void BotaoVoltar1(ActionEvent event) {
-
+        MainFx.trocaCena(1);
     }
 
 }

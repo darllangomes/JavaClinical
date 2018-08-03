@@ -29,7 +29,6 @@
       </Button>
       <PasswordField fx:id="fieldSenha" layoutX="125.0" layoutY="312.0" prefHeight="25.0" prefWidth="89.0" />
       <Separator layoutX="57.0" layoutY="397.0" prefHeight="6.0" prefWidth="327.0" />
-      <PasswordField fx:id="fieldExpecialidade" layoutX="202.0" layoutY="360.0" prefHeight="26.0" prefWidth="178.0" />
       <Label fx:id="label1" layoutX="121.0" layoutY="32.0" text="Cadastrar Usuários">
          <font>
             <Font size="24.0" />
@@ -70,6 +69,11 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="fieldID" layoutX="128.0" layoutY="404.0" onAction="#cadastrar" />
+      <Label fx:id="labelId" layoutX="127.0" layoutY="404.0" prefHeight="25.0" prefWidth="89.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="fieldEspecialidade" layoutX="170.0" layoutY="364.0" prefHeight="25.0" prefWidth="254.0" />
    </children>
 </AnchorPane>

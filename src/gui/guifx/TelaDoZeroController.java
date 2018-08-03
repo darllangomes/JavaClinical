@@ -9,6 +9,8 @@ package gui.guifx;
 import excecao.UsuarioNullException;
 import java.io.IOException;
 import java.net.URL;
+import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -22,6 +24,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import negocio.Consulta;
 import negocio.Usuario;
 
 /**
@@ -47,7 +50,7 @@ public class TelaDoZeroController implements Initializable {
 
     @FXML
     private PasswordField SenhaField;
-
+    
     @FXML
     void BotaoLogin(ActionEvent event) {
         try {
@@ -83,8 +86,6 @@ public class TelaDoZeroController implements Initializable {
     void LoginUsuario(ActionEvent event) throws UsuarioNullException {
         String senha = SenhaField.getText();
         String id = TextId.getText();
-
-        //MainFx a = new MainFx();
         MainFx.fazerLogin(id, senha);
     }
     
@@ -124,9 +125,8 @@ public class TelaDoZeroController implements Initializable {
 
     @FXML
     void BotaoListar(ActionEvent event) {
-        //a tela ainda não foi criada
-        //MainFx.trocaCena(0);
-        //acessar o servidor
+        ArrayList <Consulta> c = MainFx.getServidor().procurarConsulta(LocalDate.now());
+        listaDeConsultas.setText(c.toString());
     }
 
     @FXML
@@ -152,7 +152,7 @@ public class TelaDoZeroController implements Initializable {
 
     @FXML
     void BotaoConsultar(ActionEvent event) {
-        MainFx.trocaCena(13);
+        MainFx.trocaCena(14);
     }
     
     @FXML

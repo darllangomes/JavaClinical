@@ -8,14 +8,31 @@
 
 <AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="440.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.guifx.FXMLTelaRecepcaoController">
    <children>
-      <Button fx:id="btCadastroUsuario" layoutX="51.0" layoutY="182.0" mnemonicParsing="false" onAction="#botaoCadastroUsu" text="Cadastrar Usuario" textAlignment="CENTER" />
-      <Button fx:id="btMArcarExame" layoutX="292.0" layoutY="320.0" mnemonicParsing="false" onAction="#marcarExame" text="Marcar Exame" textAlignment="CENTER" />
-      <Button fx:id="btBuscarMedico" layoutX="292.0" layoutY="182.0" mnemonicParsing="false" onAction="#buscarMedico" text="Buscar Médico" textAlignment="CENTER" />
-      <Button fx:id="btBuscaUsuario" layoutX="58.0" layoutY="251.0" mnemonicParsing="false" onAction="#buscarUsuario" text="Buscar Usuário" textAlignment="CENTER" />
-      <Button fx:id="btRemoverUsuario" layoutX="51.0" layoutY="320.0" mnemonicParsing="false" text="Remover Usuário" textAlignment="CENTER" />
-      <Button fx:id="btMarcarConsulta" layoutX="287.0" layoutY="251.0" mnemonicParsing="false" onAction="#marcarConsulta" text="Marcar Consulta" textAlignment="CENTER" />
-      <Separator layoutX="213.0" layoutY="145.0" orientation="VERTICAL" prefHeight="237.0" prefWidth="7.0" />
-      <Button fx:id="btVoltar" layoutX="189.0" layoutY="426.0" mnemonicParsing="false" onAction="#BotaoVoltar" text="Voltar" />
+      <Button fx:id="btCadastroUsuario" layoutX="32.0" layoutY="163.0" mnemonicParsing="false" onAction="#botaoCadastroUsu" text="Cadastrar Usuario" textAlignment="CENTER">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
+      <Button fx:id="btBuscarMedico" layoutX="258.0" layoutY="202.0" mnemonicParsing="false" onAction="#buscarMedico" text="Buscar Médico" textAlignment="CENTER">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
+      <Button fx:id="btBuscaUsuario" layoutX="258.0" layoutY="294.0" mnemonicParsing="false" onAction="#buscarUsuario" text="Buscar Usuário" textAlignment="CENTER">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
+      <Button fx:id="btRemoverUsuario" layoutX="35.0" layoutY="333.0" mnemonicParsing="false" onAction="#btRemoverUsuario" text="Remover Usuário" textAlignment="CENTER">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
+      <Button fx:id="btMarcarConsulta" layoutX="38.0" layoutY="244.0" mnemonicParsing="false" onAction="#marcarConsulta" text="Marcar Consulta" textAlignment="CENTER">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
+      <Separator layoutX="220.0" layoutY="145.0" orientation="VERTICAL" prefHeight="237.0" prefWidth="7.0" />
+      <Button fx:id="btVoltar" layoutX="184.0" layoutY="425.0" mnemonicParsing="false" onAction="#BotaoVoltar" text="Voltar">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
       <Label fx:id="label1" layoutX="107.0" layoutY="51.0" text="Menu Recepção">
          <font>
             <Font size="30.0" />

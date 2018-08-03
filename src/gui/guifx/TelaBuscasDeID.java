@@ -5,19 +5,25 @@
  */
 package gui.guifx;
 
+import excecao.UsuarioExisteException;
+import excecao.UsuarioNullException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
 import javafx.geometry.VPos;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javax.xml.soap.Text;
+import negocio.Paciente;
 
 /**
  * FXML Controller class
@@ -30,7 +36,7 @@ public class TelaBuscasDeID implements Initializable {
      * Initializes the controller class.
      */
     
-    @FXML
+     @FXML
     private Button btVoltar;
 
     @FXML
@@ -41,18 +47,47 @@ public class TelaBuscasDeID implements Initializable {
 
     @FXML
     private Label titulo;
+    
+    @FXML
+    private TextArea fieldInf;
 
     @FXML
     private Label idUsuarioLabel;
 
     @FXML
-    void botaoBuscar(ActionEvent event) {
+    private Button btRemover;
 
+    @FXML
+    void botaoBuscar(ActionEvent event) {
+        try {
+            
+            Paciente p=MainFx.getServidor().procurarPaciente(fieldIdMed.getText());
+            //MainFx.trocaCena(0);
+            fieldInf.setText(p.toString());
+        } catch (UsuarioNullException ex) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("ERRO: Paciente não encontrado");
+            alert.setHeaderText("Id incorreto");
+            alert.setContentText("tente novamente.");
+            alert.showAndWait();
+        }
     }
 
     @FXML
     void botaoVoltar(ActionEvent event) {
-
+        MainFx.trocaCena(1);
+    }
+    @FXML
+    void botaoRemover(ActionEvent event) {
+         try {
+             MainFx.getServidor().descadastrarUsuario(fieldIdMed.getText());
+         } catch (UsuarioNullException ex) {
+          Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("ERRO: Paciente não foi removido");
+            alert.setHeaderText("Erro desconhecido");
+            alert.setContentText("contate o suporte.");
+            alert.showAndWait();   
+         }
     }
     
     
@@ -115,6 +150,7 @@ public class TelaBuscasDeID implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
+//        consultas.setText("");
+   }    
     
 }

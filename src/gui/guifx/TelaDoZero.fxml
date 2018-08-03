@@ -26,7 +26,7 @@
          </font>
       </Button>
       <Separator layoutX="76.0" layoutY="329.0" prefHeight="18.0" prefWidth="288.0" />
-      <TextField fx:id="TextId" layoutX="72.0" layoutY="206.0" onAction="#LoginUsuario" promptText="Digite a ID..." />
-      <PasswordField fx:id="SenhaField" layoutX="72.0" layoutY="255.0" onAction="#LoginUsuario" promptText="Digite a Senha..." />
+      <TextField fx:id="TextId" layoutX="72.0" layoutY="206.0" promptText="Digite a ID..." />
+      <PasswordField fx:id="SenhaField" layoutX="72.0" layoutY="255.0" promptText="Digite a Senha..." />
    </children>
 </AnchorPane>

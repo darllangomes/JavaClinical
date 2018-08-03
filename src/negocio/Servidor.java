@@ -224,11 +224,11 @@ public class Servidor implements IServidor {
     }
 
     public void carregarDados() throws IOException, FileNotFoundException, ClassNotFoundException {
-        /*consultas.carregarDados("consultas.txt");
+        consultas.carregarDados("consultas.txt");
         exames.carregarDados("exames.txt");
         pacientes.carregarDados("pacientes.txt");
         medicos.carregarDados("medicos.txt");
-        recepcionistas.carregarDados("recepcionistas.txt");*/
+        recepcionistas.carregarDados("recepcionistas.txt");
     }
     
     public ArrayList<Exame> procurar(LocalDate d){

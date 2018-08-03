@@ -25,6 +25,8 @@ import negocio.Login;
 import negocio.Servidor;
 import negocio.ControladorUsuario;
 import dados.RepositorioUsuario;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 
 /**
  *
@@ -80,7 +82,8 @@ public class MainFx extends Application {
         criaCena("TelaBuscarMedico.fxml");      //10
         criaCena("TelaMarcarConsulta.fxml");    //11
         criaCena("TelaMarcarExame.fxml");       //12
-        criaCena("TelaConsultar.fxml");         //13
+        criaCena("TelaBuscasDeId.fxml");        //13
+        criaCena("TelaConsultar.fxml");         //14
         
         stage.setScene(cenas.get(0));
         stage.setTitle("JavaClinical");
@@ -99,14 +102,13 @@ public class MainFx extends Application {
                 if (u.getSenhaHash() != l.getSenhaHash()) {
                     throw new UsuarioNullException();
                 }
-
+                   
                 break;
             case '2':
                 u = s.efetuarLoginMedico(l);
                 if (u.getSenhaHash() != l.getSenhaHash()) {
                     throw new UsuarioNullException();
                 }
-
                 break;
             case '3':
                 u = s.efetuarLoginPaciente(l);
@@ -125,7 +127,7 @@ public class MainFx extends Application {
     }
     
     
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException, FileNotFoundException, ClassNotFoundException  {
         s = Servidor.getInstance();
         launch(args);
     }

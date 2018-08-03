@@ -23,6 +23,7 @@ import negocio.Consulta;
 import negocio.Id;
 import negocio.Medico;
 import negocio.Paciente;
+import negocio.Prontuario;
 
 /**
  * FXML Controller class
@@ -76,6 +77,7 @@ public class TelaMarcarConsultaController implements Initializable {
             LocalDate d = LocalDate.of(Integer.parseInt(fieldAno.getText()), Integer.parseInt(fieldMes.getText()), Integer.parseInt(fieldDia.getText()));
             Consulta c = new Consulta(d, m.getEspecialidade(), m, p, false, false, false);
             c.setId(Id.gerarId(4));
+            c.setProntuario(new Prontuario());
             MainFx.getServidor().cadastrarConsulta(c);
             System.out.println(c.toString()); //Depuração
             
