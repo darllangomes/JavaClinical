@@ -23,6 +23,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import negocio.Login;
 import negocio.Servidor;
+import negocio.ControladorUsuario;
+import dados.RepositorioUsuario;
 
 /**
  *
@@ -33,6 +35,14 @@ public class MainFx extends Application {
     private static ArrayList<Scene> cenas = new ArrayList<Scene>();
     private static Stage stage;
     private static Servidor s;
+    private static ControladorUsuario controlador;
+
+    public static ControladorUsuario getControlador() {
+        return controlador;
+    }
+
+   
+    
 
     public  void criaCena(String doc) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource(doc));
@@ -68,7 +78,7 @@ public class MainFx extends Application {
         criaCena("TelaCadastroRecp.fxml");      //8
         criaCena("TelaBuscarPaciente.fxml");    //9
             criaCena("TelaBuscarMedico.fxml");//10
-        criaCena("TelaBuscasDeId.fxml");
+        //criaCena("TelaBuscasDeId.fxml");
         stage.setScene(cenas.get(0));
         stage.setTitle("JavaClinical");
         stage.show();

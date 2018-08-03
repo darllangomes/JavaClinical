@@ -7,6 +7,7 @@ package gui.guifx;
 
 //import gui.guifx.TelaDoInicial; // TODO @author Danilo Araújo
 import excecao.UsuarioNullException;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
@@ -72,7 +73,8 @@ public class TelaDoZeroController implements Initializable {
     }
 
     @FXML
-    void BotaoSair(ActionEvent event) {
+    void BotaoSair(ActionEvent event) throws IOException {
+        MainFx.getServidor().salvarDados();
         System.exit(0); // @author Danilo Araújo Valor padrão para encerramento de um programa sem erro
     }
 

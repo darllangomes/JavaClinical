@@ -14,6 +14,7 @@ public class Medico extends Usuario implements Serializable {
 	public void setEspecialidade(String especialidade) {
 		this.especialidade = especialidade;
 	}
+        
 
 	public String getIdMedico(){
 		return super.getId();
