@@ -9,6 +9,8 @@ package gui.guifx;
 import excecao.UsuarioNullException;
 import java.io.IOException;
 import java.net.URL;
+import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -22,6 +24,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import negocio.Consulta;
 import negocio.Usuario;
 
 /**
@@ -122,9 +125,8 @@ public class TelaDoZeroController implements Initializable {
 
     @FXML
     void BotaoListar(ActionEvent event) {
-        //a tela ainda não foi criada
-        //MainFx.trocaCena(0);
-        //acessar o servidor
+        ArrayList <Consulta> c = MainFx.getServidor().procurarConsulta(LocalDate.now());
+        listaDeConsultas.setText(c.toString());
     }
 
     @FXML

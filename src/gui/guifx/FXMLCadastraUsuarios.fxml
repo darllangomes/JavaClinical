@@ -8,9 +8,18 @@
 
 <AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="440.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.guifx.FXMLCadastraUsuariosController">
    <children>
-      <Button fx:id="btCadastrarRecp" layoutX="57.0" layoutY="238.0" mnemonicParsing="false" onAction="#botaoRecp" text="Recepcionista" />
-      <Button fx:id="btCadastrarMed" layoutX="203.0" layoutY="238.0" mnemonicParsing="false" onAction="#botaoCadastroMed" text="Médico" />
-      <Button fx:id="btCadastroPac" layoutX="323.0" layoutY="238.0" mnemonicParsing="false" onAction="#botaoCadastroPac" text="Paciente" />
+      <Button fx:id="btCadastrarRecp" layoutX="72.0" layoutY="161.0" mnemonicParsing="false" onAction="#botaoRecp" text="Recepcionista">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
+      <Button fx:id="btCadastrarMed" layoutX="179.0" layoutY="238.0" mnemonicParsing="false" onAction="#botaoCadastroMed" text="Médico">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
+      <Button fx:id="btCadastroPac" layoutX="283.0" layoutY="303.0" mnemonicParsing="false" onAction="#botaoCadastroPac" text="Paciente">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
       <Separator layoutX="57.0" layoutY="210.0" prefHeight="6.0" prefWidth="327.0" />
       <Separator layoutX="57.0" layoutY="289.0" prefHeight="6.0" prefWidth="327.0" />
       <Label fx:id="label2" layoutX="126.0" layoutY="46.0" text="Cadastrar Usuários">
@@ -18,6 +27,9 @@
             <Font size="23.0" />
          </font>
       </Label>
-      <Button fx:id="btVoltar" layoutX="191.0" layoutY="362.0" mnemonicParsing="false" onAction="#botaoVoltar" prefHeight="34.0" prefWidth="61.0" text="Voltar" />
+      <Button fx:id="btVoltar" layoutX="178.0" layoutY="409.0" mnemonicParsing="false" onAction="#botaoVoltar" prefHeight="39.0" prefWidth="84.0" text="Voltar">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
    </children>
 </AnchorPane>
