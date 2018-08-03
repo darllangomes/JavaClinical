@@ -65,11 +65,14 @@ public class Consulta implements Serializable {
 	public Medico getMedico() {
 		return medico;
 	}
-
+            
 	public String toString() {
-		return "Consulta:\n" + data + "\n" + medico + "\n" + paciente;
+		return "Consulta:\n" + data + "\n" + medico + "\n" + paciente +"\n" + id + "\n";
 	}
 	
+
+    
+        
 	
 
 

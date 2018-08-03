@@ -20,6 +20,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javax.xml.soap.Text;
 import negocio.Consulta;
+import negocio.Id;
 import negocio.Medico;
 import negocio.Paciente;
 
@@ -74,8 +75,9 @@ public class TelaMarcarConsultaController implements Initializable {
             Paciente p = MainFx.getServidor().procurarPaciente(fieldIdPaci.getText());
             LocalDate d = LocalDate.of(Integer.parseInt(fieldAno.getText()), Integer.parseInt(fieldMes.getText()), Integer.parseInt(fieldDia.getText()));
             Consulta c = new Consulta(d, m.getEspecialidade(), m, p, false, false, false);
-            System.out.println(c); //Depuração
+            c.setId(Id.gerarId(5));
             MainFx.getServidor().cadastrarConsulta(c);
+            System.out.println(c.toString()); //Depuração
             
         } catch (UsuarioNullException ex) {
             Logger.getLogger(TelaMarcarConsultaController.class.getName()).log(Level.SEVERE, null, ex);
