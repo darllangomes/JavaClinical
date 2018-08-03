@@ -97,6 +97,11 @@ public class FXMLTelaRecepcaoController implements Initializable {
 
     }
     
+    @FXML
+    void marcarConsulta(ActionEvent event) {
+        MainFx.trocaCena(11);
+    }
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO

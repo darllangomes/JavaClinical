@@ -5,14 +5,23 @@
  */
 package gui.guifx;
 
+import excecao.UsuarioNullException;
 import java.net.URL;
+import java.time.LocalDate;
+import java.time.Month;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javax.xml.soap.Text;
+import negocio.Consulta;
+import negocio.Medico;
+import negocio.Paciente;
 
 /**
  * FXML Controller class
@@ -32,40 +41,50 @@ public class TelaMarcarConsultaController implements Initializable {
     private Button btMarcar;
 
     @FXML
-    private Text titulo;
+    private Label titulo;
 
     @FXML
-    private Text textIdMed;
+    private Label textIdMed;
 
     @FXML
-    private TextField filedIdMed;
+    private TextField fieldIdMed;
 
     @FXML
-    private Text textIdPac;
+    private Label textIdPac;
 
     @FXML
-    private TextField filedIdPaci;
+    private TextField fieldIdPaci;
 
     @FXML
-    private Text textDataCon;
+    private Label textDataCon;
 
     @FXML
-    private TextField filedDia;
+    private TextField fieldDia;
 
     @FXML
-    private TextField filedMes;
+    private TextField fieldMes;
 
     @FXML
-    private TextField filedAno;
+    private TextField fieldAno;
 
     @FXML
     void botaoMarcar(ActionEvent event) {
-
+        try {
+            Medico m = MainFx.getServidor().procurarMedico(fieldIdMed.getText());
+            Paciente p = MainFx.getServidor().procurarPaciente(fieldIdPaci.getText());
+            LocalDate d = LocalDate.of(Integer.parseInt(fieldAno.getText()), Integer.parseInt(fieldMes.getText()), Integer.parseInt(fieldDia.getText()));
+            Consulta c = new Consulta(d, m.getEspecialidade(), m, p, false, false, false);
+            System.out.println(c); //Depuração
+            MainFx.getServidor().cadastrarConsulta(c);
+            
+        } catch (UsuarioNullException ex) {
+            Logger.getLogger(TelaMarcarConsultaController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     @FXML
     void botaoVoltar(ActionEvent event) {
-        //MainFx.trocaCena(0);
+        MainFx.trocaCena(1);
         //ver qual é a cena certa
     }
     
