@@ -20,6 +20,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import negocio.Usuario;
 
@@ -30,7 +31,7 @@ import negocio.Usuario;
  */
 public class TelaDoZeroController implements Initializable {
 
-    //MainFx gui = new MainFx();
+    
 
     @FXML
     private Button btSair;
@@ -140,6 +141,36 @@ public class TelaDoZeroController implements Initializable {
         MainFx.trocaCena(0);
     }
     
+    @FXML
+    private Label label3;
+    
+    @FXML
+    private TextArea listaDeConsultas;
+    
+    @FXML
+    private Button btConsultar;
+
+    @FXML
+    void BotaoConsultar(ActionEvent event) {
+        MainFx.trocaCena(13);
+    }
+    
+    @FXML
+    private Label label0;
+
+    @FXML
+    private TextField queixaDoUsuario;
+
+    @FXML
+    void fazerProntuario(ActionEvent event) {
+
+    }
+
+    @FXML
+    void voltar(ActionEvent event) {
+        MainFx.trocaCena(4);
+    }
+
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {

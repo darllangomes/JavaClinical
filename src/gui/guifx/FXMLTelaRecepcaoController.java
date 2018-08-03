@@ -110,6 +110,12 @@ public class FXMLTelaRecepcaoController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
+    }   
+
+    @FXML
+    void voltar(ActionEvent event) {
+
+    }
+
     
 }

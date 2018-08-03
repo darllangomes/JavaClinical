@@ -90,7 +90,7 @@ public class TelaCadastroUsuController implements Initializable {
             p.setId(Id.gerarId(3));
             p.setNome(filedNome.getText());
             p.setCpf(filedCpf.getText());
-            p.setSenhaHash(senha);
+            p.setSenhaHash(fieldSenha.getText().hashCode());
             fieldId.setText(p.getId());
        
       try{
