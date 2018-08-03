@@ -115,7 +115,7 @@ public class TelaCadastroUsuController implements Initializable {
 
     @FXML
     void voltar(ActionEvent event) {
-           MainFx.trocaCena(0);
+           MainFx.trocaCena(1);
     }
     
     @Override

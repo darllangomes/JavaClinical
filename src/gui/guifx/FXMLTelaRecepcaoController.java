@@ -74,7 +74,12 @@ public class FXMLTelaRecepcaoController implements Initializable {
     
     @FXML
     void buscarMedico(ActionEvent event) {
-      MainFx.trocaCena(10);
+        MainFx.trocaCena(10);
+    }
+    
+    @FXML
+    void marcarExame(ActionEvent even){
+        MainFx.trocaCena(12);
     }
  
     @FXML
