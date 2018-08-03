@@ -20,6 +20,12 @@ import negocio.IServidor;
 import negocio.GetInformation;
 import negocio.Usuario;
 import dados.RepositorioUsuario;
+import excecao.UsuarioExisteException;
+import excecao.UsuarioNullException;
+import javafx.scene.control.Alert;
+import negocio.Id;
+import negocio.Medico;
+import negocio.Paciente;
 
 /**
  * FXML Controller class
@@ -34,6 +40,10 @@ public class TelaCadastroUsuController implements Initializable {
     
     @FXML
     private TextField filedCpf;
+    
+      @FXML
+    private TextField fieldId;
+
 
     @FXML
     private TextField fieldIdade;
@@ -69,7 +79,37 @@ public class TelaCadastroUsuController implements Initializable {
     private Label label6;
 
     @FXML
-    void cadastrar(ActionEvent event) {
+    void cadastrar(ActionEvent event) throws UsuarioExisteException {
+         Paciente p= new Paciente();
+        //String nome = filedNome.getText();
+       //String cpf = filedCpf.getText();
+       //String especialidade= fieldExpecialidade.getText();
+       int senha =  fieldSenha.hashCode();
+       //int senhaInt=Integer.parseInt(fieldSenha.getText());
+          // m = MainFx.getServidor().procurarMedico(m.getId());
+            p.setId(Id.gerarId(3));
+            p.setNome(filedNome.getText());
+            p.setCpf(filedCpf.getText());
+            p.setSenhaHash(senha);
+            fieldId.setText(p.getId());
+       
+      try{
+            //m.setSenhaHash(senhaInt);
+            MainFx.getServidor().cadastrarUsuario(p);
+            System.out.println(p.getId());
+            
+            MainFx.trocaCena(1);
+             
+      }catch(UsuarioNullException ex){
+         // m = MainFx.getServidor().cadastrarUsuario(m);
+          Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Erro: O médico já existe");
+            alert.setHeaderText("Tente Novamente.");
+            alert.setContentText(ex.getMessage());
+            alert.showAndWait();
+      }
+          
+        
       MainFx.trocaCena(0);
     }
 
