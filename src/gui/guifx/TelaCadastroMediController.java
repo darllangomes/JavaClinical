@@ -82,6 +82,9 @@ public class TelaCadastroMediController implements Initializable {
 
     @FXML
     private Label label7;
+    @FXML
+    private Label labelId;
+
     
     @FXML
     private PasswordField fieldId;
@@ -100,8 +103,8 @@ public class TelaCadastroMediController implements Initializable {
             m.setId(Id.gerarId(2));
             m.setNome(fieldNome.getText());
             m.setCpf(fieldCpf.getText());
-            m.setSenhaHash(senha);
-            fieldID.setText(m.getId());
+            m.setSenhaHash(fieldSenha.getText().hashCode());
+            labelId.setText(m.getId());
        
       try{
             //m.setSenhaHash(senhaInt);

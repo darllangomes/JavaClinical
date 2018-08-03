@@ -31,6 +31,7 @@ public class Main /*extends Application*/ {
 
     public static void main(String[] args) {
         
+        
         TelaTextual tt = new TelaTextual(); // TODO Remover o bloco de comentários para testar em TelaTextual
         // Cria a tela
         while (tt.executando()) {

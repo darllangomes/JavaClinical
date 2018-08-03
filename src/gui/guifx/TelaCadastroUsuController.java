@@ -77,6 +77,8 @@ public class TelaCadastroUsuController implements Initializable {
 
     @FXML
     private Label label6;
+    @FXML
+    private Label labelId;
 
     @FXML
     void cadastrar(ActionEvent event) throws UsuarioExisteException {
@@ -85,13 +87,17 @@ public class TelaCadastroUsuController implements Initializable {
        //String cpf = filedCpf.getText();
        //String especialidade= fieldExpecialidade.getText();
        int senha =  fieldSenha.getText().hashCode();
+        
+
        //int senhaInt=Integer.parseInt(fieldSenha.getText());
           // m = MainFx.getServidor().procurarMedico(m.getId());
+            int idade= Integer.parseInt(fieldIdade.getText());
             p.setId(Id.gerarId(3));
             p.setNome(filedNome.getText());
+            p.setIdade(idade);
             p.setCpf(filedCpf.getText());
-            p.setSenhaHash(senha);
-            fieldId.setText(p.getId());
+            p.setSenhaHash(fieldSenha.getText().hashCode());
+            labelId.setText(p.getId());
        
       try{
             //m.setSenhaHash(senhaInt);

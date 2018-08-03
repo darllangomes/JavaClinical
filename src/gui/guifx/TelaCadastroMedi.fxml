@@ -70,6 +70,10 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="fieldID" layoutX="128.0" layoutY="404.0" onAction="#cadastrar" />
+      <Label fx:id="labelId" layoutX="127.0" layoutY="404.0" prefHeight="25.0" prefWidth="89.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

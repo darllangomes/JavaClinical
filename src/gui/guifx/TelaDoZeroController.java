@@ -46,7 +46,7 @@ public class TelaDoZeroController implements Initializable {
 
     @FXML
     private PasswordField SenhaField;
-
+    
     @FXML
     void BotaoLogin(ActionEvent event) {
         try {
@@ -82,8 +82,6 @@ public class TelaDoZeroController implements Initializable {
     void LoginUsuario(ActionEvent event) throws UsuarioNullException {
         String senha = SenhaField.getText();
         String id = TextId.getText();
-
-        //MainFx a = new MainFx();
         MainFx.fazerLogin(id, senha);
     }
     
