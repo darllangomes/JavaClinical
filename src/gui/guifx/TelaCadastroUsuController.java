@@ -98,7 +98,7 @@ public class TelaCadastroUsuController implements Initializable {
             MainFx.getServidor().cadastrarUsuario(p);
             System.out.println(p.getId());
             
-            MainFx.trocaCena(1);
+            //MainFx.trocaCena(1);
              
       }catch(UsuarioNullException ex){
          // m = MainFx.getServidor().cadastrarUsuario(m);
@@ -110,7 +110,7 @@ public class TelaCadastroUsuController implements Initializable {
       }
           
         
-      MainFx.trocaCena(0);
+      //MainFx.trocaCena(1);
     }
 
     @FXML

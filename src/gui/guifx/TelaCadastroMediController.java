@@ -108,7 +108,7 @@ public class TelaCadastroMediController implements Initializable {
             MainFx.getServidor().cadastrarUsuario(m);
             System.out.println(m.getId());
             
-            MainFx.trocaCena(1);
+            //MainFx.trocaCena(1);
              
       }catch(UsuarioNullException ex){
          // m = MainFx.getServidor().cadastrarUsuario(m);

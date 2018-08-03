@@ -56,7 +56,7 @@ public class TelaDoZeroController implements Initializable {
                 MainFx.trocaCena(1);
                 break;
             case '2':
-                //MainFx.trocaCena(2);// TODO @author Danilo Araújo trocaCena para médico
+                MainFx.trocaCena(4);// TODO @author Danilo Araújo trocaCena para médico
                 break;
             default:
                 MainFx.trocaCena(3);// TODO @author Danilo Araújo trocaCena para paciente
