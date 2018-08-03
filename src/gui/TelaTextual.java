@@ -162,12 +162,21 @@ public class TelaTextual {
         switch (l.getId().charAt(0)) {
             case '1':
                 u = s.efetuarLoginRecepcionista(l);
+                if(u.getSenhaHash()!= l.getSenhaHash()) {
+                    throw new UsuarioNullException();
+                }
                 break;
             case '2':
                 u = s.efetuarLoginMedico(l);
+                if(u.getSenhaHash()!= l.getSenhaHash()) {
+                    throw new UsuarioNullException();
+                }
                 break;
             default:
                 u = s.efetuarLoginPaciente(l);
+                if(u.getSenhaHash()!= l.getSenhaHash()) {
+                    throw new UsuarioNullException();
+                }
                 break;
         }
 
